@@ -1,0 +1,20 @@
+{
+  "calibration_parameters": {
+    "h_external_W_m2K": 30.0,
+    "emissivity": 1.0,
+    "both_at_upper_bound": true
+  },
+  "calibration_region_RMSE_C": 4.012122643442166,
+  "independent_validation_region_RMSE_C": 4.684821000886599,
+  "independent_validation_worst_region_RMSE_C": 6.881227789580045,
+  "all_independent_speeds_below_1p5C": false,
+  "hotspot_location_spearman_correlation": 0.1543033499620919,
+  "hotspot_location_trend_consistent": false,
+  "temperature_scale_order_consistent_with_Fig7": true,
+  "all_numerically_converged": true,
+  "maximum_medium_fine_Tmax_relative_difference_percent": 0.008401815655531115,
+  "maximum_medium_fine_region_difference_C": 0.04418175009736558,
+  "maximum_energy_residual_percent": 0.02794490778629391,
+  "physically_validated": false,
+  "downstream_high_fidelity_dataset_authorized": false
+}

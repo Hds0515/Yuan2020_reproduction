@@ -1,0 +1,112 @@
+{
+  "version": "v7",
+  "branch": "codex/v7-physical-rom-and-oracle-mpc",
+  "protected_checkpoint": {
+    "tag": "v6_numerical_checkpoint",
+    "commit": "1b4c412",
+    "outputs_v6_modified": false,
+    "docs_v6_modified": false,
+    "historical_frozen_models_modified": false,
+    "historical_digitization_modified": false
+  },
+  "primary_model_integrity": {
+    "sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+    "config_reference_matches": true,
+    "frozen_file_matches": true,
+    "all_v5_v6_runtime_records_match": true,
+    "primary_selection_rerun": false
+  },
+  "comsol_flow": {
+    "comsol_version": "6.4.0.293",
+    "default_solver_converged": true,
+    "inlet_boundary_count": 1,
+    "outlet_boundary_count": 1,
+    "mdot_identity_relative_error": 2.16939722262e-09,
+    "mass_imbalance_percent": 0.00347455396772,
+    "pressure_range_Pa": 5.62218598870,
+    "acceptance_passed": true
+  },
+  "comsol_heat_and_Fig7": {
+    "table2_materials_used": true,
+    "scaling_interpretation": "C: one representative channel per cell, scaled by 40 parallel channels; 3962 mm2 is the stack total inlet area",
+    "calibration_speeds_m_s": [4, 8],
+    "independent_validation_speeds_m_s": [5, 6, 10, 12],
+    "calibrated_h_external_W_m2K": 30.0,
+    "calibrated_emissivity": 1.0,
+    "calibration_parameters_at_upper_bounds": true,
+    "all_six_speeds_converged": true,
+    "maximum_medium_fine_Tmax_difference_percent": 0.008401815655531115,
+    "maximum_medium_fine_region_difference_C": 0.04418175009736558,
+    "maximum_energy_residual_percent": 0.02794490778629391,
+    "independent_region_RMSE_C": 4.684821000886599,
+    "independent_worst_speed_region_RMSE_C": 6.881227789580045,
+    "hotspot_location_spearman": 0.1543033499620919,
+    "temperature_scale_order_consistent": true,
+    "numerically_converged": true,
+    "physically_validated": false,
+    "credible_Fig7_like_map_count": 0,
+    "numerical_only_map_count": 6
+  },
+  "stage_gates": {
+    "high_fidelity_transient_dataset": "not_generated_gate_failed",
+    "five_zone_ROM": "not_built_gate_failed",
+    "observer_confirmation": "not_run_no_high_fidelity_confirmation_set",
+    "oracle_MPC": "not_run_prerequisites_failed",
+    "PI_SMC_observer_application": "not_run_prerequisites_failed"
+  },
+  "five_zone_ROM": {
+    "old_five_node_model_reused": false,
+    "independent_high_fidelity_validation_passed": false,
+    "status_semantics": "not_evaluated; false denotes no passed validation claim, not a numerical test failure"
+  },
+  "observer": {
+    "v6_post_hoc_gated_MM_EKF_result_preserved": true,
+    "v7_registry_created_before_future_tuning": true,
+    "v7_confirmation_executed": false,
+    "v7_preregistered_confirmation_passed": false,
+    "core_innovation_confirmed_in_v7": false
+  },
+  "oracle_MPC": {
+    "old_unvalidated_model_used": false,
+    "unmatched_resource_comparison_run": false,
+    "equal_fan_energy_comparison_run": false,
+    "equal_switch_budget_comparison_run": false,
+    "joint_budget_comparison_run": false,
+    "frozen_config_created": false,
+    "final_confirmation_run_count": 0,
+    "control_innovation_retained_as_supported_claim": false,
+    "decision_basis": "Oracle experiment was not authorized because the upstream physical-validation gate failed; this is not an Oracle performance failure."
+  },
+  "reference_temperature": {
+    "value_C": 55.0,
+    "is_safety_limit": false
+  },
+  "innovation_decision": {
+    "two_fully_supported_innovations_available": false,
+    "supported_innovations": [],
+    "candidates_requiring_future_confirmation": [
+      "Gated MM-EKF, pending a genuinely new preregistered high-fidelity confirmation set",
+      "A new physically validated five-zone ROM, not yet built"
+    ],
+    "methodological_result_not_promoted_as_physical_innovation": "Table-2-consistent COMSOL scaling, mesh, mass and energy audit that exposed a Fig.7 external-validation failure"
+  },
+  "final_answers": {
+    "corrected_COMSOL_physically_matches_Fig7": false,
+    "high_fidelity_transient_model_credible": false,
+    "five_zone_ROM_passed_independent_validation": false,
+    "gated_MM_EKF_passed_preregistered_confirmation": false,
+    "Oracle_MPC_effective_without_resource_matching": null,
+    "Oracle_MPC_better_at_equal_fan_energy": null,
+    "Oracle_MPC_better_at_equal_switch_budget": null,
+    "Oracle_MPC_advantage_under_joint_budget": null,
+    "control_failure_attribution": "not attributable; experiments were gated before Level 1",
+    "control_innovation_retained": false,
+    "final_two_innovations": [],
+    "ready_to_write_final_results_chapter": false,
+    "limited_negative_results_section_can_be_written": true
+  },
+  "pull_request_policy": {
+    "keep_draft": true,
+    "merge_allowed": false
+  }
+}

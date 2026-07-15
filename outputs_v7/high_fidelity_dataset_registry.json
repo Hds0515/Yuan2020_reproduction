@@ -1,0 +1,12 @@
+{
+  "status": "not_generated_gate_failed",
+  "blocking_gate": "COMSOL_Fig7_physical_validation",
+  "blocking_summary": "outputs_v7/comsol_fig7_summary.json",
+  "blocking_summary_sha256": "a209af9e422aaa5268ef5a01fe60316d5e1d46d7a2d53115bde74249326fcc99",
+  "scenario_count": 0,
+  "scenarios": [],
+  "calibration_scenarios_used": false,
+  "validation_scenarios_used": false,
+  "final_confirmation_scenarios_used": false,
+  "oracle_control_test_scenarios_used": false
+}
