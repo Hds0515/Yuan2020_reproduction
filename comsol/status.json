@@ -1,0 +1,20 @@
+{
+  "target_version": "COMSOL Multiphysics 6.4",
+  "java_compile_success": true,
+  "geometry_created": true,
+  "materials_created": true,
+  "physics_created": true,
+  "mesh_created": true,
+  "operators_created": true,
+  "study_created": true,
+  "stationary_solution_converged": false,
+  "parametric_sweep_completed": false,
+  "mesh_independence_completed": false,
+  "energy_balance_completed": false,
+  "three_node_cross_validation_completed": false,
+  "last_attempt": "Stokes-initialized segregated stationary solve was manually stopped after persistent oscillatory flow iterations at 12 percent progress.",
+  "data_policy": "No COMSOL temperatures, velocities, mesh statistics, energy balance values, or validation metrics are reported until a converged export exists.",
+  "evidence_logs": [
+    "logs/solve_twelfth.log"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comsol_version": "6.4.0.293",
+  "default_solver_converged": true,
+  "inlet_boundary_count": 1,
+  "outlet_boundary_count": 1,
+  "channel_inlet_mdot_kg_s": 1.17275199746e-05,
+  "channel_outlet_mdot_kg_s": 1.17271124955e-05,
+  "stack_inlet_mdot_kg_s": 0.000469100798982,
+  "stack_outlet_mdot_kg_s": 0.000469084499822,
+  "expected_channel_mdot_kg_s": 1.172752e-05,
+  "expected_stack_mdot_kg_s": 0.0004691008,
+  "mdot_identity_relative_error": 2.16939722262e-09,
+  "mass_imbalance_relative": 3.47455396772e-05,
+  "minimum_pressure_Pa": 0.0,
+  "maximum_pressure_Pa": 5.62218598870,
+  "pressure_range_Pa": 5.62218598870,
+  "acceptance_threshold_relative": 0.001,
+  "acceptance_passed": true,
+  "metric_evaluator": "comsol/v7_runtime/Stage2PhysicalFlow.java",
+  "model_artifact": "comsol/v7_runtime/physical_flow_0p1ms.mph"
+}

@@ -1,0 +1,14 @@
+{
+  "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "calibration_profile_rmse_C": 0.24986185766328425,
+  "independent_validation_profile_rmse_C": 1.7807518282478263,
+  "maximum_absolute_energy_residual_W": 1.3649081864741675e-12,
+  "mesh_50_vs_80_Tmax_difference_C": 0.008255441727406776,
+  "fig10_observed_cross_time_s": 19.471544715447155,
+  "fig10_best_unfitted_velocity_m_s": 5.0,
+  "fig10_best_unfitted_rmse_C": 5.104641856537713,
+  "frozen_five_node_mean_region_rmse_C": 24.40672538736436,
+  "space_validation_passed_within_palette_uncertainty": false,
+  "reversal_validation_passed": false,
+  "five_node_external_validation_passed": false
+}

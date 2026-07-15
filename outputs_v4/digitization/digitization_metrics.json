@@ -1,0 +1,410 @@
+{
+  "Fig14": {
+    "figure": "Fig14",
+    "source_image": "F:\\Thesis\\Thermal\\Yuan2020_reproduction_v3\\source_images\\Fig14.jpg",
+    "source_resolution_pixels": [
+      1634,
+      1221
+    ],
+    "plot_rectangle_pixels": [
+      123,
+      15,
+      1585,
+      1088
+    ],
+    "uncertainty": {
+      "x_units_per_pixel": 0.8207934336525308,
+      "y_units_per_pixel": 0.01863932898415657,
+      "x_half_pixel_uncertainty": 0.4103967168262654,
+      "y_half_pixel_uncertainty": 0.009319664492078284
+    },
+    "curves": {
+      "experiment_T1_C": {
+        "valid_column_ratio": 0.9316473000683527,
+        "matched_pixel_count": 19875,
+        "rejected_column_count": 26,
+        "target_rgb": [
+          120,
+          48,
+          136
+        ],
+        "color_distance_threshold": 46
+      },
+      "experiment_T2_C": {
+        "valid_column_ratio": 0.9398496240601504,
+        "matched_pixel_count": 20925,
+        "rejected_column_count": 26,
+        "target_rgb": [
+          216,
+          88,
+          32
+        ],
+        "color_distance_threshold": 46
+      },
+      "experiment_T3_C": {
+        "valid_column_ratio": 0.9309637730690362,
+        "matched_pixel_count": 20133,
+        "rejected_column_count": 31,
+        "target_rgb": [
+          232,
+          180,
+          40
+        ],
+        "color_distance_threshold": 46
+      },
+      "paper_simulation_T1_C": {
+        "valid_column_ratio": 0.9931647300068353,
+        "matched_pixel_count": 11094,
+        "rejected_column_count": 0,
+        "target_rgb": [
+          160,
+          24,
+          56
+        ],
+        "color_distance_threshold": 42
+      },
+      "paper_simulation_T2_C": {
+        "valid_column_ratio": 0.9665071770334929,
+        "matched_pixel_count": 7274,
+        "rejected_column_count": 0,
+        "target_rgb": [
+          120,
+          168,
+          48
+        ],
+        "color_distance_threshold": 42
+      },
+      "paper_simulation_T3_C": {
+        "valid_column_ratio": 0.9993164730006835,
+        "matched_pixel_count": 9618,
+        "rejected_column_count": 0,
+        "target_rgb": [
+          88,
+          184,
+          224
+        ],
+        "color_distance_threshold": 46
+      },
+      "reference_C": {
+        "valid_column_ratio": 0.4894053315105947,
+        "matched_pixel_count": 3664,
+        "rejected_column_count": 0,
+        "target_rgb": [
+          8,
+          248,
+          8
+        ],
+        "color_distance_threshold": 52
+      }
+    }
+  },
+  "Fig15": {
+    "figure": "Fig15",
+    "source_image": "F:\\Thesis\\Thermal\\Yuan2020_reproduction_v3\\source_images\\Fig15.jpg",
+    "source_resolution_pixels": [
+      1634,
+      1225
+    ],
+    "plot_rectangle_pixels": [
+      126,
+      17,
+      1584,
+      1091
+    ],
+    "uncertainty": {
+      "x_units_per_pixel": 0.823045267489712,
+      "y_units_per_pixel": 0.032588454376163874,
+      "x_half_pixel_uncertainty": 0.411522633744856,
+      "y_half_pixel_uncertainty": 0.016294227188081937
+    },
+    "curves": {
+      "experiment_current_A": {
+        "valid_column_ratio": 0.8745716244002741,
+        "matched_pixel_count": 15683,
+        "rejected_column_count": 26,
+        "target_rgb": [
+          8,
+          112,
+          184
+        ],
+        "color_distance_threshold": 52
+      },
+      "paper_simulation_current_A": {
+        "valid_column_ratio": 0.9986291980808774,
+        "matched_pixel_count": 10602,
+        "rejected_column_count": 0,
+        "target_rgb": [
+          248,
+          8,
+          248
+        ],
+        "color_distance_threshold": 48
+      }
+    }
+  },
+  "Fig16": {
+    "figure": "Fig16",
+    "source_image": "F:\\Thesis\\Thermal\\Yuan2020_reproduction_v3\\source_images\\Fig16.jpg",
+    "source_resolution_pixels": [
+      3374,
+      2962
+    ],
+    "plot_rectangle_pixels": [
+      1006,
+      18,
+      2572,
+      1171
+    ],
+    "uncertainty": {
+      "x_units_per_pixel": 0.7662835249042146,
+      "y_units_per_pixel": 0.017346053772766695,
+      "x_half_pixel_uncertainty": 0.3831417624521073,
+      "y_half_pixel_uncertainty": 0.008673026886383347
+    },
+    "curves": {
+      "experiment_middle_C": {
+        "valid_column_ratio": 0.4594767070835992,
+        "matched_pixel_count": 7182,
+        "rejected_column_count": 2,
+        "target_rgb": [
+          8,
+          112,
+          184
+        ],
+        "color_distance_threshold": 50
+      },
+      "experiment_T1_C": {
+        "valid_column_ratio": 0.7370772176132737,
+        "matched_pixel_count": 14027,
+        "rejected_column_count": 9,
+        "target_rgb": [
+          216,
+          88,
+          32
+        ],
+        "color_distance_threshold": 46
+      },
+      "experiment_T2_C": {
+        "valid_column_ratio": 0.967453733248245,
+        "matched_pixel_count": 24216,
+        "rejected_column_count": 17,
+        "target_rgb": [
+          232,
+          180,
+          40
+        ],
+        "color_distance_threshold": 48
+      },
+      "paper_simulation_middle_C": {
+        "valid_column_ratio": 0.2501595405232929,
+        "matched_pixel_count": 1559,
+        "rejected_column_count": 0,
+        "target_rgb": [
+          120,
+          48,
+          136
+        ],
+        "color_distance_threshold": 46
+      },
+      "paper_simulation_T1_C": {
+        "valid_column_ratio": 0.5315890236119974,
+        "matched_pixel_count": 3597,
+        "rejected_column_count": 0,
+        "target_rgb": [
+          120,
+          168,
+          48
+        ],
+        "color_distance_threshold": 44
+      },
+      "paper_simulation_T2_C": {
+        "valid_column_ratio": 0.8666241225271218,
+        "matched_pixel_count": 9481,
+        "rejected_column_count": 10,
+        "target_rgb": [
+          88,
+          184,
+          224
+        ],
+        "color_distance_threshold": 48
+      },
+      "reference_C": {
+        "valid_column_ratio": 0.6834716017868538,
+        "matched_pixel_count": 6370,
+        "rejected_column_count": 0,
+        "target_rgb": [
+          248,
+          8,
+          248
+        ],
+        "color_distance_threshold": 48
+      }
+    }
+  },
+  "Fig16b": {
+    "figure": "Fig16b",
+    "source_image": "F:\\Thesis\\Thermal\\Yuan2020_reproduction_v3\\source_images\\Fig16.jpg",
+    "plot_rectangle_pixels": [
+      188,
+      1658,
+      1531,
+      2582
+    ],
+    "x_range": [
+      200,
+      700
+    ],
+    "y_range": [
+      53.5,
+      56.5
+    ],
+    "uncertainty": {
+      "x_units_per_pixel": 0.37230081906180196,
+      "y_units_per_pixel": 0.003246753246753247,
+      "x_half_pixel_uncertainty": 0.18615040953090098,
+      "y_half_pixel_uncertainty": 0.0016233766233766235
+    },
+    "curves": {
+      "experiment_middle_C": {
+        "direct_valid_column_ratio": 0.49032738095238093,
+        "matched_pixel_count": 33083,
+        "rejected_column_count": 28
+      },
+      "experiment_T1_C": {
+        "direct_valid_column_ratio": 0.7507440476190477,
+        "matched_pixel_count": 62442,
+        "rejected_column_count": 36
+      },
+      "experiment_T2_C": {
+        "direct_valid_column_ratio": 0.9553571428571429,
+        "matched_pixel_count": 124247,
+        "rejected_column_count": 60
+      },
+      "paper_simulation_middle_C": {
+        "direct_valid_column_ratio": 1.0,
+        "matched_pixel_count": 8231,
+        "rejected_column_count": 0
+      },
+      "paper_simulation_T1_C": {
+        "direct_valid_column_ratio": 0.7291666666666666,
+        "matched_pixel_count": 5249,
+        "rejected_column_count": 3
+      },
+      "paper_simulation_T2_C": {
+        "direct_valid_column_ratio": 0.9747023809523809,
+        "matched_pixel_count": 16090,
+        "rejected_column_count": 34
+      }
+    }
+  },
+  "Fig16c": {
+    "figure": "Fig16c",
+    "source_image": "F:\\Thesis\\Thermal\\Yuan2020_reproduction_v3\\source_images\\Fig16.jpg",
+    "plot_rectangle_pixels": [
+      1880,
+      1609,
+      3372,
+      2605
+    ],
+    "x_range": [
+      700,
+      1200
+    ],
+    "y_range": [
+      53.5,
+      57.5
+    ],
+    "uncertainty": {
+      "x_units_per_pixel": 0.3351206434316354,
+      "y_units_per_pixel": 0.004016064257028112,
+      "x_half_pixel_uncertainty": 0.1675603217158177,
+      "y_half_pixel_uncertainty": 0.002008032128514056
+    },
+    "curves": {
+      "experiment_middle_C": {
+        "direct_valid_column_ratio": 0.47622237106496984,
+        "matched_pixel_count": 24908,
+        "rejected_column_count": 30
+      },
+      "experiment_T1_C": {
+        "direct_valid_column_ratio": 0.8198258539852645,
+        "matched_pixel_count": 61047,
+        "rejected_column_count": 49
+      },
+      "experiment_T2_C": {
+        "direct_valid_column_ratio": 0.9698593436034829,
+        "matched_pixel_count": 92075,
+        "rejected_column_count": 37
+      },
+      "paper_simulation_middle_C": {
+        "direct_valid_column_ratio": 0.8874748827863362,
+        "matched_pixel_count": 8906,
+        "rejected_column_count": 0
+      },
+      "paper_simulation_T1_C": {
+        "direct_valid_column_ratio": 0.8600133958472873,
+        "matched_pixel_count": 9860,
+        "rejected_column_count": 0
+      },
+      "paper_simulation_T2_C": {
+        "direct_valid_column_ratio": 0.9792364367046216,
+        "matched_pixel_count": 18954,
+        "rejected_column_count": 29
+      }
+    }
+  },
+  "detail_vs_main": {
+    "Fig16b": {
+      "experiment_middle_C": {
+        "local_vs_main_overlap_rmse_C": 0.2918226457107492,
+        "direct_valid_column_ratio": 0.49032738095238093
+      },
+      "experiment_T1_C": {
+        "local_vs_main_overlap_rmse_C": 0.2569524845039665,
+        "direct_valid_column_ratio": 0.7507440476190477
+      },
+      "experiment_T2_C": {
+        "local_vs_main_overlap_rmse_C": 0.1804459054508216,
+        "direct_valid_column_ratio": 0.9553571428571429
+      },
+      "paper_simulation_middle_C": {
+        "local_vs_main_overlap_rmse_C": 0.15765204561963042,
+        "direct_valid_column_ratio": 1.0
+      },
+      "paper_simulation_T1_C": {
+        "local_vs_main_overlap_rmse_C": 0.1461413346563111,
+        "direct_valid_column_ratio": 0.7291666666666666
+      },
+      "paper_simulation_T2_C": {
+        "local_vs_main_overlap_rmse_C": 0.20551624179354358,
+        "direct_valid_column_ratio": 0.9747023809523809
+      }
+    },
+    "Fig16c": {
+      "experiment_middle_C": {
+        "local_vs_main_overlap_rmse_C": 0.4571640054461855,
+        "direct_valid_column_ratio": 0.47622237106496984
+      },
+      "experiment_T1_C": {
+        "local_vs_main_overlap_rmse_C": 0.38661673761476234,
+        "direct_valid_column_ratio": 0.8198258539852645
+      },
+      "experiment_T2_C": {
+        "local_vs_main_overlap_rmse_C": 0.33079903587974563,
+        "direct_valid_column_ratio": 0.9698593436034829
+      },
+      "paper_simulation_middle_C": {
+        "local_vs_main_overlap_rmse_C": 0.271905663655761,
+        "direct_valid_column_ratio": 0.8874748827863362
+      },
+      "paper_simulation_T1_C": {
+        "local_vs_main_overlap_rmse_C": 0.2244162218242864,
+        "direct_valid_column_ratio": 0.8600133958472873
+      },
+      "paper_simulation_T2_C": {
+        "local_vs_main_overlap_rmse_C": 0.2543919061943879,
+        "direct_valid_column_ratio": 0.9792364367046216
+      }
+    }
+  }
+}

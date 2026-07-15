@@ -1,0 +1,34 @@
+{
+  "status": "blocked_by_physical_validation",
+  "registration_purpose": "Freeze the intended confirmation protocol before any future gate tuning.",
+  "high_fidelity_scenario_ids": [],
+  "parameter_ranges": null,
+  "measurement_noise_seeds": [],
+  "sensor_positions_zero_based": [0, 4],
+  "model_library": "V6 frozen five-model scale bank; may not be redesigned using confirmation data",
+  "gate_configuration": {
+    "initial_nominal_probability": 0.6,
+    "probability_floor": 0.005,
+    "new_probability_fraction_per_step": 0.35,
+    "normalized_entropy_maximum": 0.85,
+    "maximum_probability_minimum": 0.45,
+    "sustained_excess_NIS_threshold": 1.5,
+    "nominal_and_noise_fallback": "single model zero when evidence gate is closed"
+  },
+  "frozen_source_files": {
+    "v6_gate_summary": {
+      "path": "outputs_v6/observer_gated/observer_gated_summary.json",
+      "sha256": "a1fb6b39f059a736f7cbaeca84f6453123d14710fe17ea8eaa1f572218551164"
+    },
+    "v6_gate_implementation": {
+      "path": "experiments/run_observer_gated_v6.py",
+      "sha256": "162b797f554b29394d86d7b8d5d16643e0453c04d6917f172a9777c4fb22f652"
+    },
+    "v5_fixed_registry": {
+      "path": "outputs_v5/observer_decisive/continuous_off_grid_100x10.csv",
+      "sha256": "ceeaa6f7d08f5c2f709c05d96ffe94a20f24d8a57c26b0bfd204de0ad27249bd"
+    }
+  },
+  "confirmation_executed": false,
+  "core_innovation_confirmed_in_v7": false
+}

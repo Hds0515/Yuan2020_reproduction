@@ -1,0 +1,54 @@
+{
+  "Fig16b": {
+    "experiment_middle_C": {
+      "local_vs_main_overlap_rmse_C": 0.2918226457107492,
+      "direct_valid_column_ratio": 0.49032738095238093
+    },
+    "experiment_T1_C": {
+      "local_vs_main_overlap_rmse_C": 0.2569524845039665,
+      "direct_valid_column_ratio": 0.7507440476190477
+    },
+    "experiment_T2_C": {
+      "local_vs_main_overlap_rmse_C": 0.1804459054508216,
+      "direct_valid_column_ratio": 0.9553571428571429
+    },
+    "paper_simulation_middle_C": {
+      "local_vs_main_overlap_rmse_C": 0.15765204561963042,
+      "direct_valid_column_ratio": 1.0
+    },
+    "paper_simulation_T1_C": {
+      "local_vs_main_overlap_rmse_C": 0.1461413346563111,
+      "direct_valid_column_ratio": 0.7291666666666666
+    },
+    "paper_simulation_T2_C": {
+      "local_vs_main_overlap_rmse_C": 0.20551624179354358,
+      "direct_valid_column_ratio": 0.9747023809523809
+    }
+  },
+  "Fig16c": {
+    "experiment_middle_C": {
+      "local_vs_main_overlap_rmse_C": 0.4571640054461855,
+      "direct_valid_column_ratio": 0.47622237106496984
+    },
+    "experiment_T1_C": {
+      "local_vs_main_overlap_rmse_C": 0.38661673761476234,
+      "direct_valid_column_ratio": 0.8198258539852645
+    },
+    "experiment_T2_C": {
+      "local_vs_main_overlap_rmse_C": 0.33079903587974563,
+      "direct_valid_column_ratio": 0.9698593436034829
+    },
+    "paper_simulation_middle_C": {
+      "local_vs_main_overlap_rmse_C": 0.271905663655761,
+      "direct_valid_column_ratio": 0.8874748827863362
+    },
+    "paper_simulation_T1_C": {
+      "local_vs_main_overlap_rmse_C": 0.2244162218242864,
+      "direct_valid_column_ratio": 0.8600133958472873
+    },
+    "paper_simulation_T2_C": {
+      "local_vs_main_overlap_rmse_C": 0.2543919061943879,
+      "direct_valid_column_ratio": 0.9792364367046216
+    }
+  }
+}

@@ -1,0 +1,3 @@
+heat_model,physically_admissible,parameter_count,calibration_observation_count,calibration_rss_C2,calibration_rmse_C,AIC,AICc,BIC,independent_validation_rmse_C,weighted_jacobian_condition_number,delta_AICc,delta_BIC_from_best,selected_primary
+B_quadratic_current,True,8,5706,350.09455269568275,0.24770044855521647,-15909.846921904698,-15909.821645443402,-15856.652733650511,0.3253357219326715,95762467603.8357,0.0,0.0,False
+A_thermoneutral_proxy,True,5,5706,355.7382739320019,0.2496890017694553,-15824.596533797958,-15824.586007482168,-15791.350166139091,0.2960474999313763,1835765898.7165732,85.2356379612338,65.30256751142042,True

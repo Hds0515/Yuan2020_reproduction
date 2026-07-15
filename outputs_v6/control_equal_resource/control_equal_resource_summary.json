@@ -1,0 +1,37 @@
+{
+  "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "critical_search_configuration_count": 1152,
+  "critical_equal_energy_match_count": 173,
+  "equal_energy_match_found_within_5pct": true,
+  "frozen_point_energy_relative_difference_percent": 4.540949456027632,
+  "critical_equal_energy_comparison": {
+    "maximum_hotspot_absolute_decrease_C": -2.0081823214559265,
+    "above_55C_RMSE_decrease_percent": -146.62022792993062,
+    "gradient_RMSE_decrease_percent": -342.42794764005873,
+    "fan_energy_change_percent": 4.540949456027632,
+    "direction_switch_count_change": -24,
+    "mean_temperature_tracking_RMSE_change_percent": 104.08228107105089
+  },
+  "all_feasible_scenarios_frozen_point_comparison": {
+    "maximum_hotspot_absolute_decrease_C": -1.8264207704022795,
+    "above_55C_RMSE_decrease_percent": -175.58139824639574,
+    "gradient_RMSE_decrease_percent": -328.4114263686347,
+    "fan_energy_change_percent": -1.266298917624309,
+    "direction_switch_count_change": -122,
+    "mean_temperature_tracking_RMSE_change_percent": 46.18211688100797
+  },
+  "same_10s_dwell_nearest_switch_comparison": {
+    "MPC_switch_count": 23,
+    "author_switch_count": 25,
+    "maximum_hotspot_absolute_decrease_C": -4.937926679113247,
+    "above_55C_RMSE_decrease_percent": -409.61888858961026,
+    "gradient_RMSE_decrease_percent": -27.89912585397717,
+    "fan_energy_change_percent": 1.786056197130903,
+    "direction_switch_count_change": -2,
+    "mean_temperature_tracking_RMSE_change_percent": 544.9816142279801
+  },
+  "reference_temperature_C": 55.0,
+  "reference_is_safety_limit": false,
+  "actuator_limited_excluded_from_feasible_aggregate": true,
+  "Hotspot_MPC_equal_energy_advantage_holds": false
+}

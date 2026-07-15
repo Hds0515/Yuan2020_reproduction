@@ -1,0 +1,15 @@
+{
+  "actual_frozen_primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "config_reference_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "primary_model_file_sha256_txt": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "runtime_records_checked": [
+    "outputs_v5/control_fair/model_runtime_control_fair.json",
+    "outputs_v5/distributed_model/model_runtime_distributed_model.json",
+    "outputs_v5/observer_decisive/model_runtime_observer_decisive.json",
+    "outputs_v6/control_equal_resource/model_runtime_control_equal_resource_v6.json",
+    "outputs_v6/distributed_model/model_runtime_distributed_model.json",
+    "outputs_v6/observer_gated/model_runtime_observer_gated_v6.json"
+  ],
+  "all_references_match": true,
+  "primary_model_selection_rerun": false
+}

@@ -1,0 +1,7 @@
+{
+  "consumer": "distributed_model",
+  "primary_model_path": "identification_v4_primary/frozen_primary_model.json",
+  "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "heat_model": "A_thermoneutral_proxy",
+  "model_name": "Yuan2020_three_node_primary_v5"
+}

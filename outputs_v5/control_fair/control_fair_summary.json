@@ -1,0 +1,18 @@
+{
+  "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "equal_energy_match_found_within_5pct": false,
+  "resource_selection_used_for_existing_full_scenario_table": "nearest fan-energy point; not an equal-energy comparison",
+  "nearest_energy_relative_difference_percent": 42.239488788299376,
+  "hotspot_mpc_vs_author_on_existing_feasible_aggregate": {
+    "maximum_excess_improvement_percent": -22.473579588311825,
+    "excess_rmse_improvement_percent": -7.255899011342364,
+    "gradient_rmse_improvement_percent": -26.512781366293414,
+    "fan_energy_change_percent": 45.09561289496735,
+    "switch_count_change": -24,
+    "mean_tracking_rmse_change_percent": 153.1829588597752
+  },
+  "equal_energy_hotspot_advantage_proven": false,
+  "actuator_limited_excluded_from_feasible_aggregate": true,
+  "safe_temperature_configured": false,
+  "decision": "No valid ±5% equal-fan-energy point exists in the current sweep; no equal-resource MPC advantage can be claimed."
+}

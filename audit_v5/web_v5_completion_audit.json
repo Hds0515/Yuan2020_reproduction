@@ -1,0 +1,13 @@
+{
+  "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "all_runtime_hashes_match": true,
+  "external_digitization_complete": true,
+  "distributed_model_executed": true,
+  "observer_100x10_executed": true,
+  "control_pareto_executed": true,
+  "equal_energy_match_found": false,
+  "comsol_executed_in_web_environment": false,
+  "five_node_external_validation_passed": false,
+  "MM_EKF_core_innovation_supported": false,
+  "hotspot_MPC_equal_resource_advantage_supported": false
+}

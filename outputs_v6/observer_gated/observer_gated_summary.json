@@ -1,0 +1,34 @@
+{
+  "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "test_registry": "outputs_v5/observer_decisive/continuous_off_grid_100x10.csv",
+  "fixed_object_count": 100,
+  "fixed_noise_seed_count_per_object": 10,
+  "paired_sample_count": 1000,
+  "median_hotspot_rmse_improvement_percent": 41.066410330807926,
+  "mean_hotspot_rmse_improvement_percent": 39.44947592064096,
+  "improved_sample_fraction": 0.867,
+  "paired_mean_improvement_95pct_CI_percent": [
+    37.50032957599896,
+    41.39709075299112
+  ],
+  "nominal_median_performance_loss_percent": 0.0,
+  "pure_noise_median_performance_loss_percent": 0.0,
+  "runtime_s": 37.83272589999979,
+  "gate_configuration": {
+    "initial_nominal_probability": 0.6,
+    "probability_floor": 0.005,
+    "new_probability_fraction_per_step": 0.35,
+    "normalized_entropy_maximum": 0.85,
+    "maximum_probability_minimum": 0.45,
+    "sustained_excess_NIS_threshold": 1.5,
+    "nominal_and_noise_fallback": "single model zero when evidence gate is closed"
+  },
+  "post_hoc_test_set_tuning_warning": true,
+  "core_innovation_acceptance": {
+    "off_grid_majority_improves": true,
+    "paired_CI_lower_above_zero": true,
+    "median_improvement_above_10pct": true,
+    "nominal_and_noise_loss_below_5pct": true
+  },
+  "MM_EKF_core_innovation_supported": true
+}

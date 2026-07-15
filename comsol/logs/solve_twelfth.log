@@ -1,0 +1,1510 @@
+*******************************************
+***COMSOL 6.4.0.293 progress output file***
+*******************************************
+Wed Jul 15 12:37:54 CST 2026
+COMSOL Multiphysics 6.4 (开发版本: 293) 在批处理模式下启动
+正在运行: F:\Thesis\Thermal\Yuan2020_reproduction_v3\comsol\generated\..\Yuan2020Equivalent3D.class
+---------- 当前进度: 100 % - 正在更新选择
+Memory: 411/411 440/440
+           当前进度:   0 % - 长方体
+Memory: 418/418 446/446
+           当前进度:   8 % - 长方体 2
+Memory: 425/425 451/454
+-          当前进度:  17 % - 形成联合体
+-          当前进度:  17 % - 执行布尔操作
+Memory: 429/429 453/454
+---------- 当前进度: 100 % - 正在更新选择
+---------- 当前进度: 100 % - 正在创建可视化网格
+Memory: 435/435 457/457
+           当前进度:   0 % - 自由四面体网格
+Memory: 739/745 760/766
+顶点单元数：12
+           当前进度:   1 % - 正在创建边界网格
+Memory: 769/769 785/788
+边单元数：648
+边界单元数：14426
+           当前进度:   1 % - 正在创建初始四面体网格
+Memory: 771/772 805/805
+           当前进度:   2 % - 相关边界
+Memory: 780/780 815/815
+           当前进度:   3 % - 正在提高单元质量
+Memory: 785/785 828/828
+单元数：29021
+最小单元质量：0.09789
+           当前进度:   3 % - 正在定型网格
+Memory: 786/786 824/828
+           当前进度:   3 % - 生成方程
+Memory: 792/793 829/830
+<---- 研究 1/解 1 (sol1) 中的“编译方程: 稳态” ---------------------------------------------
+开始于 2026年7月15日 12:38:14。
+几何形函数: 线性拉格朗日单元
+在 Intel64 Family 6 Model 165 Stepping 3, GenuineIntel 上运行。
+在以下位置使用 1 个插槽： C201Z 上（共 6 个内核）。
+可用内存：16.23 GB。
+           当前进度:   4 % - 编译方程: 稳态
+Memory: 946/952 974/982
+           当前进度:   4 % - 正在创建可视化网格
+Memory: 941/952 970/982
+时间：3。
+物理内存: 952 MB
+虚拟内存: 982 MB
+结束时间：2026年7月15日 12:38:16。
+----- 研究 1/解 1 (sol1) 中的“编译方程: 稳态” -------------------------------------------->
+<---- 研究 1/解 1 (sol1) 中的“因变量 1” ------------------------------------------------
+开始于 2026年7月15日 12:38:16。
+           当前进度:   4 % - 因变量 1
+Memory: 953/956 980/983
+求解时间：0 s。
+物理内存: 956 MB
+虚拟内存: 983 MB
+结束时间：2026年7月15日 12:38:16。
+----- 研究 1/解 1 (sol1) 中的“因变量 1” ----------------------------------------------->
+<---- 研究 1/解 1 (sol1) 中的“稳态求解器 1” ----------------------------------------------
+开始于 2026年7月15日 12:38:16。
+参数化求解器
+分离式求解器
+求解的自由度数：29855（加上 10731 个内部自由度）。
+    
+参数 uin = 4。
+分离式求解器迭代 1。
+温度    
+找到对称矩阵。
+缩放因变量：
+温度 (comp1.T): 2.9e+02
+已使用正交零空间函数。
+           当前进度:   5 % - 矩阵分解
+Memory: 991/991 1014/1014
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1       0.017   0.8000000       0.017    1    1    1  2.6e-16    2e-16
+速度 u，压力 p
+           当前进度:   5 % - 组装矩阵
+Memory: 1028/1035 1039/1048
+找到非对称矩阵。
+缩放因变量：
+压力 (comp1.p): 0.054
+速度场 (comp1.u): 1
+已使用正交零空间函数。
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+           当前进度:   5 % - 求解线性方程组
+Memory: 1094/1099 1148/1153
+   1        0.36   0.5000000        0.36    1    1    1  6.1e-16  3.5e-16
+分离组的解误差估计
+0.014, 0.18
+伪时间步进 CFL 比率：
+0.17  
+分离式求解器迭代 2。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1      0.0034   0.8000000      0.0034    2    2    2  2.9e-16  2.3e-16
+速度 u，压力 p
+缩放因变量：
+压力 (comp1.p): 1.2e-07
+速度场 (comp1.u): 0.0075
+           当前进度:   8 % - 组装稀疏模式
+Memory: 1107/1107 1222/1222
+           当前进度:   8 % - 矩阵分解
+Memory: 1090/1144 1195/1259
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.48   0.5000000        0.48    2    2    2  1.6e-15    3e-16
+分离组的解误差估计
+0.0027, 0.24
+伪时间步进 CFL 比率：
+0.17  
+分离式求解器迭代 3。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     0.00067   0.8000000     0.00067    3    3    3  2.8e-16  2.2e-16
+速度 u，压力 p
+           当前进度:   8 % - 组装矩阵
+Memory: 1149/1164 1277/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.48   0.5000000        0.48    3    3    3  2.2e-15  3.8e-16
+分离组的解误差估计
+0.00054, 0.24
+伪时间步进 CFL 比率：
+0.14  
+           当前进度:   8 % - 正在组装残差
+Memory: 1132/1164 1259/1294
+分离式求解器迭代 4。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     0.00013   0.8000000     0.00013    4    4    4  2.5e-16    2e-16
+速度 u，压力 p
+           当前进度:   8 % - 矩阵分解
+Memory: 1108/1166 1220/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.37   0.5000000        0.37    4    4    4  1.7e-15    4e-16
+分离组的解误差估计
+0.00011, 0.18
+伪时间步进 CFL 比率：
+0.15  
+分离式求解器迭代 5。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     2.7e-05   0.8000000     2.7e-05    5    5    5  2.9e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.36   0.5000000        0.36    5    5    5  1.9e-15  4.9e-16
+分离组的解误差估计
+2.2e-05, 0.18
+伪时间步进 CFL 比率：
+0.17  
+分离式求解器迭代 6。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     5.4e-06   0.8000000     5.4e-06    6    6    6  2.9e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   8 % - 组装矩阵
+Memory: 1150/1166 1271/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.29   0.5000000        0.29    6    6    6  1.3e-15  6.1e-16
+分离组的解误差估计
+4.3e-06, 0.15
+伪时间步进 CFL 比率：
+0.17  
+分离式求解器迭代 7。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     1.1e-06   0.8000000     1.1e-06    7    7    7  2.4e-16  1.9e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.53   0.5000000        0.53    7    7    7  2.4e-15  8.9e-16
+分离组的解误差估计
+8.6e-07, 0.27
+伪时间步进 CFL 比率：
+0.18  
+           当前进度:   8 % - 正在组装残差
+Memory: 1137/1172 1257/1294
+分离式求解器迭代 8。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     2.2e-07   0.8000000     2.2e-07    8    8    8  2.8e-16  2.2e-16
+速度 u，压力 p
+           当前进度:   8 % - 矩阵分解
+Memory: 1121/1172 1247/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.24   0.5000000        0.24    8    8    8  1.7e-15  7.8e-16
+分离组的解误差估计
+1.7e-07, 0.12
+伪时间步进 CFL 比率：
+0.14  
+分离式求解器迭代 9。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     4.3e-08   0.8000000     4.3e-08    9    9    9    3e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.27   0.5000000        0.27    9    9    9  1.7e-15  1.7e-15
+分离组的解误差估计
+3.4e-08, 0.14
+伪时间步进 CFL 比率：
+0.2   
+分离式求解器迭代 10。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     8.6e-09   0.8000000     8.6e-09   10   10   10  2.4e-16  1.9e-16
+速度 u，压力 p
+           当前进度:   8 % - 组装矩阵
+Memory: 1106/1172 1242/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.24   0.5000000        0.24   10   10   10  3.1e-15  1.8e-15
+分离组的解误差估计
+6.9e-09, 0.12
+伪时间步进 CFL 比率：
+0.19  
+           当前进度:   8 % - 
+Memory: 1102/1172 1228/1294
+分离式求解器迭代 11。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     1.7e-09   0.8000000     1.7e-09   11   11   11  2.6e-16  2.1e-16
+速度 u，压力 p
+           当前进度:   8 % - 矩阵分解
+Memory: 1083/1172 1194/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.41   0.5000000        0.41   11   11   11  6.6e-15  2.2e-15
+分离组的解误差估计
+1.4e-09, 0.21
+伪时间步进 CFL 比率：
+0.2   
+分离式求解器迭代 12。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     3.4e-10   0.8000000     3.4e-10   12   12   12  2.9e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   8 % - 组装矩阵
+Memory: 1143/1172 1271/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.21   0.5000000        0.21   12   12   12    5e-15  1.8e-15
+分离组的解误差估计
+2.8e-10, 0.11
+伪时间步进 CFL 比率：
+0.16  
+分离式求解器迭代 13。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     6.9e-11   0.8000000     6.9e-11   13   13   13  2.6e-16    2e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.26   0.5000000        0.26   13   13   13  3.2e-15  2.8e-15
+分离组的解误差估计
+5.5e-11, 0.13
+伪时间步进 CFL 比率：
+0.22  
+           当前进度:   8 % - 正在组装残差
+Memory: 1120/1172 1252/1294
+分离式求解器迭代 14。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     1.4e-11   0.8000000     1.4e-11   14   14   14  2.7e-16  2.2e-16
+速度 u，压力 p
+           当前进度:   8 % - 矩阵分解
+Memory: 1095/1172 1220/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.26   0.5000000        0.26   14   14   14    3e-15  2.5e-15
+分离组的解误差估计
+1.1e-11, 0.13
+伪时间步进 CFL 比率：
+0.2   
+分离式求解器迭代 15。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     2.8e-12   0.8000000     2.8e-12   15   15   15  2.9e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   8 % - 组装矩阵
+Memory: 1127/1172 1259/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.25   0.5000000        0.25   15   15   15  5.2e-15  2.8e-15
+分离组的解误差估计
+2.2e-12, 0.12
+伪时间步进 CFL 比率：
+0.21  
+分离式求解器迭代 16。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     5.5e-13   0.8000000     5.5e-13   16   16   16  2.4e-16  1.9e-16
+速度 u，压力 p
+           当前进度:   8 % - 正在组装残差
+Memory: 1111/1172 1244/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+           当前进度:   8 % - 求解线性方程组
+Memory: 1137/1172 1271/1294
+   1        0.29   0.5000000        0.29   16   16   16  6.6e-15  2.9e-15
+分离组的解误差估计
+4.4e-13, 0.15
+伪时间步进 CFL 比率：
+0.21  
+分离式求解器迭代 17。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     1.1e-13   0.8000000     1.1e-13   17   17   17  2.6e-16  2.1e-16
+速度 u，压力 p
+           当前进度:   8 % - 矩阵分解
+Memory: 1088/1172 1211/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.18   0.5000000        0.18   17   17   17  4.6e-15  2.7e-15
+分离组的解误差估计
+8.8e-14, 0.092
+伪时间步进 CFL 比率：
+0.2   
+分离式求解器迭代 18。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     2.2e-14   0.8000000     2.2e-14   18   18   18  2.8e-16  2.2e-16
+速度 u，压力 p
+           当前进度:   8 % - 组装矩阵
+Memory: 1126/1172 1258/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.24   0.5000000        0.24   18   18   18  7.4e-15  3.8e-15
+分离组的解误差估计
+1.8e-14, 0.12
+伪时间步进 CFL 比率：
+0.24  
+分离式求解器迭代 19。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     4.3e-15   0.8000000     4.3e-15   19   19   19  2.6e-16  2.1e-16
+速度 u，压力 p
+           当前进度:   9 % - 组装矩阵
+Memory: 1127/1172 1259/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.16   0.5000000        0.16   19   19   19  7.9e-15  3.2e-15
+分离组的解误差估计
+3.5e-15, 0.08
+伪时间步进 CFL 比率：
+0.22  
+分离式求解器迭代 20。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     9.4e-16   0.8000000     9.4e-16   20   20   20  2.7e-16  2.1e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.21   0.5000000        0.21   20   20   20  8.3e-15  4.2e-15
+分离组的解误差估计
+7.5e-16, 0.1
+伪时间步进 CFL 比率：
+0.26  
+           当前进度:   9 % - 正在组装残差
+Memory: 1125/1172 1261/1294
+分离式求解器迭代 21。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     2.3e-16   0.8000000     2.3e-16   21   21   21  2.7e-16  2.2e-16
+速度 u，压力 p
+           当前进度:   9 % - 矩阵分解
+Memory: 1089/1172 1231/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.18   0.5000000        0.18   21   21   21  6.3e-15  3.4e-15
+分离组的解误差估计
+1.9e-16, 0.091
+伪时间步进 CFL 比率：
+0.24  
+分离式求解器迭代 22。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     2.6e-17   0.8000000     2.6e-17   22   22   22  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1         0.2   0.5000000         0.2   22   22   22  5.7e-15  3.9e-15
+分离组的解误差估计
+2.1e-17, 0.099
+伪时间步进 CFL 比率：
+0.26  
+分离式求解器迭代 23。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1     5.6e-18   0.8000000     5.6e-18   23   23   23  2.5e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   9 % - 组装矩阵
+Memory: 1125/1172 1263/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1         0.2   0.5000000         0.2   23   23   23    4e-15  3.8e-15
+分离组的解误差估计
+4.5e-18, 0.099
+伪时间步进 CFL 比率：
+0.25  
+分离式求解器迭代 24。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   24   24   24  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.24   0.5000000        0.24   24   24   24  3.6e-15    4e-15
+分离组的解误差估计
+0, 0.12
+伪时间步进 CFL 比率：
+0.26  
+           当前进度:   9 % - 正在组装残差
+Memory: 1113/1172 1250/1294
+分离式求解器迭代 25。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   25   25   25  2.5e-16  2.4e-16
+速度 u，压力 p
+           当前进度:   9 % - 矩阵分解
+Memory: 1095/1172 1260/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.33   0.5000000        0.33   25   25   25  6.5e-15    4e-15
+分离组的解误差估计
+0, 0.17
+伪时间步进 CFL 比率：
+0.25  
+分离式求解器迭代 26。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   26   26   26  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.16   0.5000000        0.16   26   26   26  3.1e-15    3e-15
+分离组的解误差估计
+0, 0.08
+伪时间步进 CFL 比率：
+0.22  
+分离式求解器迭代 27。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   27   27   27  2.5e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   9 % - 组装矩阵
+Memory: 1119/1172 1257/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.21   0.5000000        0.21   27   27   27  8.4e-15  5.4e-15
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.28  
+分离式求解器迭代 28。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   28   28   28  2.4e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   9 % - 正在组装残差
+Memory: 1107/1172 1244/1294
+           当前进度:   9 % - 矩阵分解
+Memory: 1132/1172 1269/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.55   0.5000000        0.55   28   28   28  8.1e-15  4.5e-15
+分离组的解误差估计
+0, 0.28
+伪时间步进 CFL 比率：
+0.26  
+分离式求解器迭代 29。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   29   29   29  2.6e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.11   0.5000000        0.11   29   29   29  3.4e-15  2.4e-15
+分离组的解误差估计
+0, 0.057
+伪时间步进 CFL 比率：
+0.19  
+分离式求解器迭代 30。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   30   30   30  2.5e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   9 % - 组装矩阵
+Memory: 1124/1172 1259/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.34   0.5000000        0.34   30   30   30  1.4e-14  7.7e-15
+分离组的解误差估计
+0, 0.17
+伪时间步进 CFL 比率：
+0.32  
+分离式求解器迭代 31。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   31   31   31  2.5e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   9 % - 正在组装残差
+Memory: 1112/1172 1247/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1       0.094   0.5000000       0.094   31   31   31  8.8e-15  3.4e-15
+分离组的解误差估计
+0, 0.047
+伪时间步进 CFL 比率：
+0.23  
+分离式求解器迭代 32。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   32   32   32  2.5e-16  2.3e-16
+速度 u，压力 p
+           当前进度:   9 % - 矩阵分解
+Memory: 1080/1172 1204/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.27   0.5000000        0.27   32   32   32  2.1e-14  8.5e-15
+分离组的解误差估计
+0, 0.13
+伪时间步进 CFL 比率：
+0.34  
+分离式求解器迭代 33。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   33   33   33  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  10 % - 矩阵分解
+Memory: 1065/1172 1187/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.11   0.5000000        0.11   33   33   33  2.3e-14  4.4e-15
+分离组的解误差估计
+0, 0.056
+伪时间步进 CFL 比率：
+0.26  
+分离式求解器迭代 34。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   34   34   34  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  10 % - 组装矩阵
+Memory: 1126/1172 1262/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.25   0.5000000        0.25   34   34   34  3.4e-14    8e-15
+分离组的解误差估计
+0, 0.13
+伪时间步进 CFL 比率：
+0.34  
+分离式求解器迭代 35。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   35   35   35  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  10 % - 正在组装残差
+Memory: 1107/1172 1249/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.21   0.5000000        0.21   35   35   35  9.5e-15  4.8e-15
+分离组的解误差估计
+0, 0.1
+伪时间步进 CFL 比率：
+0.27  
+分离式求解器迭代 36。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   36   36   36  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  10 % - 矩阵分解
+Memory: 1080/1172 1205/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.18   0.5000000        0.18   36   36   36  1.8e-14  5.7e-15
+分离组的解误差估计
+0, 0.092
+伪时间步进 CFL 比率：
+0.3   
+分离式求解器迭代 37。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   37   37   37  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.16   0.5000000        0.16   37   37   37  1.7e-14  6.3e-15
+分离组的解误差估计
+0, 0.08
+伪时间步进 CFL 比率：
+0.31  
+分离式求解器迭代 38。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   38   38   38  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  10 % - 组装矩阵
+Memory: 1122/1172 1263/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.19   0.5000000        0.19   38   38   38  2.3e-14  7.4e-15
+分离组的解误差估计
+0, 0.096
+伪时间步进 CFL 比率：
+0.32  
+分离式求解器迭代 39。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   39   39   39  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.22   0.5000000        0.22   39   39   39  2.9e-14  6.6e-15
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.31  
+分离式求解器迭代 40。
+温度    
+-          当前进度:  10 % - 正在组装残差
+Memory: 1109/1172 1250/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   40   40   40  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  10 % - 矩阵分解
+Memory: 1117/1172 1275/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.13   0.5000000        0.13   40   40   40  2.3e-14  6.8e-15
+分离组的解误差估计
+0, 0.063
+伪时间步进 CFL 比率：
+0.31  
+分离式求解器迭代 41。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   41   41   41  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.21   0.5000000        0.21   41   41   41  5.1e-14  9.9e-15
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.36  
+分离式求解器迭代 42。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   42   42   42  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  10 % - 
+Memory: 1139/1172 1281/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.72   0.5000000        0.72   42   42   42    4e-14  6.9e-15
+分离组的解误差估计
+0, 0.36
+伪时间步进 CFL 比率：
+0.32  
+分离式求解器迭代 43。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   43   43   43  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  10 % - 组装矩阵
+Memory: 1125/1172 1266/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.19   0.5000000        0.19   43   43   43  2.4e-14  2.9e-15
+分离组的解误差估计
+0, 0.097
+伪时间步进 CFL 比率：
+0.22  
+分离式求解器迭代 44。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   44   44   44  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  10 % - 正在组装残差
+Memory: 1114/1172 1254/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.27   0.5000000        0.27   44   44   44    4e-14  7.9e-15
+分离组的解误差估计
+0, 0.14
+伪时间步进 CFL 比率：
+0.33  
+分离式求解器迭代 45。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   45   45   45  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  10 % - 矩阵分解
+Memory: 1081/1172 1227/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.13   0.5000000        0.13   45   45   45  8.3e-14  1.2e-14
+分离组的解误差估计
+0, 0.066
+伪时间步进 CFL 比率：
+0.3   
+分离式求解器迭代 46。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   46   46   46  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.23   0.5000000        0.23   46   46   46  4.9e-14  1.1e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.36  
+分离式求解器迭代 47。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   47   47   47  2.4e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  10 % - 组装矩阵
+Memory: 1127/1172 1267/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.13   0.5000000        0.13   47   47   47  3.1e-14  6.9e-15
+分离组的解误差估计
+0, 0.063
+伪时间步进 CFL 比率：
+0.32  
+分离式求解器迭代 48。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   48   48   48  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.22   0.5000000        0.22   48   48   48  3.6e-14    1e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.38  
+分离式求解器迭代 49。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   49   49   49  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  10 % - 矩阵分解
+Memory: 1095/1172 1262/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.13   0.5000000        0.13   49   49   49  2.8e-14  7.1e-15
+分离组的解误差估计
+0, 0.067
+伪时间步进 CFL 比率：
+0.33  
+分离式求解器迭代 50。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   50   50   50  2.6e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.18   0.5000000        0.18   50   50   50  2.9e-14  1.1e-14
+分离组的解误差估计
+0, 0.088
+伪时间步进 CFL 比率：
+0.38  
+分离式求解器迭代 51。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   51   51   51  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.16   0.5000000        0.16   51   51   51  2.9e-14  9.8e-15
+分离组的解误差估计
+0, 0.079
+伪时间步进 CFL 比率：
+0.36  
+分离式求解器迭代 52。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   52   52   52  2.4e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1129/1172 1265/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   52   52   52  2.5e-14    1e-14
+分离组的解误差估计
+0, 0.083
+伪时间步进 CFL 比率：
+0.38  
+分离式求解器迭代 53。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   53   53   53  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 正在组装残差
+Memory: 1117/1172 1252/1294
+-          当前进度:  11 % - 矩阵分解
+Memory: 1090/1172 1224/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.42   0.5000000        0.42   53   53   53  2.7e-14    1e-14
+分离组的解误差估计
+0, 0.21
+伪时间步进 CFL 比率：
+0.38  
+分离式求解器迭代 54。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   54   54   54  2.4e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.59   0.5000000        0.59   54   54   54  1.5e-14  5.9e-15
+分离组的解误差估计
+0, 0.3
+伪时间步进 CFL 比率：
+0.31  
+分离式求解器迭代 55。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   55   55   55  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1       0.089   0.5000000       0.089   55   55   55  1.6e-14  4.6e-15
+分离组的解误差估计
+0, 0.044
+伪时间步进 CFL 比率：
+0.28  
+分离式求解器迭代 56。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   56   56   56  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1130/1172 1266/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.38   0.5000000        0.38   56   56   56    4e-14    2e-14
+分离组的解误差估计
+0, 0.19
+伪时间步进 CFL 比率：
+0.44  
+分离式求解器迭代 57。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   57   57   57  2.4e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 正在组装残差
+Memory: 1118/1172 1254/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.35   0.5000000        0.35   57   57   57  2.1e-14  6.1e-15
+分离组的解误差估计
+0, 0.17
+伪时间步进 CFL 比率：
+0.32  
+分离式求解器迭代 58。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   58   58   58  2.4e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1094/1172 1213/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.14   0.5000000        0.14   58   58   58  3.2e-14  6.7e-15
+分离组的解误差估计
+0, 0.07
+伪时间步进 CFL 比率：
+0.33  
+分离式求解器迭代 59。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   59   59   59  2.4e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.45   0.5000000        0.45   59   59   59  3.6e-14  1.3e-14
+分离组的解误差估计
+0, 0.22
+伪时间步进 CFL 比率：
+0.41  
+分离式求解器迭代 60。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   60   60   60  2.4e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1131/1172 1267/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.13   0.5000000        0.13   60   60   60  2.4e-14  5.6e-15
+分离组的解误差估计
+0, 0.065
+伪时间步进 CFL 比率：
+0.31  
+分离式求解器迭代 61。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   61   61   61  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.28   0.5000000        0.28   61   61   61  4.2e-14  1.5e-14
+分离组的解误差估计
+0, 0.14
+伪时间步进 CFL 比率：
+0.42  
+分离式求解器迭代 62。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   62   62   62  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 正在组装残差
+Memory: 1119/1172 1254/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   62   62   62    3e-14    8e-15
+-          当前进度:  11 % - 
+Memory: 1129/1172 1265/1294
+分离组的解误差估计
+0, 0.084
+伪时间步进 CFL 比率：
+0.36  
+分离式求解器迭代 63。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   63   63   63  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1086/1172 1228/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.23   0.5000000        0.23   63   63   63    3e-14  1.3e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.4   
+分离式求解器迭代 64。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   64   64   64  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.28   0.5000000        0.28   64   64   64  2.6e-14    1e-14
+分离组的解误差估计
+0, 0.14
+伪时间步进 CFL 比率：
+0.38  
+分离式求解器迭代 65。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   65   65   65  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1132/1172 1268/1294
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.16   0.5000000        0.16   65   65   65  3.5e-14  8.9e-15
+分离组的解误差估计
+0, 0.081
+伪时间步进 CFL 比率：
+0.37  
+分离式求解器迭代 66。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   66   66   66  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.22   0.5000000        0.22   66   66   66  4.8e-14  1.6e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.42  
+分离式求解器迭代 67。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+-          当前进度:  11 % - 求解线性方程组
+Memory: 1119/1172 1259/1295
+   1           0   0.8000000           0   67   67   67  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1132/1172 1271/1295
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1         0.3   0.5000000         0.3   67   67   67    3e-14  1.1e-14
+分离组的解误差估计
+0, 0.15
+伪时间步进 CFL 比率：
+0.39  
+分离式求解器迭代 68。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   68   68   68  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.16   0.5000000        0.16   68   68   68  4.1e-14  9.3e-15
+分离组的解误差估计
+0, 0.079
+伪时间步进 CFL 比率：
+0.37  
+分离式求解器迭代 69。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   69   69   69  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.54   0.5000000        0.54   69   69   69  4.3e-14  1.5e-14
+分离组的解误差估计
+0, 0.27
+伪时间步进 CFL 比率：
+0.43  
+分离式求解器迭代 70。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   70   70   70  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1133/1172 1273/1295
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1       0.093   0.5000000       0.093   70   70   70  3.2e-14  6.3e-15
+分离组的解误差估计
+0, 0.047
+伪时间步进 CFL 比率：
+0.33  
+分离式求解器迭代 71。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   71   71   71  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.36   0.5000000        0.36   71   71   71  5.1e-14  2.7e-14
+分离组的解误差估计
+0, 0.18
+伪时间步进 CFL 比率：
+0.48  
+分离式求解器迭代 72。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   72   72   72  2.4e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 正在组装残差
+Memory: 1121/1172 1265/1296
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.15   0.5000000        0.15   72   72   72  4.4e-14  1.3e-14
+分离组的解误差估计
+0, 0.077
+伪时间步进 CFL 比率：
+0.37  
+分离式求解器迭代 73。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   73   73   73  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1095/1172 1238/1300
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.24   0.5000000        0.24   73   73   73  5.2e-14  2.2e-14
+分离组的解误差估计
+0, 0.12
+伪时间步进 CFL 比率：
+0.44  
+分离式求解器迭代 74。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   74   74   74  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   74   74   74  4.2e-14  1.3e-14
+分离组的解误差估计
+0, 0.083
+伪时间步进 CFL 比率：
+0.41  
+分离式求解器迭代 75。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   75   75   75  2.6e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1133/1172 1273/1300
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.23   0.5000000        0.23   75   75   75  4.9e-14  1.8e-14
+分离组的解误差估计
+0, 0.12
+伪时间步进 CFL 比率：
+0.44  
+分离式求解器迭代 76。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   76   76   76  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.18   0.5000000        0.18   76   76   76  4.4e-14  1.4e-14
+分离组的解误差估计
+0, 0.088
+伪时间步进 CFL 比率：
+0.42  
+分离式求解器迭代 77。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   77   77   77  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   77   77   77  5.7e-14  1.8e-14
+分离组的解误差估计
+0, 0.084
+伪时间步进 CFL 比率：
+0.45  
+-          当前进度:  11 % - 正在组装残差
+Memory: 1130/1172 1271/1300
+分离式求解器迭代 78。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   78   78   78  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1095/1172 1242/1300
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1         0.2   0.5000000         0.2   78   78   78  4.5e-14  1.9e-14
+分离组的解误差估计
+0, 0.098
+伪时间步进 CFL 比率：
+0.45  
+分离式求解器迭代 79。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   79   79   79  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.16   0.5000000        0.16   79   79   79  5.4e-14  1.7e-14
+分离组的解误差估计
+0, 0.08
+伪时间步进 CFL 比率：
+0.45  
+分离式求解器迭代 80。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   80   80   80  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 约束处理
+Memory: 1156/1172 1297/1300
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.33   0.5000000        0.33   80   80   80  6.1e-14  2.1e-14
+分离组的解误差估计
+0, 0.16
+伪时间步进 CFL 比率：
+0.47  
+分离式求解器迭代 81。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   81   81   81  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1135/1172 1275/1300
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   81   81   81  4.5e-14  1.3e-14
+分离组的解误差估计
+0, 0.085
+伪时间步进 CFL 比率：
+0.41  
+分离式求解器迭代 82。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   82   82   82  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 
+Memory: 1135/1172 1276/1300
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.51   0.5000000        0.51   82   82   82  5.6e-14  2.2e-14
+分离组的解误差估计
+0, 0.25
+伪时间步进 CFL 比率：
+0.47  
+分离式求解器迭代 83。
+温度    
+-          当前进度:  11 % - 组装矩阵
+Memory: 1122/1172 1262/1300
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   83   83   83  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1113/1172 1268/1300
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.21   0.5000000        0.21   83   83   83  4.3e-14    1e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.38  
+分离式求解器迭代 84。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   84   84   84  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   84   84   84  5.5e-14  2.1e-14
+分离组的解误差估计
+0, 0.083
+伪时间步进 CFL 比率：
+0.46  
+分离式求解器迭代 85。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   85   85   85  2.4e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   85   85   85    9e-14  2.7e-14
+分离组的解误差估计
+0, 0.087
+伪时间步进 CFL 比率：
+0.48  
+分离式求解器迭代 86。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   86   86   86  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1135/1172 1280/1302
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.22   0.5000000        0.22   86   86   86  5.2e-14  2.3e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.48  
+分离式求解器迭代 87。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   87   87   87  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.22   0.5000000        0.22   87   87   87    5e-14  2.1e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.46  
+-          当前进度:  11 % - 正在组装残差
+Memory: 1132/1172 1277/1303
+分离式求解器迭代 88。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   88   88   88  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1091/1172 1224/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.19   0.5000000        0.19   88   88   88  5.6e-14  2.2e-14
+分离组的解误差估计
+0, 0.093
+伪时间步进 CFL 比率：
+0.47  
+分离式求解器迭代 89。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   89   89   89  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1134/1172 1279/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.18   0.5000000        0.18   89   89   89  6.1e-14  2.5e-14
+分离组的解误差估计
+0, 0.09
+伪时间步进 CFL 比率：
+0.48  
+分离式求解器迭代 90。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   90   90   90  2.4e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 正在组装残差
+Memory: 1091/1172 1235/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+-          当前进度:  11 % - 求解线性方程组
+Memory: 1131/1172 1277/1303
+   1        0.19   0.5000000        0.19   90   90   90  7.5e-14  2.6e-14
+分离组的解误差估计
+0, 0.097
+伪时间步进 CFL 比率：
+0.49  
+分离式求解器迭代 91。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   91   91   91  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1078/1172 1215/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.16   0.5000000        0.16   91   91   91    9e-14  3.8e-14
+分离组的解误差估计
+0, 0.082
+伪时间步进 CFL 比率：
+0.49  
+分离式求解器迭代 92。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   92   92   92  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1123/1172 1269/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.32   0.5000000        0.32   92   92   92  6.9e-14    3e-14
+分离组的解误差估计
+0, 0.16
+伪时间步进 CFL 比率：
+0.51  
+分离式求解器迭代 93。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   93   93   93  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.12   0.5000000        0.12   93   93   93  5.6e-14    2e-14
+分离组的解误差估计
+0, 0.06
+伪时间步进 CFL 比率：
+0.45  
+分离式求解器迭代 94。
+温度    
+-          当前进度:  11 % - 
+Memory: 1113/1172 1258/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   94   94   94  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1093/1172 1244/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.22   0.5000000        0.22   94   94   94  8.5e-14  4.5e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.54  
+分离式求解器迭代 95。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   95   95   95  2.4e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.33   0.5000000        0.33   95   95   95  6.9e-14  2.7e-14
+分离组的解误差估计
+0, 0.17
+伪时间步进 CFL 比率：
+0.49  
+分离式求解器迭代 96。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   96   96   96  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1127/1172 1272/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.15   0.5000000        0.15   96   96   96  7.2e-14  2.1e-14
+分离组的解误差估计
+0, 0.073
+伪时间步进 CFL 比率：
+0.46  
+分离式求解器迭代 97。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   97   97   97  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   97   97   97  7.6e-14  3.9e-14
+分离组的解误差估计
+0, 0.084
+伪时间步进 CFL 比率：
+0.53  
+分离式求解器迭代 98。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   98   98   98  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1         0.2   0.5000000         0.2   98   98   98  9.7e-14  3.6e-14
+分离组的解误差估计
+0, 0.098
+伪时间步进 CFL 比率：
+0.52  
+-          当前进度:  11 % - 正在组装残差
+Memory: 1127/1172 1271/1303
+分离式求解器迭代 99。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0   99   99   99  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 矩阵分解
+Memory: 1083/1172 1234/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17   99   99   99  6.9e-14  3.3e-14
+分离组的解误差估计
+0, 0.086
+伪时间步进 CFL 比率：
+0.52  
+分离式求解器迭代 100。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  100  100  100  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1         0.7   0.5000000         0.7  100  100  100  5.4e-13  8.7e-14
+分离组的解误差估计
+0, 0.35
+伪时间步进 CFL 比率：
+0.53  
+分离式求解器迭代 101。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  101  101  101  2.4e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  11 % - 组装矩阵
+Memory: 1130/1172 1275/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1       0.092   0.5000000       0.092  101  101  101  6.8e-14  1.5e-14
+分离组的解误差估计
+0, 0.046
+伪时间步进 CFL 比率：
+0.42  
+分离式求解器迭代 102。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  102  102  102  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  12 % - 组装矩阵
+Memory: 1131/1172 1276/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.24   0.5000000        0.24  102  102  102  8.7e-14  6.8e-14
+分离组的解误差估计
+0, 0.12
+伪时间步进 CFL 比率：
+0.59  
+分离式求解器迭代 103。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  103  103  103  2.5e-16  2.3e-16
+速度 u，压力 p
+-          当前进度:  12 % - 正在组装残差
+Memory: 1119/1172 1263/1303
+-          当前进度:  12 % - 矩阵分解
+Memory: 1102/1172 1274/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17  103  103  103  7.7e-14  3.2e-14
+分离组的解误差估计
+0, 0.083
+伪时间步进 CFL 比率：
+0.51  
+分离式求解器迭代 104。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  104  104  104  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.19   0.5000000        0.19  104  104  104  8.8e-14  4.7e-14
+分离组的解误差估计
+0, 0.093
+伪时间步进 CFL 比率：
+0.55  
+分离式求解器迭代 105。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  105  105  105  2.4e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.19   0.5000000        0.19  105  105  105  8.4e-14  4.3e-14
+分离组的解误差估计
+0, 0.094
+伪时间步进 CFL 比率：
+0.54  
+分离式求解器迭代 106。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  106  106  106  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  12 % - 组装矩阵
+Memory: 1137/1172 1285/1303
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.28   0.5000000        0.28  106  106  106  1.1e-13  4.7e-14
+分离组的解误差估计
+0, 0.14
+伪时间步进 CFL 比率：
+0.55  
+分离式求解器迭代 107。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  107  107  107  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.11   0.5000000        0.11  107  107  107  2.7e-13  6.1e-13
+分离组的解误差估计
+0, 0.055
+伪时间步进 CFL 比率：
+0.52  
+分离式求解器迭代 108。
+温度    
+-          当前进度:  12 % - 约束处理
+Memory: 1124/1172 1272/1306
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  108  108  108  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.31   0.5000000        0.31  108  108  108  1.3e-13  1.8e-13
+分离组的解误差估计
+0, 0.16
+伪时间步进 CFL 比率：
+0.6   
+-          当前进度:  12 % - 正在组装残差
+分离式求解器迭代 109。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  109  109  109  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  12 % - 矩阵分解
+Memory: 1125/1172 1282/1306
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.17   0.5000000        0.17  109  109  109  9.4e-14  3.7e-14
+分离组的解误差估计
+0, 0.083
+伪时间步进 CFL 比率：
+0.52  
+分离式求解器迭代 110。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  110  110  110  2.5e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.34   0.5000000        0.34  110  110  110  9.9e-14  6.3e-14
+分离组的解误差估计
+0, 0.17
+伪时间步进 CFL 比率：
+0.57  
+分离式求解器迭代 111。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  111  111  111  2.5e-16  2.3e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.09   0.5000000        0.09  111  111  111  9.9e-14  3.7e-14
+分离组的解误差估计
+0, 0.045
+伪时间步进 CFL 比率：
+0.52  
+分离式求解器迭代 112。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  112  112  112  2.5e-16  2.4e-16
+速度 u，压力 p
+-          当前进度:  12 % - 组装矩阵
+Memory: 1152/1172 1301/1307
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.21   0.5000000        0.21  112  112  112  1.3e-13  1.1e-13
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.63  
+分离式求解器迭代 113。
+温度    
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1           0   0.8000000           0  113  113  113  2.6e-16  2.4e-16
+速度 u，压力 p
+Iter      SolEst     Damping    Stepsize #Res #Jac #Sol   LinErr   LinRes
+   1        0.23   0.5000000        0.23  113  113  113  9.2e-14  5.7e-14
+分离组的解误差估计
+0, 0.11
+伪时间步进 CFL 比率：
+0.56  
+-          当前进度:  12 % - 正在组装残差
+Memory: 1133/1172 1282/1307
