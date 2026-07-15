@@ -1,0 +1,65 @@
+{
+  "Fig14": {
+    "plot_rectangle_pixels": [
+      123,
+      15,
+      1585,
+      1088
+    ],
+    "x_range": [
+      0,
+      1200
+    ],
+    "y_range": [
+      40,
+      60
+    ],
+    "retained_y_pixels": [
+      120,
+      450
+    ],
+    "color_distance_threshold": 80
+  },
+  "Fig15": {
+    "plot_rectangle_pixels": [
+      126,
+      17,
+      1584,
+      1091
+    ],
+    "x_range": [
+      0,
+      1200
+    ],
+    "y_range": [
+      0,
+      35
+    ],
+    "retained_y_pixels": [
+      250,
+      1000
+    ],
+    "color_distance_threshold": 100
+  },
+  "Fig16": {
+    "plot_rectangle_pixels": [
+      608,
+      10,
+      1562,
+      711
+    ],
+    "x_range": [
+      0,
+      1200
+    ],
+    "y_range": [
+      45,
+      65
+    ],
+    "retained_y_pixels": [
+      280,
+      450
+    ],
+    "color_distance_threshold": 55
+  }
+}

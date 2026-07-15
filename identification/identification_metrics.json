@@ -1,0 +1,24 @@
+{
+  "fig14_calibration": {
+    "T1_RMSE_C": 0.29000464898225364,
+    "T2_RMSE_C": 0.18162748584408817,
+    "T3_RMSE_C": 0.2861005580913527,
+    "overall_RMSE_C": 0.25751684047556195
+  },
+  "fig16_calibration_0_700_s": {
+    "cool_end_RMSE_C": 0.27649359957942127,
+    "middle_RMSE_C": 0.15991130094199607,
+    "hot_end_RMSE_C": 0.26716180597348166,
+    "overall_RMSE_C": 0.24041336994737433
+  },
+  "fig16_independent_validation_700_1200_s": {
+    "cool_end_RMSE_C": 0.27511223623004155,
+    "middle_RMSE_C": 0.3600790298579155,
+    "hot_end_RMSE_C": 0.27590154841661085,
+    "overall_RMSE_C": 0.30630339789474276
+  },
+  "experimental_curve_consistency": {
+    "fig14_overall_RMSE_C": 0.31788906965298663,
+    "fig16_validation_700_1200_s_overall_RMSE_C": 0.38263811848327156
+  }
+}

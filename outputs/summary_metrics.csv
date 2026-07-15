@@ -1,0 +1,7 @@
+item,value,unit
+Fig14 calibration RMSE,0.25751684047556195,°C
+Fig16 0-700 s calibration RMSE,0.24041336994737433,°C
+Fig16 700-1200 s independent validation RMSE,0.30630339789474276,°C
+Five-node EKF hotspot RMSE,0.1357470524872514,°C
+PI+SMC stress peak,56.50219358809514,°C
+MPC stress peak,56.32894340665225,°C

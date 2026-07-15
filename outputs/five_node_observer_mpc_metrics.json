@@ -1,0 +1,40 @@
+{
+  "EKF": {
+    "sensors": [
+      "node_2",
+      "node_4"
+    ],
+    "sensor_noise_standard_deviation_C": 0.12,
+    "plant_parameter_mismatch": {
+      "C_th": "+8%",
+      "K_cool": "-10%",
+      "K_node": "+15%"
+    },
+    "node_RMSE_C": [
+      0.18751508355369056,
+      0.0696082018817988,
+      0.11976592782292207,
+      0.07256946407010245,
+      0.2079431488346481
+    ],
+    "hotspot_RMSE_C": 0.1357470524872514
+  },
+  "stress_current": "1.25 times digitized Fig. 15 current, capped at 35 A",
+  "PI_SMC_baseline": {
+    "peak_temperature_C": 56.50219358809514,
+    "constraint_violation_seconds": 4,
+    "maximum_gradient_C": 1.999080928994701,
+    "gradient_rmse_C": 0.47084958364126234,
+    "fan_energy_proxy_sum_u2_s": 17.775969482503744,
+    "mean_duty": 0.10763183894916867
+  },
+  "hotspot_constrained_MPC": {
+    "peak_temperature_C": 56.32894340665225,
+    "constraint_violation_seconds": 0,
+    "maximum_gradient_C": 1.999080928994701,
+    "gradient_rmse_C": 0.41957779936461037,
+    "fan_energy_proxy_sum_u2_s": 17.79512594071143,
+    "mean_duty": 0.10805748514876819
+  },
+  "MPC_temperature_limit_C": 56.5
+}

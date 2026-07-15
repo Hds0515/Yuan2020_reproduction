@@ -1,0 +1,72 @@
+{
+  "model": "Yuan2020_three_node_control_oriented_v2",
+  "status": "frozen_after_curve_digitization_and_split_validation",
+  "values": {
+    "C_th_J_K": 4819.765163699336,
+    "K_cool_W_K": 31.255533821243908,
+    "K_node_W_K": 7.084189978044634,
+    "Kp_1_K": 0.06918055120537839,
+    "Ki_1_Ks": 0.0014267621718740485
+  },
+  "fixed_reported_values": {
+    "temperature_reference_C": 55.0,
+    "fan_enable_temperature_C": 53.0,
+    "smc_deadband_C": 0.5,
+    "smc_update_period_s": 10.0,
+    "coolant_node_temperatures_forward_C": [
+      24.8,
+      30.05,
+      35.3
+    ],
+    "number_of_cells": 40,
+    "stack_mass_kg": 10.5
+  },
+  "calibration_validation": {
+    "calibration": [
+      {
+        "source": "Fig14",
+        "time_s": [
+          0,
+          1200
+        ],
+        "signals": [
+          "paper_simulation_T1_C",
+          "paper_simulation_T2_C",
+          "paper_simulation_T3_C"
+        ]
+      },
+      {
+        "source": "Fig16",
+        "time_s": [
+          0,
+          700
+        ],
+        "signals": [
+          "paper_simulation_middle_C",
+          "paper_simulation_T1_C",
+          "paper_simulation_T2_C"
+        ]
+      }
+    ],
+    "independent_validation": [
+      {
+        "source": "Fig16",
+        "time_s": [
+          700,
+          1200
+        ],
+        "signals": [
+          "paper_simulation_middle_C",
+          "paper_simulation_T1_C",
+          "paper_simulation_T2_C"
+        ]
+      }
+    ],
+    "external_consistency_check": [
+      "Fig14 experimental curves",
+      "Fig16 experimental curves"
+    ]
+  },
+  "important_identifiability_note": "K_cool, Kp and Ki are almost perfectly correlated because fan duty was not published. Their individual nominal values are frozen for reproducibility, but the products K_cool*Kp and K_cool*Ki are the more defensible identifiable closed-loop quantities.",
+  "sha256_without_hash_field": "8f669482afc5818feba0019673b07063f713e3ebe2b6b7ea31608f1533d84262"
+}

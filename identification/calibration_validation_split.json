@@ -1,0 +1,46 @@
+{
+  "calibration": [
+    {
+      "source": "Fig14",
+      "time_s": [
+        0,
+        1200
+      ],
+      "signals": [
+        "paper_simulation_T1_C",
+        "paper_simulation_T2_C",
+        "paper_simulation_T3_C"
+      ]
+    },
+    {
+      "source": "Fig16",
+      "time_s": [
+        0,
+        700
+      ],
+      "signals": [
+        "paper_simulation_middle_C",
+        "paper_simulation_T1_C",
+        "paper_simulation_T2_C"
+      ]
+    }
+  ],
+  "independent_validation": [
+    {
+      "source": "Fig16",
+      "time_s": [
+        700,
+        1200
+      ],
+      "signals": [
+        "paper_simulation_middle_C",
+        "paper_simulation_T1_C",
+        "paper_simulation_T2_C"
+      ]
+    }
+  ],
+  "external_consistency_check": [
+    "Fig14 experimental curves",
+    "Fig16 experimental curves"
+  ]
+}
