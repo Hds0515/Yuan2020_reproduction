@@ -1,0 +1,26 @@
+project:
+  seed: 20200715
+  dt_s: 1.0
+digitization:
+  figures: [Fig14, Fig15, Fig16]
+model:
+  fan_enable_temperature_C: 53.0
+  reference_temperature_C: 55.0
+  smc_deadband_C: 0.5
+  smc_update_period_s: 10.0
+  coolant_node_temperatures_forward_C: [24.8, 30.05, 35.3]
+identification:
+  fig14_calibration_s: [0, 1200]
+  fig16_calibration_s: [0, 700]
+  fig16_validation_s: [700, 1200]
+  multistart_count: 6
+  bootstrap_count: 8
+  parameter_bounds:
+    C_th_J_K: [2000.0, 12000.0]
+    K_cool_W_K: [5.0, 80.0]
+    K_node_W_K: [0.1, 30.0]
+    Kp_1_K: [0.005, 0.2]
+    Ki_1_Ks: [0.00001, 0.01]
+    heat_a0_W: [0.0, 300.0]
+    heat_a1_W_A: [0.0, 60.0]
+    heat_a2_W_A2: [0.0, 3.0]

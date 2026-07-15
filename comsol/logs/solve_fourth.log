@@ -1,0 +1,32 @@
+*******************************************
+***COMSOL 6.4.0.293 progress output file***
+*******************************************
+Wed Jul 15 12:19:30 CST 2026
+COMSOL Multiphysics 6.4 (开发版本: 293) 在批处理模式下启动
+正在运行: F:\Thesis\Thermal\Yuan2020_reproduction_v3\comsol\generated\..\Yuan2020Equivalent3D.class
+---------- 当前进度: 100 % - 正在更新选择
+Memory: 406/406 438/438
+           当前进度:   0 % - 长方体
+Memory: 415/415 445/445
+           当前进度:   8 % - 长方体 2
+Memory: 422/422 448/452
+-          当前进度:  17 % - 形成联合体
+-          当前进度:  17 % - 执行布尔操作
+Memory: 425/425 450/452
+---------- 当前进度: 100 % - 正在更新选择
+Memory: 426/426 450/452
+---------- 当前进度: 100 % - 正在创建可视化网格
+Memory: 432/432 454/454
+
+/***************/
+/*****错误********/
+/***************/
+运行 Java 类时出错。
+Failed to initialize multiphysics coupling
+Unknown multiphysics coupling
+ - 多物理场耦合: NonisothermalFlow
+Failed to initialize multiphysics coupling
+ - 类: Yuan2020Equivalent3D
+正在保存模型: F:\Thesis\Thermal\Yuan2020_reproduction_v3\comsol\generated\..\Yuan2020Equivalent3D_Model.mph
+保存时间: 2 s.
+总时间: 11 s.

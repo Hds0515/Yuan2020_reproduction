@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+tmp/
+comsol/generated/*.class
+comsol/logs/*.lck
+comsol/*.class
+comsol/*.class.status
+comsol/~*.mph
+outputs_v3/

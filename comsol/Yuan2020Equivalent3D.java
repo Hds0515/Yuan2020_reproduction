@@ -1,5 +1,6 @@
 import com.comsol.model.*;
 import com.comsol.model.util.*;
+import java.io.IOException;
 
 /**
  * Yuan et al. (2020) equivalent 3D coolant-channel model.
@@ -18,8 +19,9 @@ public class Yuan2020Equivalent3D {
     model.param().set("L", "0.30[m]", "Flow-direction length");
     model.param().set("W", "0.082333333[m]", "Width; L*W = 247 cm^2");
     model.param().set("Ain", "3962[mm^2]", "Reported total coolant inlet area");
-    model.param().set("Hair", "Ain/W", "Equivalent homogenized air gap");
-    model.param().set("Hs", "0.010[m]", "Equivalent graphite solid thickness");
+    model.param().set("Hair", "1[mm]", "Representative channel height; geometry not reported");
+    model.param().set("areaScale", "Ain/(W*Hair)", "Parallel-channel area multiplier");
+    model.param().set("Hs", "0.001[m]", "Equivalent graphite solid thickness");
     model.param().set("Tin", "25[degC]");
     model.param().set("uin", "4[m/s]");
     model.param().set("qflux", "2425.5[W/m^2]");
@@ -46,6 +48,7 @@ public class Yuan2020Equivalent3D {
     model.component("comp1").geom("geom1").feature("solid").set("selresult", "on");
 
     model.component("comp1").geom("geom1").run();
+    System.out.println("COMSOL_STAGE geometry_complete");
 
     // Coordinate-based selections avoid relying on manually entered entity IDs.
     model.component("comp1").selection().create("selInlet", "Box");
@@ -88,6 +91,7 @@ public class Yuan2020Equivalent3D {
       model.component("comp1").selection(zones[i]).set("zmin", "Hair");
       model.component("comp1").selection(zones[i]).set("zmax", "Hair+Hs");
     }
+    System.out.println("COMSOL_STAGE selections_complete");
 
     model.component("comp1").material().create("matAir", "Common");
     model.component("comp1").material("matAir").selection().named("geom1_air_dom");
@@ -98,7 +102,7 @@ public class Yuan2020Equivalent3D {
     model.component("comp1").material("matAir").propertyGroup("def")
          .set("density", "1.184");
     model.component("comp1").material("matAir").propertyGroup("def")
-         .set("dynamicviscosity", "1.849e-5");
+         .set("dynamicviscosity", "1.849e-5[Pa*s]");
 
     model.component("comp1").material().create("matGraphite", "Common");
     model.component("comp1").material("matGraphite").selection().named("geom1_solid_dom");
@@ -108,20 +112,23 @@ public class Yuan2020Equivalent3D {
          .set("heatcapacity", "460");
     model.component("comp1").material("matGraphite").propertyGroup("def")
          .set("density", "2250");
+    System.out.println("COMSOL_STAGE materials_complete");
 
     model.component("comp1").physics().create("spf", "LaminarFlow", "geom1");
     model.component("comp1").physics("spf").selection().named("geom1_air_dom");
+    model.component("comp1").physics("spf").prop("PhysicalModelProperty").set("StokesFlowProp", "1");
     model.component("comp1").physics("spf").feature().create("inl1", "Inlet", 2);
     model.component("comp1").physics("spf").feature("inl1").selection().named("selInlet");
     model.component("comp1").physics("spf").feature("inl1").set("BoundaryCondition", "Velocity");
     model.component("comp1").physics("spf").feature("inl1").set("U0in", "uin");
     model.component("comp1").physics("spf").feature().create("out1", "Outlet", 2);
     model.component("comp1").physics("spf").feature("out1").selection().named("selOutlet");
+    model.component("comp1").physics("spf").feature("out1").set("BoundaryCondition", "Pressure");
     model.component("comp1").physics("spf").feature("out1").set("p0", "0[Pa]");
 
-    model.component("comp1").physics().create("ht", "HeatTransfer", "geom1");
-    model.component("comp1").physics("ht").feature("solid1").selection().named("geom1_solid_dom");
-    model.component("comp1").physics("ht").feature().create("fluid1", "Fluid", 3);
+    model.component("comp1").physics().create("ht", "HeatTransferInSolidsAndFluids", "geom1");
+    // The default solid feature owns the complement of explicit fluid domains;
+    // its selection is locked in COMSOL 6.4 and must not be edited directly.
     model.component("comp1").physics("ht").feature("fluid1").selection().named("geom1_air_dom");
     model.component("comp1").physics("ht").feature().create("temp1", "TemperatureBoundary", 2);
     model.component("comp1").physics("ht").feature("temp1").selection().named("selInlet");
@@ -130,17 +137,23 @@ public class Yuan2020Equivalent3D {
     model.component("comp1").physics("ht").feature("hf1").selection().named("selHeat");
     model.component("comp1").physics("ht").feature("hf1").set("q0", "qflux");
 
-    model.component("comp1").multiphysics().create("nitf1", "NonisothermalFlow", 3);
-    model.component("comp1").multiphysics("nitf1").selection().named("geom1_air_dom");
+    // With constant properties and incompressible forced flow, the Heat Transfer
+    // fluid node reads the Laminar Flow velocity field directly. COMSOL 6.4 does
+    // not expose the obsolete "NonisothermalFlow" coupling creator used by V2.
+    System.out.println("COMSOL_STAGE physics_complete");
 
     model.component("comp1").mesh().create("mesh1");
-    model.component("comp1").mesh("mesh1").autoMeshSize(3);
+    model.component("comp1").mesh("mesh1").autoMeshSize(7);
+    System.out.println("COMSOL_STAGE mesh_complete");
 
     for (int i = 0; i < 3; i++) {
       String tag = "ave" + (i + 1);
       model.component("comp1").cpl().create(tag, "Average");
       model.component("comp1").cpl(tag).selection().named(zones[i]);
     }
+    model.component("comp1").cpl().create("maxop1", "Maximum");
+    model.component("comp1").cpl("maxop1").selection().named("geom1_solid_dom");
+    System.out.println("COMSOL_STAGE operators_complete");
 
     model.study().create("std1");
     model.study("std1").feature().create("stat", "Stationary");
@@ -149,6 +162,7 @@ public class Yuan2020Equivalent3D {
     model.study("std1").feature("param").set("plistarr",
          new String[]{"4[m/s] 5[m/s] 6[m/s] 8[m/s] 10[m/s] 12[m/s]"});
     model.study("std1").feature("param").set("punit", new String[]{"m/s"});
+    System.out.println("COMSOL_STAGE study_complete");
 
     model.result().table().create("tblZones", "Table");
     model.result().numerical().create("gevZones", "EvalGlobal");
@@ -162,6 +176,12 @@ public class Yuan2020Equivalent3D {
     model.result().numerical("gevZones").set("table", "tblZones");
 
     model.study("std1").run();
+    System.out.println("COMSOL_STAGE stokes_initialization_complete");
+    model.component("comp1").physics("spf").prop("PhysicalModelProperty").set("StokesFlowProp", "0");
+    model.sol("sol1").feature("v1").set("initmethod", "sol");
+    model.sol("sol1").feature("v1").set("initsol", "sol1");
+    model.sol("sol1").runAll();
+    System.out.println("COMSOL_STAGE inertial_laminar_solution_complete");
     model.result().numerical("gevZones").setResult();
 
     model.result().export().create("tblExport", "Table");
@@ -172,8 +192,13 @@ public class Yuan2020Equivalent3D {
     return model;
   }
 
-  public static void main(String[] args) {
-    Model model = run();
-    model.save("Yuan2020_equivalent_3D.mph");
+  public static void main(String[] args) throws Exception {
+    try {
+      Model model = run();
+      model.save("Yuan2020_equivalent_3D.mph");
+    } catch (Exception exception) {
+      exception.printStackTrace(System.err);
+      throw exception;
+    }
   }
 }

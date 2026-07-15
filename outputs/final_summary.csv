@@ -1,0 +1,14 @@
+﻿item,value
+curve_digitization_reproducible,True
+three_node_reproduction_passed,True
+independent_validation_rmse_C,0.2960474999313763
+comsol_compiled,True
+comsol_solved,False
+mesh_convergence_passed,False
+energy_balance_passed,False
+comsol_three_node_cross_validation_passed,False
+five_node_energy_consistency_passed,True
+ekf_completed,True
+multiple_model_observer_completed,True
+mpc_completed,True
+remaining_limitations,"[""COMSOL Java compiles, but the stationary solve did not converge; no MPH result, mesh convergence, CFD energy balance, or cross-validation may be claimed."", ""The paper does not publish full CAD/channel geometry; the COMSOL model is explicitly equivalent, not exact."", ""The polarization curve is a documented proxy rather than the authors' full electrochemical model."", ""K_cool, Kp, and Ki are strongly entangled without measured fan duty; product parameters are more defensible than individual values."", ""The current bootstrap count is a reproducibility smoke run (8); use at least 200 resamples for publication-grade intervals."", ""MPC conclusions are simulation-only and require experimental or converged CFD corroboration.""]"

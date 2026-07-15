@@ -1,0 +1,10 @@
+{
+  "best_two_sensor_nodes_1_based": [
+    2,
+    5
+  ],
+  "best_two_sensor_mean_hotspot_rmse_C": 0.0680511554860861,
+  "multiple_model_mean_hotspot_rmse_C": 0.04673912436873323,
+  "single_model_mean_hotspot_rmse_C": 0.0511544672346727,
+  "multiple_model_improves_mean": true
+}

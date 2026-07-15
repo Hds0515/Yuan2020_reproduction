@@ -43,10 +43,10 @@
   },
   "Fig16": {
     "plot_rectangle_pixels": [
-      608,
-      10,
-      1562,
-      711
+      1006,
+      18,
+      2572,
+      1171
     ],
     "x_range": [
       0,
@@ -57,9 +57,10 @@
       65
     ],
     "retained_y_pixels": [
-      280,
-      450
+      461,
+      741
     ],
-    "color_distance_threshold": 55
+    "color_distance_threshold": 55,
+    "v2_calibration_note": "V2 coordinates were measured on a 2048-pixel-wide resized copy; v3 coordinates refer to the protected 3374x2962 source JPG."
   }
 }
