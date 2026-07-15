@@ -1,7 +1,7 @@
 {
   "algorithm": "SHA-256",
   "self_excluded": true,
-  "file_count": 173,
+  "file_count": 167,
   "files": [
     {
       "path": ".gitignore",
@@ -474,11 +474,6 @@
       "sha256": "469bb493e3f20b82e103d6c2c56f91b9631cce0301f3a9a470f0b792f616c5e5"
     },
     {
-      "path": "outputs/control/actuator_limited_pi_smc.csv",
-      "bytes": 345809,
-      "sha256": "a68eac9b502b79392bc14ba9a9900830cacd461b9c70ca1a8c4945c56ba77693"
-    },
-    {
       "path": "outputs/control/ambient_plus_5C_fivenodemean_pi_smc.csv",
       "bytes": 344819,
       "sha256": "b65bc66c8c1b60f190d6fb96f2eb24eef93e55ffb8735a56ae647d8338cc42cb"
@@ -529,11 +524,6 @@
       "sha256": "90becac61a25db5f19d9083ed894c16543f7f64aba7a6ceaca943e07219b88f6"
     },
     {
-      "path": "outputs/control/critical_load_plus_25pct_pi_smc.csv",
-      "bytes": 345658,
-      "sha256": "86345e72b6295c37999cff284b54a8379834c8fdd4929449805cbab9facb8045"
-    },
-    {
       "path": "outputs/control/load_preview_minus_10pct_fivenodemean_pi_smc.csv",
       "bytes": 344770,
       "sha256": "76c0f79385e91808968593dfd4ea686bdff8827208344b1459f1173dfb251775"
@@ -547,11 +537,6 @@
       "path": "outputs/control/load_preview_minus_10pct_original_pi_smc.csv",
       "bytes": 344799,
       "sha256": "f28715d72bfc72d437aa2e7dfc9c54cfac1b6ef9844baf46c7351c8704694afb"
-    },
-    {
-      "path": "outputs/control/load_preview_minus_10pct_pi_smc.csv",
-      "bytes": 344741,
-      "sha256": "d14ec4685808cb062fba78944b6ec8dbd533fe36a3baac1b509f14bbef794425"
     },
     {
       "path": "outputs/control/measurement_noise_fivenodemean_pi_smc.csv",
@@ -569,11 +554,6 @@
       "sha256": "3a60f715eb6156533cf617706ce729c81c0195c8bd0251026f31fa379460f5f5"
     },
     {
-      "path": "outputs/control/measurement_noise_pi_smc.csv",
-      "bytes": 344925,
-      "sha256": "dc93493af146faa59e34159a3e5606914be2fd0d2eeefd98abb297952a394d0f"
-    },
-    {
       "path": "outputs/control/nominal_fivenodemean_pi_smc.csv",
       "bytes": 344887,
       "sha256": "49cdb7195c639f2e6578d434ba8a7252dec4352644f67068fdca6781a9d4228f"
@@ -589,11 +569,6 @@
       "sha256": "cca14fb8b63acc67fc8b2cd0232832f6529170c3d46c8de1d2e0fc03aec85438"
     },
     {
-      "path": "outputs/control/nominal_pi_smc.csv",
-      "bytes": 344802,
-      "sha256": "f5e5094954b2d81a8d7b1ead785a95d2a5d0977d1c3f287449583854156b7500"
-    },
-    {
       "path": "outputs/control/plant_mismatch_fivenodemean_pi_smc.csv",
       "bytes": 344729,
       "sha256": "f3892bb9ba6f6162bcafe74b86bf70e893f65fdb122bf44c53c6f9d16224de8e"
@@ -607,11 +582,6 @@
       "path": "outputs/control/plant_mismatch_original_pi_smc.csv",
       "bytes": 344731,
       "sha256": "9a525bfd0b7b377045de02c985adc58498676f6ffe8525108034e1914c6c68bf"
-    },
-    {
-      "path": "outputs/control/plant_mismatch_pi_smc.csv",
-      "bytes": 344805,
-      "sha256": "e63283c30f69cd0d4cfcdba5d57a0507e534019ec1bd6a971afb5710632b4269"
     },
     {
       "path": "outputs/digitization/digitization_metrics.json",
@@ -765,8 +735,8 @@
     },
     {
       "path": "run_all.py",
-      "bytes": 4867,
-      "sha256": "a1f1e3aea9c32280ed7ae450d7e1b7d1f8b4a2a855e9e5cdceea5f5ce1eae38d"
+      "bytes": 5737,
+      "sha256": "230bb34a12287fb3197f7f5736abebfcdff76e5aef216ddba69f4d8507938eaf"
     },
     {
       "path": "source_images/Fig10.jpg",

@@ -36,6 +36,28 @@ def prepare_output(path: Path, clean: bool) -> None:
     resolved.mkdir(parents=True, exist_ok=True)
 
 
+def clear_generated_workspace() -> None:
+    """Remove only v3-generated artifacts; never touch protected V2 inputs."""
+    generated_directories = [
+        ROOT / "digitization" / "regenerated",
+        ROOT / "outputs" / "digitization",
+        ROOT / "outputs" / "three_node",
+        ROOT / "outputs" / "five_node",
+        ROOT / "outputs" / "observer",
+        ROOT / "outputs" / "control",
+    ]
+    for path in generated_directories:
+        if path.exists():
+            shutil.rmtree(path)
+    for path in (ROOT / "outputs" / "final_summary.json", ROOT / "outputs" / "final_summary.csv"):
+        if path.exists():
+            path.unlink()
+    identification = ROOT / "identification_v3"
+    for path in identification.iterdir():
+        if path.is_file() and path.name != "run_identification.py":
+            path.unlink()
+
+
 def collect(output: Path) -> None:
     for source, destination in (
         (ROOT / "digitization" / "regenerated", output / "digitization" / "regenerated"),
@@ -59,6 +81,7 @@ def main() -> None:
     parser.add_argument("--comsol-timeout-s", type=int, default=1800)
     args = parser.parse_args(); output = args.output_dir.resolve()
     prepare_output(output, args.clean_output)
+    clear_generated_workspace()
 
     run("digitization/digitize_figures.py", "--output-root", str(ROOT))
     # V2 comparison is diagnostic only and runs strictly after image extraction.
