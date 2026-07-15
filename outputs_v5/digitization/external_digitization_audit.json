@@ -1,0 +1,257 @@
+{
+  "Fig2": {
+    "figure": "Fig2",
+    "axis_calibration": {
+      "plot_rectangle_pixels": [
+        139,
+        59,
+        1595,
+        1094
+      ],
+      "x_range": [
+        0.0,
+        100.0
+      ],
+      "y_range": [
+        0.0,
+        0.0004
+      ]
+    },
+    "resolution_uncertainty": {
+      "x_units_per_pixel": 0.06868131868131869,
+      "y_units_per_pixel": 3.8647342995169085e-07,
+      "x_half_pixel_uncertainty": 0.034340659340659344,
+      "y_half_pixel_uncertainty": 1.9323671497584542e-07
+    },
+    "exclusion_rectangles": [
+      [
+        250,
+        80,
+        690,
+        270
+      ]
+    ],
+    "curves": {
+      "corotation_mass_flow_kg_s": {
+        "matched_pixels": 10863,
+        "direct_valid_column_ratio": 0.6904598490048044,
+        "target_rgb": [
+          0,
+          114,
+          189
+        ],
+        "threshold": 62
+      },
+      "reversion_mass_flow_kg_s": {
+        "matched_pixels": 11553,
+        "direct_valid_column_ratio": 0.820178448867536,
+        "target_rgb": [
+          0,
+          180,
+          180
+        ],
+        "threshold": 62
+      }
+    }
+  },
+  "Fig9": {
+    "figure": "Fig9",
+    "axis_calibration": {
+      "plot_rectangle_pixels": [
+        137,
+        23,
+        1608,
+        1080
+      ],
+      "x_range": [
+        0.0,
+        60.0
+      ],
+      "y_range": [
+        20.0,
+        45.0
+      ]
+    },
+    "resolution_uncertainty": {
+      "x_units_per_pixel": 0.04078857919782461,
+      "y_units_per_pixel": 0.023651844843897825,
+      "x_half_pixel_uncertainty": 0.020394289598912305,
+      "y_half_pixel_uncertainty": 0.011825922421948912
+    },
+    "exclusion_rectangles": [
+      [
+        650,
+        30,
+        1550,
+        200
+      ]
+    ],
+    "curves": {
+      "surface_1_air_C": {
+        "matched_pixels": 12730,
+        "direct_valid_column_ratio": 0.9993206521739131,
+        "target_rgb": [
+          126,
+          47,
+          142
+        ],
+        "threshold": 58
+      },
+      "surface_2_air_C": {
+        "matched_pixels": 7866,
+        "direct_valid_column_ratio": 0.9918478260869565,
+        "target_rgb": [
+          217,
+          83,
+          25
+        ],
+        "threshold": 58
+      }
+    }
+  },
+  "Fig10": {
+    "figure": "Fig10",
+    "axis_calibration": {
+      "plot_rectangle_pixels": [
+        132,
+        20,
+        1608,
+        1084
+      ],
+      "x_range": [
+        0.0,
+        60.0
+      ],
+      "y_range": [
+        45.0,
+        60.0
+      ]
+    },
+    "resolution_uncertainty": {
+      "x_units_per_pixel": 0.04065040650406504,
+      "y_units_per_pixel": 0.014097744360902255,
+      "x_half_pixel_uncertainty": 0.02032520325203252,
+      "y_half_pixel_uncertainty": 0.007048872180451127
+    },
+    "exclusion_rectangles": [
+      [
+        900,
+        35,
+        1550,
+        200
+      ]
+    ],
+    "curves": {
+      "surface_1_C": {
+        "matched_pixels": 26427,
+        "direct_valid_column_ratio": 0.997968855788761,
+        "target_rgb": [
+          0,
+          114,
+          189
+        ],
+        "threshold": 60
+      },
+      "surface_2_C": {
+        "matched_pixels": 12705,
+        "direct_valid_column_ratio": 1.0,
+        "target_rgb": [
+          217,
+          83,
+          25
+        ],
+        "threshold": 60
+      }
+    }
+  },
+  "Fig7": {
+    "figure": "Fig7",
+    "method": "nearest printed-colorbar palette decoding; robust row median; flow is bottom-to-top",
+    "panels": [
+      {
+        "velocity_m_s": 4.0,
+        "T_inlet_region_K": 328.48650851879023,
+        "T_middle_region_K": 333.44812188074593,
+        "T_outlet_region_K": 336.06117479823916,
+        "Tmax_K": 336.51724137931035,
+        "Tmin_K": 326.8635363169479,
+        "DeltaT_K": 9.653705062362462,
+        "hotspot_location_normalized": 0.8287937743190661,
+        "valid_pixel_fraction": 0.6221462228302174,
+        "reported_palette_uncertainty_K": 1.5
+      },
+      {
+        "velocity_m_s": 5.0,
+        "T_inlet_region_K": 326.12702553372645,
+        "T_middle_region_K": 330.2466709464417,
+        "T_outlet_region_K": 333.9344414893617,
+        "Tmax_K": 334.49816581071167,
+        "Tmin_K": 324.62362435803374,
+        "DeltaT_K": 9.874541452677931,
+        "hotspot_location_normalized": 0.96484375,
+        "valid_pixel_fraction": 0.5511517387559633,
+        "reported_palette_uncertainty_K": 1.5
+      },
+      {
+        "velocity_m_s": 6.0,
+        "T_inlet_region_K": 323.7525474851227,
+        "T_middle_region_K": 327.7069599557983,
+        "T_outlet_region_K": 331.42163884812913,
+        "Tmax_K": 332.479090242113,
+        "Tmin_K": 321.24798239178284,
+        "DeltaT_K": 11.231107850330147,
+        "hotspot_location_normalized": 0.9455252918287937,
+        "valid_pixel_fraction": 0.5222761734389642,
+        "reported_palette_uncertainty_K": 1.5
+      },
+      {
+        "velocity_m_s": 8.0,
+        "T_inlet_region_K": 318.86975986975983,
+        "T_middle_region_K": 322.3494505494506,
+        "T_outlet_region_K": 325.03076923076924,
+        "Tmax_K": 325.5054945054945,
+        "Tmin_K": 317.45274725274726,
+        "DeltaT_K": 8.052747252747224,
+        "hotspot_location_normalized": 0.96875,
+        "valid_pixel_fraction": 0.5010125296723197,
+        "reported_palette_uncertainty_K": 1.5
+      },
+      {
+        "velocity_m_s": 10.0,
+        "T_inlet_region_K": 316.5764482431149,
+        "T_middle_region_K": 319.9228937728937,
+        "T_outlet_region_K": 322.7992673992674,
+        "Tmax_K": 323.5128205128205,
+        "Tmin_K": 314.01831501831504,
+        "DeltaT_K": 9.49450549450546,
+        "hotspot_location_normalized": 0.921875,
+        "valid_pixel_fraction": 0.48756515674326406,
+        "reported_palette_uncertainty_K": 1.5
+      },
+      {
+        "velocity_m_s": 12.0,
+        "T_inlet_region_K": 314.3862433862434,
+        "T_middle_region_K": 318.4685479129924,
+        "T_outlet_region_K": 320.81208791208803,
+        "Tmax_K": 321.1098901098901,
+        "Tmin_K": 312.2600732600733,
+        "DeltaT_K": 8.849816849816818,
+        "hotspot_location_normalized": 0.8560311284046693,
+        "valid_pixel_fraction": 0.4929976597923066,
+        "reported_palette_uncertainty_K": 1.5
+      }
+    ],
+    "limitations": [
+      "JPEG compression, antialiasing and black channel ribs introduce colour uncertainty.",
+      "The temperature profile is a row-wise plate statistic, not original CFD node data.",
+      "A conservative ±1.5 K palette uncertainty is attached to every profile point."
+    ]
+  },
+  "Fig17": {
+    "figure": "Fig17",
+    "switch_event_count": 111,
+    "median_switch_interval_s": 10.045074050225367,
+    "uncertainty_s": 0.386349001931745,
+    "note": "Switches are sign changes of the two complementary colour traces after 70 s."
+  }
+}

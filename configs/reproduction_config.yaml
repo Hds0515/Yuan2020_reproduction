@@ -2,27 +2,120 @@ project:
   seed: 20200715
   dt_s: 1.0
 digitization:
-  figures: [Fig14, Fig15, Fig16]
+  figures:
+  - Fig14
+  - Fig15
+  - Fig16
 model:
   fan_enable_temperature_C: 53.0
-  reference_temperature_C: 55.0  # Paper optimum/control reference; not a safety limit.
+  reference_temperature_C: 55.0
   smc_deadband_C: 0.5
   smc_update_period_s: 10.0
-  coolant_node_temperatures_forward_C: [24.8, 30.05, 35.3]
+  coolant_node_temperatures_forward_C:
+  - 24.8
+  - 30.05
+  - 35.3
 safety:
-  safe_temperature_C: null  # External evidence required; null disables safety conclusions.
+  safe_temperature_C: null
 identification:
-  fig14_calibration_s: [0, 1200]
-  fig16_calibration_s: [0, 700]
-  fig16_validation_s: [700, 1200]
+  fig14_calibration_s:
+  - 0
+  - 1200
+  fig16_calibration_s:
+  - 0
+  - 700
+  fig16_validation_s:
+  - 700
+  - 1200
   multistart_count: 6
   bootstrap_count: 200
   parameter_bounds:
-    C_th_J_K: [2000.0, 12000.0]
-    K_cool_W_K: [5.0, 80.0]
-    K_node_W_K: [0.1, 30.0]
-    Kp_1_K: [0.005, 0.2]
-    Ki_1_Ks: [0.00001, 0.01]
-    heat_a0_W: [0.0, 300.0]
-    heat_a1_W_A: [0.0, 60.0]
-    heat_a2_W_A2: [0.0, 3.0]
+    C_th_J_K:
+    - 2000.0
+    - 12000.0
+    K_cool_W_K:
+    - 5.0
+    - 80.0
+    K_node_W_K:
+    - 0.1
+    - 30.0
+    Kp_1_K:
+    - 0.005
+    - 0.2
+    Ki_1_Ks:
+    - 1.0e-05
+    - 0.01
+    heat_a0_W:
+    - 0.0
+    - 300.0
+    heat_a1_W_A:
+    - 0.0
+    - 60.0
+    heat_a2_W_A2:
+    - 0.0
+    - 3.0
+primary_model:
+  path: identification_v4_primary/frozen_primary_model.json
+  sha256: 971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc
+  sensitivity_model_path: outputs_v4/identification/identified_parameters_v4.json
+distributed_model:
+  node_counts:
+  - 30
+  - 50
+  - 80
+  calibration_velocities_m_s:
+  - 4
+  - 8
+  validation_velocities_m_s:
+  - 5
+  - 6
+  - 10
+  - 12
+  inlet_temperature_C: 25.0
+  air_cp_J_kgK: 1007.0
+  heat_flux_W_m2: 2425.5
+  active_area_m2: 0.0247
+  velocity_to_duty_percent: 100*(velocity/12)**1.0
+  fig7_palette_uncertainty_K: 1.5
+observer_v5:
+  lhs_design_objects: 20
+  lhs_test_objects: 100
+  noise_seeds_per_test_object: 10
+  evaluation_dt_s: 20.0
+  parameter_ranges:
+    C_th_scale:
+    - 0.85
+    - 1.15
+    K_cool_scale:
+    - 0.75
+    - 1.15
+    K_node_scale:
+    - 0.8
+    - 1.25
+    load_input_scale:
+    - 0.85
+    - 1.15
+    coolant_temperature_offset_C:
+    - -3.0
+    - 5.0
+control_v5:
+  evaluation_dt_s: 10.0
+  minimum_dwell_s:
+  - 10
+  - 30
+  - 60
+  direction_switch_weight:
+  - 1.0
+  - 4.0
+  - 10.0
+  fan_weight:
+  - 0.15
+  - 0.35
+  - 0.7
+  hotspot_weight:
+  - 4.0
+  - 8.0
+  gradient_weight:
+  - 1.0
+  - 3.0
+  pareto_max_configs: 9

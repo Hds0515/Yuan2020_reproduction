@@ -17,6 +17,7 @@ class HotspotMPC:
     horizon_steps: int = 12
     prediction_dt_s: float = 3.0
     hotspot_weight: float = 8.0
+    mean_temperature_weight: float = 0.0
     gradient_weight: float = 2.0
     fan_weight: float = 0.22
     duty_move_weight: float = 0.8
@@ -116,8 +117,10 @@ class HotspotMPC:
                             self.parameters, self.heat_model,
                         ).next_temperature_C
                         hotspot_violation = max(float(np.max(state) - self.reference_C), 0.0)
+                        mean_error = float(np.mean(state) - self.reference_C)
                         gradient = float(np.max(state) - np.min(state))
                         cost += self.hotspot_weight * hotspot_violation**2
+                        cost += self.mean_temperature_weight * mean_error**2
                         cost += self.gradient_weight * gradient**2
                         cost += self.fan_weight * effective_duty**2
                         preview_index += 1

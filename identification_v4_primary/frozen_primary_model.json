@@ -1,0 +1,83 @@
+{
+  "model": "Yuan2020_three_node_primary_v5",
+  "heat_model": "A_thermoneutral_proxy",
+  "values": {
+    "C_th_J_K": 4381.600240346621,
+    "K_cool_W_K": 31.722471972119184,
+    "K_node_W_K": 7.1833293414246695,
+    "Kp_1_K": 0.0727170185330114,
+    "Ki_1_Ks": 0.0014992061134433243
+  },
+  "paper_reported_or_directly_derived": {
+    "reference_temperature_C": 55.0,
+    "fan_enable_temperature_C": 53.0,
+    "smc_deadband_C": 0.5,
+    "smc_update_period_s": 10.0,
+    "coolant_node_temperatures_forward_C": [
+      24.8,
+      30.05,
+      35.3
+    ],
+    "number_of_cells": 40
+  },
+  "assumptions": {
+    "polarization_curve_is_proxy": true,
+    "radiation_neglected": true,
+    "uniform_node_heat_generation": true
+  },
+  "metrics": {
+    "fig14_calibration_rmse_C": 0.24913712773122107,
+    "fig16_calibration_rmse_C": 0.2506316847976803,
+    "fig16_independent_validation_rmse_C": 0.2960474999313763,
+    "selected_heat_model": "A_thermoneutral_proxy",
+    "weighted_jacobian_condition_number": 1835765898.7165732,
+    "maximum_total_energy_residual_W": 1.4305320166288493e-11,
+    "maximum_relative_energy_residual": 3.573159290796472e-14,
+    "K_cool_times_Kp": 2.306763582309525,
+    "K_cool_times_Ki": 0.047558523914135585
+  },
+  "identifiability_note": "K_cool, Kp and Ki are structurally entangled when fan duty is unavailable; product parameters are more defensible than individual values.",
+  "selection": {
+    "selected_heat_model": "A_thermoneutral_proxy",
+    "selection_rule": "Operational primary selected by an identifiability-and-holdout gate. Naive pointwise-i.i.d. AIC/AICc/BIC favors B, but dense digitized time-series residuals are serially correlated; B adds three heat-source parameters, has a much worse Jacobian condition number and a worse untouched 700-1200 s holdout RMSE. A is frozen downstream and B remains a sensitivity model. This is not a claim that A wins naive information criteria.",
+    "validation_not_used_for_parameter_fitting": true,
+    "candidate_metrics": [
+      {
+        "heat_model": "B_quadratic_current",
+        "physically_admissible": true,
+        "parameter_count": 8,
+        "calibration_observation_count": 5706,
+        "calibration_rss_C2": 350.09455269568275,
+        "calibration_rmse_C": 0.24770044855521647,
+        "AIC": -15909.846921904698,
+        "AICc": -15909.821645443402,
+        "BIC": -15856.652733650511,
+        "independent_validation_rmse_C": 0.3253357219326715,
+        "weighted_jacobian_condition_number": 95762467603.8357,
+        "delta_AICc": 0.0,
+        "delta_BIC_from_best": 0.0
+      },
+      {
+        "heat_model": "A_thermoneutral_proxy",
+        "physically_admissible": true,
+        "parameter_count": 5,
+        "calibration_observation_count": 5706,
+        "calibration_rss_C2": 355.7382739320019,
+        "calibration_rmse_C": 0.2496890017694553,
+        "AIC": -15824.596533797958,
+        "AICc": -15824.586007482168,
+        "BIC": -15791.350166139091,
+        "independent_validation_rmse_C": 0.2960474999313763,
+        "weighted_jacobian_condition_number": 1835765898.7165732,
+        "delta_AICc": 85.2356379612338,
+        "delta_BIC_from_best": 65.30256751142042
+      }
+    ],
+    "sensitivity_model": "B_quadratic_current",
+    "pointwise_information_criteria_winner": "B_quadratic_current",
+    "operational_primary": "A_thermoneutral_proxy",
+    "selection_conflict_disclosed": true,
+    "external_holdout_used_for_model_choice_not_parameter_fitting": true
+  },
+  "canonical_content_sha256": "2935896ab51b82c6db3ac3c6f5150229f369c5684322cd49efd4e739ebea53b3"
+}

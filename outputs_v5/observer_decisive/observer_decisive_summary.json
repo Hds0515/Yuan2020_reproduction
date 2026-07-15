@@ -1,0 +1,31 @@
+{
+  "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "selected_sensor_nodes_1_based": [
+    1,
+    5
+  ],
+  "sensor_selection_used_test_set": false,
+  "off_grid_object_count": 100,
+  "noise_seed_count_per_object": 10,
+  "paired_sample_count": 1000,
+  "median_hotspot_rmse_improvement_percent": 14.235066851295237,
+  "mean_hotspot_rmse_improvement_percent": 33.99608018753797,
+  "worst_hotspot_rmse_improvement_percent": -16.81775822371719,
+  "q05_hotspot_improvement_percent": -3.684921240714679,
+  "improved_sample_fraction": 0.845,
+  "paired_mean_improvement_95pct_CI_percent": [
+    31.882024475938486,
+    36.057222934299915
+  ],
+  "nominal_median_performance_loss_percent": 3.53343610369789,
+  "pure_noise_median_performance_loss_percent": 5.809568255634885,
+  "linearization_note": "Heat generation evaluated at 55 C; cooling/conduction dynamics exact in T_i>Tcoolant regime.",
+  "exact_and_leave_one_out_noise_seeds": 3,
+  "core_innovation_acceptance": {
+    "off_grid_majority_improves": true,
+    "paired_CI_lower_above_zero": true,
+    "median_improvement_above_10pct": true,
+    "nominal_and_noise_loss_below_5pct": false
+  },
+  "MM_EKF_core_innovation_supported": false
+}

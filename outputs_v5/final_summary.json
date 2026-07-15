@@ -1,0 +1,99 @@
+{
+  "web_v5_completion": {
+    "model_registry_completed": true,
+    "external_digitization_completed": true,
+    "distributed_model_completed": true,
+    "observer_off_grid_validation_completed": true,
+    "control_resource_audit_completed": true,
+    "statistical_and_methodological_audit_completed": true
+  },
+  "primary_model": {
+    "operational_model": "A_thermoneutral_proxy",
+    "sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+    "all_v5_runtime_records_match": true,
+    "information_criteria_conflict_disclosed": true,
+    "pointwise_AICc_BIC_winner": "B_quadratic_current"
+  },
+  "distributed_model": {
+    "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+    "calibration_profile_rmse_C": 0.24986186949940042,
+    "independent_validation_profile_rmse_C": 1.7807523983231655,
+    "maximum_absolute_energy_residual_W": 1.0254019855437946e-12,
+    "mesh_50_vs_80_Tmax_difference_C": 0.00825543936909412,
+    "fig10_observed_cross_time_s": 19.471544715447155,
+    "fig10_best_unfitted_velocity_m_s": 5.0,
+    "fig10_best_unfitted_rmse_C": 5.104642143614919,
+    "frozen_five_node_mean_region_rmse_C": 24.40672439839867,
+    "space_validation_passed_within_palette_uncertainty": false,
+    "reversal_validation_passed": false,
+    "five_node_external_validation_passed": false
+  },
+  "observer": {
+    "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+    "selected_sensor_nodes_1_based": [
+      1,
+      5
+    ],
+    "sensor_selection_used_test_set": false,
+    "off_grid_object_count": 100,
+    "noise_seed_count_per_object": 10,
+    "paired_sample_count": 1000,
+    "median_hotspot_rmse_improvement_percent": 14.235066851295237,
+    "mean_hotspot_rmse_improvement_percent": 33.99608018753797,
+    "worst_hotspot_rmse_improvement_percent": -16.81775822371719,
+    "q05_hotspot_improvement_percent": -3.684921240714679,
+    "improved_sample_fraction": 0.845,
+    "paired_mean_improvement_95pct_CI_percent": [
+      31.882024475938486,
+      36.057222934299915
+    ],
+    "nominal_median_performance_loss_percent": 3.53343610369789,
+    "pure_noise_median_performance_loss_percent": 5.809568255634885,
+    "linearization_note": "Heat generation evaluated at 55 C; cooling/conduction dynamics exact in T_i>Tcoolant regime.",
+    "exact_and_leave_one_out_noise_seeds": 3,
+    "core_innovation_acceptance": {
+      "off_grid_majority_improves": true,
+      "paired_CI_lower_above_zero": true,
+      "median_improvement_above_10pct": true,
+      "nominal_and_noise_loss_below_5pct": false
+    },
+    "MM_EKF_core_innovation_supported": false
+  },
+  "control": {
+    "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+    "equal_energy_match_found_within_5pct": false,
+    "resource_selection_used_for_existing_full_scenario_table": "nearest fan-energy point; not an equal-energy comparison",
+    "nearest_energy_relative_difference_percent": 42.239488788299376,
+    "hotspot_mpc_vs_author_on_existing_feasible_aggregate": {
+      "maximum_excess_improvement_percent": -22.473579588311825,
+      "excess_rmse_improvement_percent": -7.255899011342364,
+      "gradient_rmse_improvement_percent": -26.512781366293414,
+      "fan_energy_change_percent": 45.09561289496735,
+      "switch_count_change": -24,
+      "mean_tracking_rmse_change_percent": 153.1829588597752
+    },
+    "equal_energy_hotspot_advantage_proven": false,
+    "actuator_limited_excluded_from_feasible_aggregate": true,
+    "safe_temperature_configured": false,
+    "decision": "No valid ±5% equal-fan-energy point exists in the current sweep; no equal-resource MPC advantage can be claimed."
+  },
+  "comsol": {
+    "web_environment_executed_comsol": false,
+    "full_flow_converged": false,
+    "prescribed_velocity_heat_converged": false,
+    "handoff_code_created": true
+  },
+  "innovation_decision": {
+    "distributed_and_five_node_external_validation": false,
+    "MM_EKF_as_core_innovation": false,
+    "hotspot_MPC_equal_resource_advantage": false
+  },
+  "claims_not_supported": [
+    "Frozen five-node model passed independent spatial validation.",
+    "MM-EKF is uniformly superior.",
+    "Hotspot MPC is superior at equal fan energy.",
+    "55 C is a safety limit.",
+    "COMSOL flow/heat converged.",
+    "Fig.7 exact original geometry reproduced."
+  ]
+}

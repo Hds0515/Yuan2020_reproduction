@@ -1,0 +1,28 @@
+{
+  "model": "independent_distributed_solid_air_v5",
+  "primary_model_sha256_for_downstream_comparison_only": "6aacf40f745aca71de9fc4dc56eea6bad49d04f61f29d828428d54fa4387d677",
+  "calibrated_with_velocities_m_s": [
+    4.0,
+    8.0
+  ],
+  "independent_validation_velocities_m_s": [
+    5.0,
+    6.0,
+    10.0,
+    12.0
+  ],
+  "values": {
+    "total_UA_W_K": 1.0012182500332292,
+    "total_external_loss_W_K": 0.09207909405769668,
+    "axial_edge_conductance_W_K": 6.119977559127449,
+    "effective_heat_fraction": 0.1339608313464908,
+    "paper_heat_flux_W_m2": 2425.5,
+    "paper_active_area_m2": 0.0247,
+    "paper_mass_times_graphite_cp_J_K": 4830.0
+  },
+  "explicit_equivalent_assumptions": [
+    "Fig. 7 velocity is mapped to Fig. 2 duty as duty=100*velocity/12 because the paper gives no direct map.",
+    "The effective heat fraction represents heat-flux-area and unmodelled external-loss ambiguity.",
+    "The model is one-dimensional along the cooling-flow direction and does not reproduce full 3D ribs."
+  ]
+}
