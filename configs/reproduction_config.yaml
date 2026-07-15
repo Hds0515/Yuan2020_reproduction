@@ -5,16 +5,18 @@ digitization:
   figures: [Fig14, Fig15, Fig16]
 model:
   fan_enable_temperature_C: 53.0
-  reference_temperature_C: 55.0
+  reference_temperature_C: 55.0  # Paper optimum/control reference; not a safety limit.
   smc_deadband_C: 0.5
   smc_update_period_s: 10.0
   coolant_node_temperatures_forward_C: [24.8, 30.05, 35.3]
+safety:
+  safe_temperature_C: null  # External evidence required; null disables safety conclusions.
 identification:
   fig14_calibration_s: [0, 1200]
   fig16_calibration_s: [0, 700]
   fig16_validation_s: [700, 1200]
   multistart_count: 6
-  bootstrap_count: 8
+  bootstrap_count: 200
   parameter_bounds:
     C_th_J_K: [2000.0, 12000.0]
     K_cool_W_K: [5.0, 80.0]

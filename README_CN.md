@@ -1,50 +1,30 @@
-# Yuan 2020 PEM 燃料电池热管理复现 v3
+# Yuan2020 热管理复现：v4 方法学修正版
 
-这是对 V2 工程的审计式重建。受保护的论文 PDF、三张原始 JPG、原始 raw CSV 和 `identification/frozen_parameters_v2.json` 未被修改；V2 的逐文件 SHA-256 副本保存在本仓库基线提交/tag `baseline_v2` 中。
+本分支修复了 v3 的三个关键问题：多模型观察器场景未真正进入 truth、MPC 在整个预测域只用单一控制量，以及 55 °C 被混称为安全上限。受保护的原始 JPG、V2 raw/cleaned CSV、`frozen_parameters_v2.json` 和 `frozen_parameters_v3.json` 不会被改写。
 
-当前结论：图片数字化、三节点辨识/独立验证、五节点模型、EKF、多模型观测器和热点 MPC 均已实际运行；COMSOL 6.4 Java 已实际编译，但稳态求解未收敛，因此网格无关性、CFD 能量守恒和 COMSOL—三节点交叉验证均明确标记为未完成。
-
-## 一键复现
-
-建议先在工程根目录建立环境并安装锁定依赖：
+## 复现
 
 ```powershell
 py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\reproduce_python_only.bat
+.\.venv\Scripts\python.exe run_all.py --clean-output
 ```
 
-Python-only 入口会从 `source_images/Fig14.jpg`、`Fig15.jpg`、`Fig16.jpg` 开始，依次重新数字化、辨识、验证、运行五节点/观测器/控制实验和测试，并把本次完整产物收集到全新的 `outputs_v3`。它不把 V2 cleaned CSV、PNG 或结果 JSON 当作模型输入；V2 CSV 仅在图片提取完成后用于审计性比较。
-
-若需要同时重试 COMSOL：
+如需重试 COMSOL Stage 1：
 
 ```powershell
-.\reproduce_all.bat
+.\.venv\Scripts\python.exe run_all.py --clean-output --with-comsol
 ```
 
-COMSOL 求解可能耗时较长；当前失败证据和安全中止点见 `comsol/status.json` 与 `comsol/logs/solve_twelfth.log`。
+新结果只写入 `outputs_v4/`、`comsol/generated_v4/`、`comsol/results_v4/` 和 `comsol/logs_v4/`。旧结果不会复制进 fresh bundle；V2 状态由 `baseline_v2` 标签和 `baseline_v2_outputs/README.md` 只读引用。
 
-## 核心结果
+## 当前结论
 
-- Fig14 校准 RMSE：0.2491 °C。
-- Fig16 0–700 s 校准 RMSE：0.2506 °C。
-- Fig16 700–1200 s 独立验证 RMSE：0.2960 °C。
-- 三节点最大相对能量残差：3.57e-14。
-- 三/五节点平均温度 RMSE：0.00449 °C；五节点最大绝对能量残差：1.18e-11 W。
-- 两传感器推荐位置：节点 2、5；跨六类失配场景的热点 RMSE 为 0.0681 °C。
-- 多模型 EKF 平均热点 RMSE 0.0467 °C，单模型 EKF 为 0.0512 °C。
-- 七场景中热点 MPC 使用两传感器 EKF 状态；与论文式中点 PI–SMC 相比降低热点越界 RMSE 和平均温差，但风机能耗代理更高。不可行场景单独标记，不混入常规可行性结论。
+- 55 °C 仅为论文最优工作温度/控制参考，不是安全上限。`T_safe` 默认为空；未提供外部可信值时不作安全结论。
+- 参数模型库属于 MM-EKF/MMAE，不是未知气流方向的切换观察器。它在 5/5 个真实失配场景降低热点 RMSE，平均改善 30.48%，配对 bootstrap 95% 区间为 9.27%–51.69%。
+- Hotspot-MPC 使用 12 步、三控制块（1–4、5–8、9–12），包含方向反转代价、10 s 最小驻留时间和 2 s 反转无效风量时间。
+- 在可行场景中，MPC 相对 AuthorMeasured-PI-SMC 的 60 s 后热点峰值改善 1.44%，温差 RMSE 改善 46.78%；代价为风机能耗代理增加 30.30%、方向切换增加 316 次、平均温度跟踪 RMSE 增加 121.37%。`actuator_limited` 不计入正常均值。
+- Fig.16(b)/(c) 已直接从局部放大图重新提取；参数与模型选择不使用 700–1200 s 验证区反向调节。
+- COMSOL 采用代表性并联通道方案 B，`areaScale=Ain/(W*Hair)` 实际进入总质量流量。0.1 m/s Stage 1 仍未收敛，因此 0.5–4 m/s 延续、传热、网格无关性和 CFD 能量守恒均未执行，也未生成虚假结果。
 
-## 导航
-
-- 总报告：`docs/final_reproduction_report_CN.md`
-- 工程审计：`audit/project_audit.md`
-- 数字化：`docs/digitization_audit.md`
-- 模型假设：`docs/model_assumptions.md`
-- 可辨识性：`docs/parameter_identifiability.md`
-- COMSOL：`docs/comsol_cross_validation.md`
-- 五节点与观测器：`docs/five_node_observer_results.md`
-- MPC：`docs/hotspot_mpc_results.md`
-- 机器可读状态：`outputs/final_summary.json`
-
-本工程复现的是独立空气冷却流道方向热管理，不能称为开放阴极反应空气—冷却空气耦合模型，也不支持氧传输、水淹或膜含水量结论。
+机器可读汇总见 `outputs_v4/final_summary.json`，人工验收结论见 `outputs_v4/stage_acceptance_report.md`，COMSOL 证据见 `comsol/status_v4.json` 和 `comsol/logs_v4/`。

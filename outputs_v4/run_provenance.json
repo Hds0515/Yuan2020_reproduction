@@ -1,0 +1,24 @@
+{
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "operating_system": "Windows-11-10.0.26200-SP0",
+  "git_commit_at_run_start": "924379b86ad10f183a2ca04dfa821eb077b79d16",
+  "packages": {
+    "numpy": "2.3.1",
+    "pandas": "2.3.1",
+    "scipy": "1.16.0",
+    "matplotlib": "3.10.3",
+    "Pillow": "11.3.0",
+    "PyYAML": "6.0.2",
+    "pytest": "8.4.1"
+  },
+  "config_sha256": "538e4c798a53d78c63e33b83494cbd26ab33fefee385aaa0ded4733ca9b4f475",
+  "protected_inputs_unchanged": true,
+  "inputs": {
+    "source_images/Fig14.jpg": "1638387f5e90abba293bd528b004b566ab25024e7f0fd4d1cc14e2b29731cbcb",
+    "source_images/Fig15.jpg": "81d9b51ba04dbfeab2ac3544985d54abbdb9a633e513092c4f0cbb2d08eb0753",
+    "source_images/Fig16.jpg": "d4b424def94093e9ce7a7ee47ecf11b35ef6eabd6bf69f5a91e681ae4122b0bf",
+    "digitization/axis_calibration.json": "7b0e58dd5dd65d6ae963f90e7c232bd1176ad3467b5d7f3c496e6a09ec3e6cb7",
+    "configs/reproduction_config.yaml": "538e4c798a53d78c63e33b83494cbd26ab33fefee385aaa0ded4733ca9b4f475",
+    "identification_v3/frozen_parameters_v3.json": "00099011e5974dc99dab55553a53f5dcf88846a7322b6006644c196f05b8f94f"
+  }
+}

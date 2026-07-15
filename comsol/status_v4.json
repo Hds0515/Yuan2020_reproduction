@@ -1,0 +1,29 @@
+{
+  "target_version": "COMSOL Multiphysics 6.4",
+  "equivalent_geometry_decision": "B: representative parallel channel with all extensive totals scaled by areaScale",
+  "area_scaling_formula_consistent": true,
+  "java_compile_success": true,
+  "swept_mesh_created": true,
+  "air_thickness_layers": 4,
+  "solver_requested": "fully coupled PARDISO with Stokes initialization and inertial-laminar continuation",
+  "stage1_flow_0p1ms_converged": false,
+  "stage1_mass_balance_passed": false,
+  "stage2_started": false,
+  "stage2_flow_4ms_converged": false,
+  "stage3_started": false,
+  "stage3_one_way_thermal_converged": false,
+  "stage3_energy_balance_passed": false,
+  "last_attempt": "The 0.1 m/s Stokes initialization did not satisfy the nonlinear convergence test. PARDISO repeatedly reported an inaccurate/ill-conditioned pressure-velocity linear solve and the maximum Newton iteration count was reached. Outlet pressure referencing, an explicit pressure-point trial, 4 thickness layers, and a refined mapped/swept cross-section were tested without a converged solution.",
+  "stop_policy_applied": "Stage 2 velocity continuation and Stage 3 heat transfer were not run after Stage 1 failed.",
+  "data_policy": "No COMSOL temperature, velocity, pressure, mass-balance, mesh-convergence, or energy-balance result is reported without convergence.",
+  "evidence_logs": [
+    "logs_v4/stage1_compile.log",
+    "logs_v4/stage1_flow_0p1ms.log"
+  ],
+  "remaining_tasks": [
+    "Resolve the Stage 1 pressure-velocity conditioning/convergence failure and pass <0.1% mass imbalance.",
+    "Only then continue 0.1, 0.5, 1, 2, and 4 m/s with previous solutions as initial values.",
+    "Only after a converged 4 m/s flow field, add one-way heat transfer and pass the <0.5% energy balance.",
+    "Six-speed and three-mesh studies remain prohibited until Stage 3 passes."
+  ]
+}

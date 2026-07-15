@@ -62,5 +62,19 @@
     ],
     "color_distance_threshold": 55,
     "v2_calibration_note": "V2 coordinates were measured on a 2048-pixel-wide resized copy; v3 coordinates refer to the protected 3374x2962 source JPG."
+  },
+  "Fig16b": {
+    "plot_rectangle_pixels": [188, 1658, 1531, 2582],
+    "x_range": [200, 700],
+    "y_range": [53.5, 56.5],
+    "retained_y_pixels": [1650, 2590],
+    "calibration_note": "Tick-to-tick calibration of the protected Fig16(b) local enlargement."
+  },
+  "Fig16c": {
+    "plot_rectangle_pixels": [1880, 1609, 3372, 2605],
+    "x_range": [700, 1200],
+    "y_range": [53.5, 57.5],
+    "retained_y_pixels": [1605, 2610],
+    "calibration_note": "Tick/frame calibration of the protected Fig16(c) local enlargement."
   }
 }

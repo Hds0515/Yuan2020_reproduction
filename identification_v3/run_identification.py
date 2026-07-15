@@ -3,10 +3,13 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ProcessPoolExecutor
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
+import time
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -32,10 +35,11 @@ def vector_to_parameters(x: np.ndarray, heat_model: str) -> ThermalParameters:
     return ThermalParameters(**values)
 
 
-def load_cases(root: Path) -> dict[str, object]:
-    fig14 = pd.read_csv(root / "digitization" / "regenerated" / "Fig14_digitized.csv")
-    fig15 = pd.read_csv(root / "digitization" / "regenerated" / "Fig15_digitized.csv")
-    fig16 = pd.read_csv(root / "digitization" / "regenerated" / "Fig16_digitized.csv")
+def load_cases(root: Path, digitized_dir: Path | None = None) -> dict[str, object]:
+    source = digitized_dir or root / "digitization" / "regenerated"
+    fig14 = pd.read_csv(source / "Fig14_digitized.csv")
+    fig15 = pd.read_csv(source / "Fig15_digitized.csv")
+    fig16 = pd.read_csv(source / "Fig16_digitized.csv")
     fig14_target = fig14[
         ["paper_simulation_T1_C", "paper_simulation_T2_C", "paper_simulation_T3_C"]
     ].to_numpy()
@@ -199,13 +203,73 @@ def block_resample(residual: np.ndarray, rng: np.random.Generator, block: int = 
     return np.concatenate([residual[s : s + block] for s in starts], axis=0)[:n]
 
 
+def _bootstrap_replicate(task: tuple[object, ...]) -> dict[str, object]:
+    (
+        replicate,
+        seed,
+        best_x,
+        heat_model,
+        cases,
+        config,
+        fitted14_temperature,
+        fitted16_temperature,
+        residual14,
+        residual16,
+        cal16,
+        lower,
+        upper,
+        names,
+    ) = task
+    replicate_rng = np.random.default_rng(int(seed))
+    synthetic14 = np.asarray(fitted14_temperature) + block_resample(
+        np.asarray(residual14), replicate_rng
+    )
+    synthetic16 = np.asarray(cases["fig16_target"]).copy()  # type: ignore[index]
+    synthetic16[np.asarray(cal16)] = np.asarray(fitted16_temperature)[np.asarray(cal16)] + block_resample(
+        np.asarray(residual16), replicate_rng
+    )
+    fit = least_squares(
+        residual_vector,
+        np.asarray(best_x),
+        args=(heat_model, cases, config, (synthetic14, synthetic16)),
+        bounds=(np.asarray(lower), np.asarray(upper)),
+        x_scale="jac",
+        max_nfev=60,
+    )
+    fitted_parameters = vector_to_parameters(fit.x, str(heat_model))
+    _, bootstrap16 = simulate_both(fit.x, str(heat_model), cases, config)  # type: ignore[arg-type]
+    validation_mask = np.asarray(cases["fig16_time"]) >= 700.0  # type: ignore[index]
+    validation_rmse = float(
+        np.sqrt(
+            np.mean(
+                (
+                    bootstrap16.temperature_C[validation_mask]
+                    - np.asarray(cases["fig16_target"])[validation_mask]  # type: ignore[index]
+                )
+                ** 2
+            )
+        )
+    )
+    return {
+        "replicate": int(replicate),
+        "seed": int(seed),
+        "success": bool(fit.success),
+        "cost": float(fit.cost),
+        "nfev": int(fit.nfev),
+        "Kcool_times_Kp": fitted_parameters.K_cool_W_K * fitted_parameters.Kp_1_K,
+        "Kcool_times_Ki": fitted_parameters.K_cool_W_K * fitted_parameters.Ki_1_Ks,
+        "independent_validation_rmse_C": validation_rmse,
+        **{name: float(value) for name, value in zip(names, fit.x, strict=True)},
+    }
+
+
 def bootstrap(
     best: object,
     heat_model: str,
     cases: dict[str, object],
     config: dict[str, object],
-    rng: np.random.Generator,
-) -> pd.DataFrame:
+    seed: int,
+) -> tuple[pd.DataFrame, float]:
     names = parameter_names(heat_model)
     bounds_cfg = config["identification"]["parameter_bounds"]
     lower = np.asarray([bounds_cfg[n][0] for n in names], dtype=float)
@@ -214,29 +278,37 @@ def bootstrap(
     residual14 = cases["fig14_target"] - fitted14.temperature_C
     cal16 = cases["fig16_time"] <= 700.0
     residual16 = cases["fig16_target"][cal16] - fitted16.temperature_C[cal16]
-    rows = []
-    for replicate in range(int(config["identification"]["bootstrap_count"])):
-        synthetic14 = fitted14.temperature_C + block_resample(residual14, rng)
-        synthetic16 = cases["fig16_target"].copy()
-        synthetic16[cal16] = fitted16.temperature_C[cal16] + block_resample(residual16, rng)
-        fit = least_squares(
-            residual_vector,
+    rows: list[dict[str, object]] = []
+    started = time.perf_counter()
+    count = int(config["identification"]["bootstrap_count"])
+    tasks = [
+        (
+            replicate,
+            seed + replicate,
             best.x,
-            args=(heat_model, cases, config, (synthetic14, synthetic16)),
-            bounds=(lower, upper),
-            x_scale="jac",
-            max_nfev=100,
+            heat_model,
+            cases,
+            config,
+            fitted14.temperature_C,
+            fitted16.temperature_C,
+            residual14,
+            residual16,
+            cal16,
+            lower,
+            upper,
+            names,
         )
-        rows.append(
-            {
-                "replicate": replicate,
-                "success": bool(fit.success),
-                "cost": float(fit.cost),
-                **{name: float(value) for name, value in zip(names, fit.x, strict=True)},
-            }
-        )
-        print(f"bootstrap {replicate + 1}/{config['identification']['bootstrap_count']}: cost={fit.cost:.6g}", flush=True)
-    return pd.DataFrame(rows)
+        for replicate in range(count)
+    ]
+    worker_count = min(6, os.cpu_count() or 1)
+    with ProcessPoolExecutor(max_workers=worker_count) as executor:
+        for index, row in enumerate(executor.map(_bootstrap_replicate, tasks, chunksize=1), start=1):
+            rows.append(row)
+            print(
+                f"bootstrap {index}/{count}: cost={float(row['cost']):.6g}, nfev={row['nfev']}",
+                flush=True,
+            )
+    return pd.DataFrame(rows), time.perf_counter() - started
 
 
 def save_plots(
@@ -249,7 +321,7 @@ def save_plots(
     correlation: np.ndarray,
     singular: np.ndarray,
 ) -> None:
-    out = root / "outputs" / "three_node"
+    out = root / "three_node"
     out.mkdir(parents=True, exist_ok=True)
     colors = ["tab:red", "tab:green", "tab:blue"]
     fig, ax = plt.subplots(figsize=(10, 5))
@@ -300,12 +372,16 @@ def save_plots(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=PROJECT_ROOT)
+    parser.add_argument("--output-dir", type=Path)
+    parser.add_argument("--digitized-dir", type=Path)
     args = parser.parse_args()
     root = args.root.resolve()
     config = yaml.safe_load((root / "configs" / "reproduction_config.yaml").read_text(encoding="utf-8"))
     rng = np.random.default_rng(int(config["project"]["seed"]))
-    cases = load_cases(root)
-    out = root / "identification_v3"; out.mkdir(parents=True, exist_ok=True)
+    output_root = (args.output_dir or root / "outputs_v4").resolve()
+    digitized_dir = (args.digitized_dir or output_root / "digitization" / "regenerated").resolve()
+    cases = load_cases(root, digitized_dir)
+    out = output_root / "identification"; out.mkdir(parents=True, exist_ok=True)
 
     candidate_rows = []
     best_by_model = {}
@@ -320,16 +396,25 @@ def main() -> None:
             currents = np.linspace(0, 35, 100)
             heats = p.heat_a0_W + p.heat_a1_W_A * currents + p.heat_a2_W_A2 * currents**2
             physical = bool(np.all(heats >= -1e-9) and np.all(np.diff(heats) >= -1e-9))
-        candidate_rows.append({"heat_model": heat_model, "physically_admissible": physical, **metrics})
+        calibration_score = float(
+            np.sqrt((metrics["fig14_calibration_rmse_C"] ** 2 + metrics["fig16_calibration_rmse_C"] ** 2) / 2.0)
+        )
+        candidate_rows.append({
+            "heat_model": heat_model,
+            "physically_admissible": physical,
+            "calibration_selection_score_C": calibration_score,
+            **metrics,
+        })
         best_by_model[heat_model] = (best, result14, result16)
         multistarts.append(starts)
     comparison = pd.DataFrame(candidate_rows)
     admissible = comparison[comparison["physically_admissible"]]
-    selected_model = str(admissible.sort_values("fig16_independent_validation_rmse_C").iloc[0]["heat_model"])
+    selected_model = str(admissible.sort_values("calibration_selection_score_C").iloc[0]["heat_model"])
     best, result14, result16 = best_by_model[selected_model]
     names = parameter_names(selected_model)
     covariance, correlation, singular, condition = covariance_from_jacobian(best)
-    boot = bootstrap(best, selected_model, cases, config, rng)
+    bootstrap_seed = int(config["project"]["seed"]) + 100000
+    boot, bootstrap_runtime_s = bootstrap(best, selected_model, cases, config, bootstrap_seed)
     standard = np.sqrt(np.maximum(np.diag(covariance), 0.0))
 
     units = {
@@ -364,7 +449,8 @@ def main() -> None:
             {"source": "digitization/regenerated/Fig16_digitized.csv", "time_s": [700, 1200]}
         ],
         "validation_used_in_parameter_optimization": False,
-        "validation_used_only_for_predeclared_heat_model_A_B_comparison": True,
+        "validation_used_in_heat_model_selection": False,
+        "heat_model_selection_criterion": "root-mean-square of Fig14 and Fig16 calibration RMSE only",
     }
     (out / "calibration_validation_split.json").write_text(json.dumps(split, indent=2) + "\n", encoding="utf-8")
     metrics = rmse_metrics(result14, result16, cases)
@@ -382,8 +468,53 @@ def main() -> None:
     )
     (out / "identification_metrics.json").write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
 
+    bootstrap_summary = {
+        "replicate_count": int(len(boot)),
+        "base_seed": bootstrap_seed,
+        "runtime_s": bootstrap_runtime_s,
+        "successful_replicates": int(boot["success"].sum()),
+        "Kcool_times_Kp_95pct_interval": [
+            float(boot["Kcool_times_Kp"].quantile(0.025)),
+            float(boot["Kcool_times_Kp"].quantile(0.975)),
+        ],
+        "Kcool_times_Ki_95pct_interval": [
+            float(boot["Kcool_times_Ki"].quantile(0.025)),
+            float(boot["Kcool_times_Ki"].quantile(0.975)),
+        ],
+        "independent_validation_rmse_C_95pct_interval": [
+            float(boot["independent_validation_rmse_C"].quantile(0.025)),
+            float(boot["independent_validation_rmse_C"].quantile(0.975)),
+        ],
+    }
+    (out / "bootstrap_summary.json").write_text(
+        json.dumps(bootstrap_summary, indent=2) + "\n", encoding="utf-8"
+    )
+
+    detail_path = digitized_dir / "Fig16c_digitized.csv"
+    if detail_path.exists():
+        local = pd.read_csv(detail_path)
+        local_target = local[
+            ["paper_simulation_T2_C", "paper_simulation_middle_C", "paper_simulation_T1_C"]
+        ].to_numpy()
+        model_local = np.column_stack(
+            [
+                np.interp(local["time_s"], cases["fig16_time"], result16.temperature_C[:, i])
+                for i in range(3)
+            ]
+        )
+        local_rmse = float(np.sqrt(np.mean((model_local - local_target) ** 2)))
+        detail_impact = {
+            "main_panel_independent_validation_rmse_C": metrics["fig16_independent_validation_rmse_C"],
+            "Fig16c_local_panel_independent_validation_rmse_C": local_rmse,
+            "local_minus_main_rmse_C": local_rmse - metrics["fig16_independent_validation_rmse_C"],
+            "parameters_refit_to_local_panel": False,
+        }
+        (out / "local_detail_validation_impact.json").write_text(
+            json.dumps(detail_impact, indent=2) + "\n", encoding="utf-8"
+        )
+
     payload = {
-        "model": "Yuan2020_three_node_control_oriented_v3",
+        "model": "Yuan2020_three_node_control_oriented_v4_analysis",
         "heat_model": selected_model,
         "values": {name: float(value) for name, value in zip(names, best.x, strict=True)},
         "paper_reported_or_directly_derived": {
@@ -404,9 +535,11 @@ def main() -> None:
     }
     serialized = json.dumps(payload, ensure_ascii=False, indent=2).encode("utf-8")
     payload["sha256_without_hash_field"] = hashlib.sha256(serialized).hexdigest()
-    (out / "frozen_parameters_v3.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    (out / "identified_parameters_v4.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
 
-    save_plots(root, names, best, result14, result16, cases, correlation, singular)
+    save_plots(output_root, names, best, result14, result16, cases, correlation, singular)
     print(json.dumps(metrics, indent=2))
 
 

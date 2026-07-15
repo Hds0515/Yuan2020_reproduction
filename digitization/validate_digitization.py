@@ -38,7 +38,8 @@ def main() -> None:
             args.output_root / "digitization" / "regenerated" / f"{name}_digitized.csv",
             PROJECT_ROOT / "digitization" / f"{name}_cleaned_1s.csv",
         )
-    path = args.output_root / "outputs" / "digitization" / "v2_comparison.json"
+    path = args.output_root / "digitization" / "v2_comparison.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result, ensure_ascii=False, indent=2))
 

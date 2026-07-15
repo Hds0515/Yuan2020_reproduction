@@ -6,6 +6,7 @@ from controllers.hotspot_mpc import HotspotMPC
 from models.five_node_model import FiveNodeParameters
 from models.three_node_model import ThermalParameters
 from observers.ekf import ExtendedKalmanFilter
+from observers.multiple_model_observer import MultipleModelObserver
 
 
 def _parameters() -> FiveNodeParameters:
@@ -35,3 +36,29 @@ def test_mpc_returns_feasible_command_and_obeys_dwell() -> None:
     controller.previous_direction = direction
     _, next_direction, _ = controller.command(np.array([54.0, 54.5, 55.0, 55.5, 56.0]), np.full(3, 20.0))
     assert next_direction == direction
+    assert len(controller.last_planned_duty) == 3
+    assert len(controller.last_planned_direction) == 3
+
+
+def test_model_bank_applies_declared_input_scales() -> None:
+    class RecordingFilter:
+        def __init__(self) -> None:
+            self.currents: list[float] = []
+            self.state_C = np.zeros(5)
+
+        def predict(self, current_A: float, duty: float, direction: int, dt_s: float) -> None:
+            self.currents.append(current_A)
+
+        def update(self, measurement_C: np.ndarray) -> float:
+            return 0.0
+
+    filters = [RecordingFilter(), RecordingFilter()]
+    bank = MultipleModelObserver(  # type: ignore[arg-type]
+        filters=filters,
+        probabilities=np.array([0.5, 0.5]),
+        model_names=("nominal", "load_input_minus_10pct"),
+        input_scales=np.array([1.0, 0.9]),
+    )
+    bank.predict(20.0, 0.5, 1, 1.0)
+    assert filters[0].currents == [20.0]
+    assert filters[1].currents == [18.0]

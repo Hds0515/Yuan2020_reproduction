@@ -1,9 +1,15 @@
-# COMSOL 6.4 等效三维模型
+# COMSOL 6.4 最小复杂度收敛任务
 
-模型名称固定为 `Yuan2020_equivalent_3D`。论文未公开完整 CAD 和流道尺寸，所以它不是作者原始几何的精确复刻。
+当前模型选择方案 B：代表性并联通道。完整决定和尺度证明见 `docs/equivalent_geometry_decision.md`。总入口面积为 `Ain=3962 mm²`，代表性通道面积为 `W*Hair`，所有总量使用 `areaScale=Ain/(W*Hair)` 缩放；Stage 1 的目标总质量流量为 `rho*uin*Ain`。
 
-`Yuan2020Equivalent3D.java` 已在 `E:\COMSOL\COMSOL64\Multiphysics` 的 COMSOL 6.4 环境中实际编译成功，并完成几何、材料、物理场、网格、区域算子和参数化研究的 API 初始化。最后一次 Stokes 初始化稳态求解在 12% 处长期振荡，人工安全中止；没有得到收敛 MPH 或可信的场量导出。
+运行：
 
-运行 `run_comsol_windows.bat` 可重新编译并求解。仅当 `comsol_zone_temperatures.csv` 存在且包含六个有限工况时，`validate_comsol_reduction.py` 才执行真实三节点稳态比较；否则它返回状态码 2，绝不生成虚构验证值。
+```powershell
+.\run_comsol_windows.bat
+```
 
-当前可靠状态以 `status.json` 为准。`logs/solve_twelfth.log` 是最后一次求解证据。当前不得声称：求解完成、网格收敛、CFD 能量守恒通过、温度云图已生成或三节点交叉验证通过。
+脚本只执行 Stage 1：关闭传热、入口 0.1 m/s、Laminar Flow、映射/扫掠网格（厚度方向 4 层）、Stokes 初始化、全耦合 PARDISO，再延续到惯性层流。编译物、结果和日志分别写入 `generated_v4/`、`results_v4/` 和 `logs_v4/`。
+
+当前 Stage 1 未收敛。压力出口、显式压力点试验、截面细化和扫掠网格均已尝试；PARDISO 的压力—速度线性系统仍出现病态/相对残差失败并达到 Newton 迭代上限。按预定停止规则，Stage 2 和 Stage 3 未启动。
+
+可靠状态以 `status_v4.json` 为准。没有收敛的 MPH、质量守恒验收和能量账本时，不得声称速度场、压力场、温度场、网格收敛或 CFD 能量守恒已经完成。

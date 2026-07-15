@@ -1,0 +1,30 @@
+{
+  "calibration": [
+    {
+      "source": "digitization/regenerated/Fig14_digitized.csv",
+      "time_s": [
+        0,
+        1200
+      ]
+    },
+    {
+      "source": "digitization/regenerated/Fig16_digitized.csv",
+      "time_s": [
+        0,
+        700
+      ]
+    }
+  ],
+  "independent_validation": [
+    {
+      "source": "digitization/regenerated/Fig16_digitized.csv",
+      "time_s": [
+        700,
+        1200
+      ]
+    }
+  ],
+  "validation_used_in_parameter_optimization": false,
+  "validation_used_in_heat_model_selection": false,
+  "heat_model_selection_criterion": "root-mean-square of Fig14 and Fig16 calibration RMSE only"
+}
