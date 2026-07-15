@@ -1,31 +1,30 @@
-# Yuan 2020 PEMFC 三节点模型复现 v2
+# Yuan2020 热管理复现：v4 方法学修正版
 
-本工程完成了：
+本分支修复了 v3 的三个关键问题：多模型观察器场景未真正进入 truth、MPC 在整个预测域只用单一控制量，以及 55 °C 被混称为安全上限。受保护的原始 JPG、V2 raw/cleaned CSV、`frozen_parameters_v2.json` 和 `frozen_parameters_v3.json` 不会被改写。
 
-1. Fig. 14、15、16 曲线数字化；
-2. `C_th`、`K_cool`、`K_node`、`Kp`、`Ki` 的正则化辨识；
-3. 论文曲线与复现曲线叠加图；
-4. 校准集与独立验证集分离；
-5. 参数冻结和哈希记录；
-6. COMSOL 6.4 等效三维建模脚本；
-7. COMSOL 三区域温度验证管线；
-8. 五节点、双传感器 EKF 和热点约束 MPC 原型。
+## 复现
 
-## 首先查看
+```powershell
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe run_all.py --clean-output
+```
 
-- `docs/completion_report_CN.md`
-- `identification/frozen_parameters_v2.json`
-- `outputs/02_fig14_calibration_overlay.png`
-- `outputs/03_fig16_calibration_validation_overlay.png`
-- `comsol/README_COMSOL_CN.md`
+如需重试 COMSOL Stage 1：
 
-## 已验证的复现精度
+```powershell
+.\.venv\Scripts\python.exe run_all.py --clean-output --with-comsol
+```
 
-- Fig. 14 总体 RMSE：0.258 °C
-- Fig. 16 独立验证 RMSE：0.306 °C
+新结果只写入 `outputs_v4/`、`comsol/generated_v4/`、`comsol/results_v4/` 和 `comsol/logs_v4/`。旧结果不会复制进 fresh bundle；V2 状态由 `baseline_v2` 标签和 `baseline_v2_outputs/README.md` 只读引用。
 
-## 重要状态
+## 当前结论
 
-三节点控制导向模型已经达到“曲线级、分离验证的论文功能复现”。
+- 55 °C 仅为论文最优工作温度/控制参考，不是安全上限。`T_safe` 默认为空；未提供外部可信值时不作安全结论。
+- 参数模型库属于 MM-EKF/MMAE，不是未知气流方向的切换观察器。它在 5/5 个真实失配场景降低热点 RMSE，平均改善 30.48%，配对 bootstrap 95% 区间为 9.27%–51.69%。
+- Hotspot-MPC 使用 12 步、三控制块（1–4、5–8、9–12），包含方向反转代价、10 s 最小驻留时间和 2 s 反转无效风量时间。
+- 在可行场景中，MPC 相对 AuthorMeasured-PI-SMC 的 60 s 后热点峰值改善 1.44%，温差 RMSE 改善 46.78%；代价为风机能耗代理增加 30.30%、方向切换增加 316 次、平均温度跟踪 RMSE 增加 121.37%。`actuator_limited` 不计入正常均值。
+- Fig.16(b)/(c) 已直接从局部放大图重新提取；参数与模型选择不使用 700–1200 s 验证区反向调节。
+- COMSOL 采用代表性并联通道方案 B，`areaScale=Ain/(W*Hair)` 实际进入总质量流量。0.1 m/s Stage 1 仍未收敛，因此 0.5–4 m/s 延续、传热、网格无关性和 CFD 能量守恒均未执行，也未生成虚假结果。
 
-COMSOL 脚本已经生成，但由于当前环境没有 COMSOL，尚未实际求解 `.mph`。
+机器可读汇总见 `outputs_v4/final_summary.json`，人工验收结论见 `outputs_v4/stage_acceptance_report.md`，COMSOL 证据见 `comsol/status_v4.json` 和 `comsol/logs_v4/`。

@@ -1,0 +1,41 @@
+{
+  "model": "Yuan2020_three_node_control_oriented_v3",
+  "heat_model": "A_thermoneutral_proxy",
+  "values": {
+    "C_th_J_K": 4381.600240346621,
+    "K_cool_W_K": 31.722471972119184,
+    "K_node_W_K": 7.1833293414246695,
+    "Kp_1_K": 0.0727170185330114,
+    "Ki_1_Ks": 0.0014992061134433243
+  },
+  "paper_reported_or_directly_derived": {
+    "reference_temperature_C": 55.0,
+    "fan_enable_temperature_C": 53.0,
+    "smc_deadband_C": 0.5,
+    "smc_update_period_s": 10.0,
+    "coolant_node_temperatures_forward_C": [
+      24.8,
+      30.05,
+      35.3
+    ],
+    "number_of_cells": 40
+  },
+  "assumptions": {
+    "polarization_curve_is_proxy": true,
+    "radiation_neglected": true,
+    "uniform_node_heat_generation": true
+  },
+  "metrics": {
+    "fig14_calibration_rmse_C": 0.24913712773122107,
+    "fig16_calibration_rmse_C": 0.2506316847976803,
+    "fig16_independent_validation_rmse_C": 0.2960474999313763,
+    "selected_heat_model": "A_thermoneutral_proxy",
+    "weighted_jacobian_condition_number": 1835765898.7165732,
+    "maximum_total_energy_residual_W": 1.4305320166288493e-11,
+    "maximum_relative_energy_residual": 3.573159290796472e-14,
+    "K_cool_times_Kp": 2.306763582309525,
+    "K_cool_times_Ki": 0.047558523914135585
+  },
+  "identifiability_note": "K_cool, Kp and Ki are structurally entangled when fan duty is unavailable; product parameters are more defensible than individual values.",
+  "sha256_without_hash_field": "3a52dd14d9b1a4bf56fd1b581456935ed3872d3a750313216d2a7a788e17083b"
+}

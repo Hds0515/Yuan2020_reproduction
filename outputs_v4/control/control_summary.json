@@ -1,0 +1,47 @@
+{
+  "reference_temperature_C": 55.0,
+  "reference_semantics": "paper optimum/control reference only; not a safety upper limit",
+  "safe_temperature_C": null,
+  "safety_conclusion": "No externally supported safe limit was supplied; no safety conclusion is made.",
+  "controller_definitions": {
+    "AuthorMeasured-PI-SMC": "direct true/measured temperatures at the three regional nodes; ideal paper baseline",
+    "SparseSensor-PI-SMC": "nodes 2 and 5 plus EKF; middle-node PI-SMC feedback",
+    "FiveNodeMean-PI-SMC": "nodes 2 and 5 plus EKF; five-node mean PI-SMC feedback",
+    "Hotspot-MPC": "nodes 2 and 5 plus EKF; three-block hotspot MPC"
+  },
+  "control_blocking": {
+    "horizon_steps": 12,
+    "block_steps": [
+      [
+        1,
+        4
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        9,
+        12
+      ]
+    ]
+  },
+  "direction_reversal": {
+    "fixed_objective_penalty": 2.0,
+    "minimum_dwell_s": 10.0,
+    "reversal_dead_time_s": 2.0
+  },
+  "feasible_scenario_count": 6,
+  "infeasible_scenarios_excluded_from_normal_aggregate": [
+    "actuator_limited"
+  ],
+  "actuator_limited_declared_infeasible": true,
+  "mpc_hotspot_improvement_still_holds": true,
+  "mpc_tradeoffs_relative_to_author_measured_pi_smc_feasible_scenarios": {
+    "hotspot_after_60s_improvement_percent": 1.4404663268274391,
+    "temperature_gradient_rmse_improvement_percent": 46.78076451014173,
+    "fan_energy_proxy_change_percent": 30.298675316710067,
+    "direction_switch_count_change": 316,
+    "mean_temperature_tracking_rmse_change_percent": 121.3720391844807
+  }
+}

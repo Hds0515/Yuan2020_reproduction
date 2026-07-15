@@ -1,0 +1,20 @@
+{
+  "feedback_source": "two-sensor EKF estimated five-node state",
+  "sensor_nodes_1_based": [
+    2,
+    5
+  ],
+  "scenario_count": 7,
+  "actuator_limited_declared_infeasible": true,
+  "maximum_hotspot_metric_initial_condition_limited": false,
+  "mpc_lower_mean_hotspot_violation_rmse": true,
+  "mpc_lower_mean_gradient": true,
+  "mpc_mean_maximum_hotspot_C": 60.01168136596038,
+  "pi_mean_maximum_hotspot_C": 60.21712187098514,
+  "mpc_mean_hotspot_violation_rmse_C": 1.7282023694491053,
+  "pi_mean_hotspot_violation_rmse_C": 2.1078833150740066,
+  "mpc_mean_gradient_C": 0.12433407096460374,
+  "pi_mean_gradient_C": 0.4137975446845168,
+  "mpc_mean_fan_energy_proxy_duty2_h": 0.004678879960317461,
+  "pi_mean_fan_energy_proxy_duty2_h": 0.004087206477456395
+}

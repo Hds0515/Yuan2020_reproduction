@@ -1,0 +1,29 @@
+{
+  "calibration": [
+    {
+      "source": "digitization/regenerated/Fig14_digitized.csv",
+      "time_s": [
+        0,
+        1200
+      ]
+    },
+    {
+      "source": "digitization/regenerated/Fig16_digitized.csv",
+      "time_s": [
+        0,
+        700
+      ]
+    }
+  ],
+  "independent_validation": [
+    {
+      "source": "digitization/regenerated/Fig16_digitized.csv",
+      "time_s": [
+        700,
+        1200
+      ]
+    }
+  ],
+  "validation_used_in_parameter_optimization": false,
+  "validation_used_only_for_predeclared_heat_model_A_B_comparison": true
+}

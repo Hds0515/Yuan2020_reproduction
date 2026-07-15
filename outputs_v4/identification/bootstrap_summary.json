@@ -1,0 +1,18 @@
+{
+  "replicate_count": 200,
+  "base_seed": 20300715,
+  "runtime_s": 603.3574248999994,
+  "successful_replicates": 200,
+  "Kcool_times_Kp_95pct_interval": [
+    3.186542114819826,
+    5.242089233148379
+  ],
+  "Kcool_times_Ki_95pct_interval": [
+    0.0610700669700336,
+    0.09342898392440184
+  ],
+  "independent_validation_rmse_C_95pct_interval": [
+    0.28915965945855954,
+    0.4695738460859893
+  ]
+}

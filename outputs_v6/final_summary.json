@@ -1,0 +1,89 @@
+{
+  "primary_model_integrity": {
+    "sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+    "config_reference_matches": true,
+    "frozen_file_matches": true,
+    "all_v5_runtime_records_match": true,
+    "all_v6_runtime_records_match": true,
+    "primary_selection_rerun": false
+  },
+  "comsol_local_6p4": {
+    "actual_local_execution": true,
+    "selection_audit_passed": true,
+    "full_default_flow_converged": true,
+    "flow_mass_imbalance_percent": 0.0123041299566,
+    "flow_pressure_range_Pa": 6.44752557631,
+    "prescribed_velocity_heat_converged": true,
+    "six_speed_mesh_and_energy_gate_passed": true,
+    "maximum_medium_fine_Tmax_relative_difference_percent": 0.0826456560227,
+    "maximum_medium_fine_region_difference_C": 0.102152149437,
+    "maximum_relative_energy_error": 1.10537053992e-13,
+    "credible_Fig7_like_map_count": 6,
+    "original_paper_geometry_exactly_reproduced": false
+  },
+  "distributed_model": {
+    "calibration_profile_rmse_C": 0.24986185766328425,
+    "independent_validation_profile_rmse_C": 1.7807518282478263,
+    "fig10_best_unfitted_velocity_m_s": 5.0,
+    "fig10_best_unfitted_rmse_C": 5.104641856537713,
+    "frozen_five_node_mean_region_rmse_C": 24.40672538736436,
+    "numerical_energy_conservation_passed": true,
+    "mesh_convergence_passed": true,
+    "external_validation_passed": false,
+    "frozen_five_node_independent_high_resolution_validation_passed": false,
+    "promoted_as_five_node_reference_truth": false
+  },
+  "observer_gated_MM_EKF": {
+    "fixed_v5_object_count": 100,
+    "fixed_noise_seed_count_per_object": 10,
+    "paired_sample_count": 1000,
+    "median_hotspot_rmse_improvement_percent": 41.066410330807926,
+    "mean_hotspot_rmse_improvement_percent": 39.44947592064096,
+    "improved_sample_fraction": 0.867,
+    "paired_mean_improvement_95pct_CI_percent": [37.50032957599896, 41.39709075299112],
+    "nominal_median_performance_loss_percent": 0.0,
+    "pure_noise_median_performance_loss_percent": 0.0,
+    "all_numeric_acceptance_gates_passed": true,
+    "post_hoc_development_disclosed": true
+  },
+  "control_equal_resource": {
+    "critical_search_configuration_count": 1152,
+    "equal_energy_match_count_within_5pct": 173,
+    "equal_energy_match_found": true,
+    "frozen_point_energy_relative_difference_percent": 4.540949456027632,
+    "critical_maximum_hotspot_absolute_decrease_C": -2.0081823214559265,
+    "critical_above_55C_RMSE_improvement_percent": -146.62022792993062,
+    "critical_gradient_RMSE_improvement_percent": -342.42794764005873,
+    "critical_direction_switch_count_change": -24,
+    "critical_mean_tracking_RMSE_change_percent": 104.08228107105089,
+    "equal_energy_hotspot_advantage_proven": false,
+    "reference_temperature_C": 55.0,
+    "reference_is_safety_limit": false
+  },
+  "final_answers": {
+    "full_COMSOL_flow_converged": true,
+    "prescribed_velocity_heat_converged": true,
+    "six_speed_credible_Fig7_like_maps_obtained": true,
+    "distributed_model_external_validation_passed": false,
+    "five_node_independent_high_resolution_validation_passed": false,
+    "MM_EKF_all_gates_passed": true,
+    "Hotspot_MPC_advantage_at_plus_minus_5pct_equal_energy": false,
+    "two_defensible_innovations": [
+      "Innovation-statistics and probability-entropy gated MM-EKF with automatic single-EKF fallback, supported on the fixed V5 stress test.",
+      "COMSOL-verified prescribed-velocity conjugate heat-transfer validation workflow with nested structured meshes, six-speed maps, and a full energy ledger."
+    ],
+    "methods_to_downgrade_or_remove": [
+      "50-node distributed model as externally validated reference truth",
+      "frozen five-node model as independently spatially validated",
+      "Hotspot-MPC as an equal-resource superior controller",
+      "instantaneous reversal distributed dynamics as a validated Fig.10 model",
+      "55 C as a safety limit"
+    ],
+    "ready_to_finalize_results_chapter": false,
+    "limited_results_draft_can_start": true
+  },
+  "pull_request_policy": {
+    "keep_draft": true,
+    "merge_allowed": false
+  }
+}

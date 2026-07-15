@@ -1,0 +1,42 @@
+{
+  "audit_timestamp_local": "2026-07-15T11:50:00+08:00",
+  "baseline_commit": "98af306",
+  "baseline_tag": "baseline_v2",
+  "three_node_executable": true,
+  "digitization_executable": false,
+  "identification_executable": false,
+  "five_node_executable": false,
+  "ekf_executable": false,
+  "mpc_executable": false,
+  "comsol_script_compiled": false,
+  "comsol_model_solved": false,
+  "all_outputs_reproducible": false,
+  "data_integrity": {
+    "csv_readable": 15,
+    "json_readable": 5,
+    "png_readable": 7,
+    "jpg_readable": 13,
+    "unreadable_files": [],
+    "frozen_parameters_internal_hash_valid": true,
+    "baseline_copy_file_count": 51,
+    "baseline_copy_hash_mismatches": 0
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "1.26.4",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "pillow": "12.2.0",
+    "matplotlib_available": false,
+    "comsol": "6.4.0.293",
+    "comsol_home": "E:/COMSOL/COMSOL64/Multiphysics"
+  },
+  "verified_baseline_metric": {
+    "fig16_validation_700_1200_overall_rmse_C": 0.3063033978947427,
+    "note": "Recomputed from existing cleaned CSV files; this does not prove raw-image reproducibility."
+  },
+  "comsol_compile_failure": {
+    "source": "Yuan2020Equivalent3D.java:177",
+    "message": "Unhandled exception type IOException at model.save(...)"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "primary_model_sha256": "971d1e9ea3c64bee71c383f4578450bf73e2b295c80cad158a8762aeeff2c8dc",
+  "frozen_split": {
+    "calibration_velocities_m_s": [4, 8],
+    "independent_validation_velocities_m_s": [5, 6, 10, 12],
+    "Fig10_role": "independent reversal validation",
+    "frozen_five_node_parameters_changed": false
+  },
+  "ordered_physical_audit": [
+    {
+      "item": 1,
+      "topic": "Fig.7 palette inversion and region definition",
+      "finding": "The printed color bar is cyclic: red appears at both low and high ends. Nearest-RGB inversion is therefore non-unique at the endpoints. The retained 3%-97% flow-coordinate window and robust row median suppress border/header pixels but cannot remove the fundamental endpoint ambiguity.",
+      "action": "Kept the V5 digitized profiles and ±1.5 K uncertainty fixed; did not re-label ambiguous red pixels to improve validation.",
+      "status": "unresolved_source_ambiguity"
+    },
+    {
+      "item": 2,
+      "topic": "Fig.2 mass-flow units and forward/reverse difference",
+      "finding": "The digitized axis is kg/s. At 100% duty the co-rotation curve is 3.82995169082e-4 kg/s and the reverse curve is 2.22608695652e-4 kg/s. The current steady Fig.7 model uses only the co-rotation curve; a reversal model with a single direction-independent flow is physically incomplete.",
+      "action": "Retained the V5 co-rotation mapping for an apples-to-apples fixed validation; flagged direction-specific flow as unavailable in the present dynamic model.",
+      "status": "model_deficiency"
+    },
+    {
+      "item": 3,
+      "topic": "2425.5 W/m2 heat-flux scope",
+      "finding": "The source image/repository does not establish whether 2425.5 W/m2 applies to one plate, one cell, or an equivalent stack area. The fitted effective heat fraction 0.133960789937 absorbs this scope ambiguity and is not a directly measured property.",
+      "action": "Did not replace the scope with an unsupported interpretation.",
+      "status": "not_identifiable_from_4_and_8_m_s"
+    },
+    {
+      "item": 4,
+      "topic": "3962 mm2 inlet area and parallel-channel scaling",
+      "finding": "The COMSOL equivalent channel area is 82.3333377009 mm2; 3962 mm2 implies a scale factor of 48.12146. Direct rho*A*v gives 0.0187640 kg/s at 4 m/s for the full area, whereas the V5 Fig.2 interpolation gives 1.26377e-4 kg/s. Velocity-to-duty and parallel-channel meanings are therefore not jointly identifiable from the figures.",
+      "action": "Kept the preregistered duty=100*velocity/12 mapping and reported it as an equivalent assumption, not a measured conversion.",
+      "status": "unresolved_scaling_ambiguity"
+    },
+    {
+      "item": 5,
+      "topic": "solid thickness, effective capacity, and natural convection",
+      "finding": "The 1D model uses total heat capacity 4830 J/K and a fitted external loss of 0.0920790 W/K, but the steady 4/8 m/s calibration contains no information about heat capacity. Thickness and natural convection are confounded with total UA and effective heat fraction.",
+      "action": "Recorded the steady-fit parameters but did not claim independent identification of thickness or capacity.",
+      "status": "structurally_confounded"
+    },
+    {
+      "item": 6,
+      "topic": "reversal dead zone, air residence, and sensor inertia",
+      "finding": "The current dynamic model reverses direction instantaneously, treats air sequentially quasi-steady, and has no sensor lag. These omitted time constants are not calibrated because Fig.10 remains a fixed validation set.",
+      "action": "Did not fit the omitted dynamics to Fig.10; retained the negative reversal result.",
+      "status": "external_validation_failure_mechanism"
+    }
+  ],
+  "identified_equivalent_parameters": [
+    {"name": "total_UA_W_K", "value": 1.00121697313, "fit_bounds": [0.01, 200.0], "source": "4 and 8 m/s Fig.7 profiles", "identifiability": "jointly fitted; confounded with mass-flow mapping"},
+    {"name": "total_external_loss_W_K", "value": 0.0920790242506, "fit_bounds": [0.005, 20.0], "source": "4 and 8 m/s Fig.7 profiles", "identifiability": "jointly fitted; confounded with heat fraction"},
+    {"name": "axial_edge_conductance_W_K", "value": 6.11997385699, "fit_bounds": [0.01, 100.0], "source": "4 and 8 m/s Fig.7 profile shape", "identifiability": "equivalent 1D value, not graphite bulk conductivity"},
+    {"name": "effective_heat_fraction", "value": 0.133960789937, "fit_bounds": [0.05, 2.0], "source": "4 and 8 m/s Fig.7 levels", "identifiability": "absorbs heat-flux area/scope and external-loss ambiguity"}
+  ],
+  "validation_results": {
+    "calibration_profile_RMSE_C": 0.249861857663,
+    "independent_profile_RMSE_C": 1.78075182825,
+    "independent_profile_threshold_C": 1.5,
+    "best_unfitted_Fig10_RMSE_C": 5.10464185654,
+    "Fig10_threshold_C": 0.75,
+    "frozen_five_node_region_RMSE_C": 24.4067253874,
+    "five_node_threshold_C": 1.0,
+    "energy_conservation_passed": true,
+    "mesh_convergence_passed": true,
+    "distributed_external_validation_passed": false,
+    "five_node_external_validation_passed": false
+  },
+  "decision": "The 50-node model remains an audit model and is not promoted to five-node reference truth."
+}
