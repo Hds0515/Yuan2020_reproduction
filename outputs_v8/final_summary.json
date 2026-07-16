@@ -1,0 +1,144 @@
+{
+  "protected_v7_tag": "v7_physical_gate_failed",
+  "scope": "Fig.7 cooling-structure discrepancy only; no ROM, MM-EKF or MPC executed",
+  "digitization": {
+    "source_image": "source_images/Fig7.jpg",
+    "source_image_sha256": "967bba1776c53cf643652dd5428fa1dde41f487d15512da2a3c8aedea2cf117d",
+    "manual_point_count": 72,
+    "manual_points_per_region_per_speed": 4,
+    "colour_bar_review": {
+      "left_panels_K": [
+        295.0,
+        338.0
+      ],
+      "right_panels_K": [
+        295.0,
+        335.0
+      ],
+      "cyclic_red_endpoint_ambiguity": true,
+      "manual_resolution": "sample only the coloured fin core and map its continuous gradient to the >=307 K colour-bar branch"
+    },
+    "overall_manual_vs_automatic_region_RMSE_K": 0.6615875328864183,
+    "maximum_per_speed_region_RMSE_K": 0.8582018004759573,
+    "redigitization_trigger_threshold_K": 1.0,
+    "redigitization_triggered": false,
+    "digitization_reliable": true,
+    "validation_threshold_changed": false,
+    "fixed_validation_target": "outputs_v5/digitization/external/Fig7_region_summary.csv"
+  },
+  "frozen_external_heat_loss": {
+    "natural_convection": {
+      "method": "Churchill-Chu vertical-plate correlation evaluated from the local surface temperature",
+      "characteristic_length_m": 0.24936900555275113,
+      "reference_surface_temperature_C": 55.0,
+      "reference_h_external_W_m2K": 4.858655294653669,
+      "calibrated_to_Fig7": false,
+      "source": "https://www.sandia.gov/files/sierra/Aria_Users_5_20/simulation_setup/advanced_feat/correlation_heat_transfer_coeff_reference.html"
+    },
+    "radiation": {
+      "emissivity": 0.82,
+      "basis": "fixed midpoint of the Industrial Graphite Engineering Handbook range 0.70-0.95",
+      "calibrated_to_Fig7": false,
+      "source": "https://nucleus.iaea.org/sites/graphiteknowledgebase/Meetings2/Old%20Meetings/2017/Background%20Info/GraphiteHandbook.pdf"
+    }
+  },
+  "v7_energy_partition": {
+    "four_m_s_air_fraction": 0.30005086459504465,
+    "four_m_s_external_fraction": 0.6999491436636566,
+    "external_exceeds_air_at_4m_s": true
+  },
+  "area_interpretation": {
+    "recommended_structure": "H3 discrete channels with conserved total area, mass flow and heat",
+    "stack_vs_single_aggregate_label_identifiable": false,
+    "reason": "H1 and H2 are exactly scale-equivalent for temperature when all extensive quantities are scaled together",
+    "hypothesis_count": 3
+  },
+  "model_decision": {
+    "selected_model": null,
+    "M1_passed": false,
+    "M2_passed": false,
+    "stop_rule_triggered": true,
+    "downstream_ROM_or_Oracle_authorized": false,
+    "selected_model_sha256": null
+  },
+  "structural_comparison": [
+    {
+      "model": "M0",
+      "free_parameter_count": 2,
+      "calibration_region_RMSE_C": 4.4705755701,
+      "independent_overall_region_RMSE_C": 5.0952730883,
+      "independent_worst_speed_region_RMSE_C": 6.8812277896,
+      "independent_Tmax_RMSE_C": 6.3101817916,
+      "independent_DeltaT_RMSE_C": 7.4876520168,
+      "hotspot_trend_spearman": -0.9486832981,
+      "hotspot_trend_assessable": true,
+      "AICc_calibration": 25.9702059586,
+      "BIC_calibration": 21.5537248971,
+      "parameters_at_boundary": true,
+      "maximum_medium_fine_Tmax_relative_difference": 8.40182e-05,
+      "maximum_medium_fine_region_difference_C": 0.0441817501,
+      "maximum_energy_residual_relative": 0.0002794491,
+      "mesh_and_energy_passed": true,
+      "air_cooling_fraction_monotonically_increases": true,
+      "fine_six_speed_runtime_s": null,
+      "runtime_status": "not_recorded_in_V7_machine_readable_output",
+      "all_acceptance_gates_passed": false
+    },
+    {
+      "model": "M1",
+      "free_parameter_count": 2,
+      "calibration_region_RMSE_C": 3.4945216321,
+      "independent_overall_region_RMSE_C": 3.728184217,
+      "independent_worst_speed_region_RMSE_C": 4.5056276404,
+      "independent_Tmax_RMSE_C": 3.8225609739,
+      "independent_DeltaT_RMSE_C": 9.1633215081,
+      "hotspot_trend_spearman": 0.0,
+      "hotspot_trend_assessable": false,
+      "AICc_calibration": 23.014357931,
+      "BIC_calibration": 18.5978768695,
+      "parameters_at_boundary": true,
+      "maximum_medium_fine_Tmax_relative_difference": 1.426e-06,
+      "maximum_medium_fine_region_difference_C": 0.0040087285,
+      "maximum_energy_residual_relative": 0.0,
+      "mesh_and_energy_passed": true,
+      "air_cooling_fraction_monotonically_increases": true,
+      "fine_six_speed_runtime_s": 0.317641,
+      "runtime_status": "measured_wall_clock",
+      "all_acceptance_gates_passed": false
+    },
+    {
+      "model": "M2",
+      "free_parameter_count": 2,
+      "calibration_region_RMSE_C": 2.549630255,
+      "independent_overall_region_RMSE_C": 2.845862878,
+      "independent_worst_speed_region_RMSE_C": 3.2253898425,
+      "independent_Tmax_RMSE_C": 4.7406894514,
+      "independent_DeltaT_RMSE_C": 9.1312810881,
+      "hotspot_trend_spearman": 0.0,
+      "hotspot_trend_assessable": false,
+      "AICc_calibration": 19.2313802072,
+      "BIC_calibration": 14.8148991457,
+      "parameters_at_boundary": false,
+      "maximum_medium_fine_Tmax_relative_difference": 1.2652e-06,
+      "maximum_medium_fine_region_difference_C": 0.0037652153,
+      "maximum_energy_residual_relative": 0.0,
+      "mesh_and_energy_passed": true,
+      "air_cooling_fraction_monotonically_increases": true,
+      "fine_six_speed_runtime_s": 0.2938239,
+      "runtime_status": "measured_wall_clock",
+      "all_acceptance_gates_passed": false
+    }
+  ],
+  "final_answers": {
+    "Fig7_digitization_reliable": true,
+    "recommended_3962mm2_interpretation": "H3 structural representation; H1 versus H2 scale label remains unidentifiable",
+    "error_mainly_internal_cooling_structure": true,
+    "M1_or_M2_passed_independent_validation": false,
+    "continue_ROM_and_Oracle_MPC": false,
+    "retain_Thermal_article_as_high_fidelity_baseline": false
+  },
+  "pull_request_policy": {
+    "keep_draft": true,
+    "merge_allowed": false
+  }
+}
