@@ -1,0 +1,44 @@
+{
+  "model": "M3_limited_equivalent_inverse_model",
+  "parameters": {
+    "h0_W_m2K_at_8m_s": 88.75329934335754,
+    "velocity_exponent_m": 0.6572949080566769,
+    "downstream_cooling_bias_beta": 1.3679347347371371,
+    "heat_source_skew_eta": -0.3118665087792232
+  },
+  "bounds": {
+    "h0_W_m2K_at_8m_s": [
+      1.0,
+      300.0
+    ],
+    "velocity_exponent_m": [
+      0.1,
+      1.5
+    ],
+    "downstream_cooling_bias_beta": [
+      -8.0,
+      8.0
+    ],
+    "heat_source_skew_eta": [
+      -0.95,
+      0.95
+    ]
+  },
+  "calibration_velocities_m_s": [
+    4.0,
+    8.0
+  ],
+  "independent_validation_velocities_m_s": [
+    5.0,
+    6.0,
+    10.0,
+    12.0
+  ],
+  "parameter_interpretation": {
+    "h0_W_m2K_at_8m_s": "lumped effective internal heat transfer; hydraulic diameter and contact area are not separately identifiable",
+    "velocity_exponent_m": "velocity sensitivity of effective forced convection",
+    "downstream_cooling_bias_beta": "equivalent downstream cooling imbalance; not a unique manifold geometry",
+    "heat_source_skew_eta": "equivalent linear heat-source skew; not a measured electrochemical heat map"
+  },
+  "not_original_CAD": true
+}

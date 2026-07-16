@@ -1,0 +1,7 @@
+{
+  "mean_temperature_rmse_C": 0.004489887102128311,
+  "hotspot_rmse_C": 0.02244085397921498,
+  "maximum_absolute_energy_residual_W": 1.5074164139150525e-11,
+  "five_node_total_capacity_J_K": 4381.600240346621,
+  "area_preservation_ratio": 1.0
+}

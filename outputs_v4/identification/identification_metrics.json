@@ -1,0 +1,11 @@
+{
+  "fig14_calibration_rmse_C": 0.2475779546072061,
+  "fig16_calibration_rmse_C": 0.2479101726881249,
+  "fig16_independent_validation_rmse_C": 0.3253357219326715,
+  "selected_heat_model": "B_quadratic_current",
+  "weighted_jacobian_condition_number": 95762467603.8357,
+  "maximum_total_energy_residual_W": 2.2260955460405935e-11,
+  "maximum_relative_energy_residual": 2.937314660301795e-14,
+  "K_cool_times_Kp": 3.554248389956111,
+  "K_cool_times_Ki": 0.07436895721139133
+}

@@ -1,0 +1,89 @@
+{
+  "scope": "limited equivalent inverse identification; no claim of original geometry recovery",
+  "source_target": {
+    "path": "outputs_v5/digitization/external/Fig7_region_summary.csv",
+    "sha256": "01b87ddea0591e84c30cfa8bbe2c789bed47a36022895f18b2e4c7cee90ffe50",
+    "digitization_manual_audit_RMSE_C": 0.662
+  },
+  "frozen_equivalent_parameters": {
+    "h0_W_m2K_at_8m_s": 88.75329934335754,
+    "velocity_exponent_m": 0.6572949080566769,
+    "downstream_cooling_bias_beta": 1.3679347347371371,
+    "heat_source_skew_eta": -0.3118665087792232
+  },
+  "frozen_parameter_file_sha256": "e4504981c33e2381cb29c2888fd0604a7b745a4c2bbf8523073b10f7fd2c7343",
+  "validation_metrics": {
+    "calibration_region_RMSE_C": 0.25848825647224416,
+    "independent_overall_region_RMSE_C": 1.1569356765720122,
+    "independent_worst_speed_region_RMSE_C": 1.621806312417134,
+    "independent_Tmax_RMSE_C": 1.636881973740842,
+    "independent_DeltaT_RMSE_C": 1.6484082934410549,
+    "hotspot_trend_spearman": 0.0,
+    "hotspot_trend_assessable": false,
+    "maximum_energy_residual_relative": 5.185278949526928e-13,
+    "six_speed_runtime_s": 0.13753413800009184,
+    "region_overall_gate_passed": true,
+    "region_each_speed_gate_passed": false,
+    "DeltaT_gate_passed": true,
+    "hotspot_gate_passed": false,
+    "energy_gate_passed": true,
+    "calibration_full_profile_RMSE_C": 3.6987890681382884,
+    "independent_full_profile_RMSE_C": 1.850605851387093
+  },
+  "identifiability": {
+    "singular_values": [
+      32.43550459728964,
+      26.885208017768893,
+      2.437736733324044,
+      0.17716518072921547
+    ],
+    "jacobian_condition_number": 183.0805831246549,
+    "rank": 4,
+    "parameter_correlation_matrix": [
+      [
+        1.0000000000000002,
+        0.10446707010254387,
+        -0.8715488224328648,
+        0.87892297382078
+      ],
+      [
+        0.1044670701024671,
+        0.9999999999999999,
+        0.29756656841802637,
+        -0.28995951258613206
+      ],
+      [
+        -0.8715488224329035,
+        0.29756656841795415,
+        1.0000000000000002,
+        -0.992051889189092
+      ],
+      [
+        0.8789229738208169,
+        -0.28995951258606006,
+        -0.9920518891890904,
+        0.9999999999999999
+      ]
+    ],
+    "maximum_absolute_parameter_correlation": 0.992051889189092
+  },
+  "multistart": {
+    "start_count": 16,
+    "best_calibration_RSS_C2": 0.3107558523109884,
+    "near_optimal_solution_count": 16,
+    "near_optimal_threshold_delta_RSS_C2": 0.25
+  },
+  "bootstrap": {
+    "replicates": 30,
+    "noise_sigma_C": 0.662,
+    "interval_file": "outputs_v9/parameter_intervals.csv"
+  },
+  "decision": {
+    "equivalent_regional_temperature_model_improved": true,
+    "actual_geometry_recovered": false,
+    "high_fidelity_authorized": false,
+    "ROM_MM_EKF_Oracle_MPC_authorized": false,
+    "use_allowed": "steady regional-temperature sensitivity and bounded equivalent simulation only",
+    "use_prohibited": "original CAD claim, hotspot truth, high-fidelity ROM training or decisive control validation"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "comsol_version": "6.4.0.293",
+  "selection_audit": {
+    "compiled": true,
+    "passed": true,
+    "fluid_domain_ids": [1],
+    "inlet_boundary_ids": [1],
+    "outlet_boundary_ids": [6],
+    "wall_boundary_ids": [2, 3, 4, 5],
+    "inlet_boundary_count": 1,
+    "outlet_boundary_count": 1,
+    "inlet_area_m2": 8.23333377009e-05,
+    "outlet_area_m2": 8.23333377009e-05
+  },
+  "default_flow_solver": {
+    "compiled": true,
+    "default_solver_tree_used": true,
+    "converged": true,
+    "inlet_velocity_m_s": 0.1,
+    "channel_inlet_mass_flow_kg_s": 9.24618576504e-06,
+    "channel_outlet_mass_flow_kg_s": 9.24504810232e-06,
+    "scaled_inlet_mass_flow_kg_s": 0.000444939937037,
+    "scaled_outlet_mass_flow_kg_s": 0.000444885191049,
+    "relative_mass_imbalance": 0.000123041299566,
+    "mass_imbalance_percent": 0.0123041299566,
+    "minimum_pressure_Pa": 0.0,
+    "maximum_pressure_Pa": 6.44752557631,
+    "pressure_range_Pa": 6.44752557631,
+    "acceptance_below_0p1_percent": true
+  },
+  "prescribed_velocity_heat": {
+    "compiled": true,
+    "physics_interface": "HeatTransferInSolidsAndFluids",
+    "prescribed_velocity_API_confirmed": true,
+    "air_material_included": true,
+    "graphite_material_included": true,
+    "air_inlet_temperature_C": 25.0,
+    "solid_heat_flux_W_m2": 2425.5,
+    "structured_swept_mesh_elements": {
+      "coarse": 2160,
+      "medium": 17280,
+      "fine": 64800
+    },
+    "velocities_m_s": [4, 5, 6, 8, 10, 12],
+    "fine_mesh_results": [
+      {"velocity_m_s": 4, "T_inlet_region_C": 154.978559753, "T_middle_region_C": 170.823064536, "T_outlet_region_C": 181.731502777, "Tmax_C": 183.859025619, "hotspot_xyz_m": [0.3, 0.0708981478611, 0.011], "air_outlet_C": 177.574294130, "heat_input_W": 59.9098497574, "air_enthalpy_gain_W": 59.9098497574, "relative_energy_error": 6.02498105449e-14},
+      {"velocity_m_s": 5, "T_inlet_region_C": 130.374805827, "T_middle_region_C": 144.092720269, "T_outlet_region_C": 153.784492735, "Tmax_C": 155.726172251, "hotspot_xyz_m": [0.3, 0.0708981478611, 0.011], "air_outlet_C": 147.059435304, "heat_input_W": 59.9098497574, "air_enthalpy_gain_W": 59.9098497574, "relative_energy_error": 4.26967161342e-14},
+      {"velocity_m_s": 6, "T_inlet_region_C": 114.801530212, "T_middle_region_C": 127.010547566, "T_outlet_region_C": 135.737152387, "Tmax_C": 137.520155493, "hotspot_xyz_m": [0.3, 0.0, 0.011], "air_outlet_C": 126.716196087, "heat_input_W": 59.9098497574, "air_enthalpy_gain_W": 59.9098497574, "relative_energy_error": 2.08739501101e-14},
+      {"velocity_m_s": 8, "T_inlet_region_C": 96.3001439542, "T_middle_region_C": 106.593864177, "T_outlet_region_C": 113.955495005, "Tmax_C": 115.497051267, "hotspot_xyz_m": [0.3, 0.0640370367778, 0.011], "air_outlet_C": 101.287147065, "heat_input_W": 59.9098497574, "air_enthalpy_gain_W": 59.9098497575, "relative_energy_error": 1.10537053992e-13},
+      {"velocity_m_s": 10, "T_inlet_region_C": 85.6234583369, "T_middle_region_C": 94.8065620058, "T_outlet_region_C": 101.293152371, "Tmax_C": 102.668751644, "hotspot_xyz_m": [0.3, 0.0228703702778, 0.011], "air_outlet_C": 86.0297176521, "heat_input_W": 59.9098497574, "air_enthalpy_gain_W": 59.9098497574, "relative_energy_error": 4.63733778013e-14},
+      {"velocity_m_s": 12, "T_inlet_region_C": 78.5838795705, "T_middle_region_C": 87.0660513863, "T_outlet_region_C": 92.9672743383, "Tmax_C": 94.2265184870, "hotspot_xyz_m": [0.3, 0.0663240738056, 0.011], "air_outlet_C": 75.8580980434, "heat_input_W": 59.9098497574, "air_enthalpy_gain_W": 59.9098497574, "relative_energy_error": 8.30213924832e-16}
+    ],
+    "medium_to_fine_acceptance": [
+      {"velocity_m_s": 4, "Tmax_relative_difference": 5.36811714893e-05, "maximum_region_difference_C": 0.0182337483939, "passed": true},
+      {"velocity_m_s": 5, "Tmax_relative_difference": 0.000109159486042, "maximum_region_difference_C": 0.0246937324905, "passed": true},
+      {"velocity_m_s": 6, "Tmax_relative_difference": 0.000195663462176, "maximum_region_difference_C": 0.0341679020971, "passed": true},
+      {"velocity_m_s": 8, "Tmax_relative_difference": 0.000403026195293, "maximum_region_difference_C": 0.0582407527340, "passed": true},
+      {"velocity_m_s": 10, "Tmax_relative_difference": 0.000601938159852, "maximum_region_difference_C": 0.0748038734857, "passed": true},
+      {"velocity_m_s": 12, "Tmax_relative_difference": 0.000826456560227, "maximum_region_difference_C": 0.102152149437, "passed": true}
+    ],
+    "all_six_speeds_converged": true,
+    "all_mesh_and_energy_gates_passed": true,
+    "fig7_like_map_count": 6,
+    "fig7_like_maps_usable": true
+  }
+}

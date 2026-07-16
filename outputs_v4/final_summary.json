@@ -1,0 +1,59 @@
+{
+  "curve_digitization_reproducible": true,
+  "local_detail_digitization_completed": true,
+  "independent_validation_rmse_C": 0.3253357219326715,
+  "local_detail_validation_rmse_C": 0.2920396031204365,
+  "bootstrap_replicates": 200,
+  "five_node_energy_consistency_passed": true,
+  "temperature_semantics_separated": true,
+  "observer_method": "parameter-model-bank MM-EKF/MMAE; not an unknown-airflow-direction switching observer",
+  "actuator_limited_excluded_from_feasible_aggregate": true,
+  "comsol_stage1_converged": false,
+  "no_synthetic_comsol_results": true,
+  "stage_answers": {
+    "1_multiple_model_better_in_majority_of_true_mismatches": {
+      "answer": true,
+      "improved_scenarios": 5,
+      "total_true_mismatch_scenarios": 5,
+      "mean_hotspot_improvement_percent": 30.48050464108899,
+      "paired_bootstrap_95pct_CI_percent": [
+        9.274607655711034,
+        51.68640162646695
+      ]
+    },
+    "2_mpc_hotspot_improvement_still_holds": {
+      "answer": true,
+      "hotspot_after_60s_improvement_percent": 1.4404663268274391
+    },
+    "3_mpc_extra_fan_and_direction_cost": {
+      "hotspot_after_60s_improvement_percent": 1.4404663268274391,
+      "temperature_gradient_rmse_improvement_percent": 46.78076451014173,
+      "fan_energy_proxy_change_percent": 30.298675316710067,
+      "direction_switch_count_change": 316,
+      "mean_temperature_tracking_rmse_change_percent": 121.3720391844807
+    },
+    "4_55C_is_reference_only": {
+      "answer": true,
+      "safe_temperature_C": null,
+      "safety_conclusion": "No externally supported safe limit was supplied; no safety conclusion is made."
+    },
+    "5_comsol_inlet_area_mass_flow_consistent_with_3962mm2": {
+      "geometry_and_formula_consistent": true,
+      "numerically_verified_by_converged_solution": false,
+      "decision": "B: representative parallel channel with all extensive totals scaled by areaScale"
+    },
+    "6_first_converged_0p1ms_flow_solution": false,
+    "7_converged_4ms_flow_solution": false,
+    "8_first_sequential_flow_thermal_solution": false,
+    "9_energy_conservation_passed": {
+      "python_lumped_models": true,
+      "comsol_stage3": false
+    },
+    "10_remaining_tasks": [
+      "Resolve the Stage 1 pressure-velocity conditioning/convergence failure and pass <0.1% mass imbalance.",
+      "Only then continue 0.1, 0.5, 1, 2, and 4 m/s with previous solutions as initial values.",
+      "Only after a converged 4 m/s flow field, add one-way heat transfer and pass the <0.5% energy balance.",
+      "Six-speed and three-mesh studies remain prohibited until Stage 3 passes."
+    ]
+  }
+}

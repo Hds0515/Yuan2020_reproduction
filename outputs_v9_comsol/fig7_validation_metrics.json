@@ -1,0 +1,25 @@
+{
+  "fixed_calibration_velocities_m_s": [
+    4.0,
+    8.0
+  ],
+  "fixed_independent_validation_velocities_m_s": [
+    5.0,
+    6.0,
+    10.0,
+    12.0
+  ],
+  "calibration_region_RMSE_C": 0.2714584942932351,
+  "independent_overall_region_RMSE_C": 1.1727715857719732,
+  "independent_worst_speed_m_s": 6.0,
+  "independent_worst_speed_region_RMSE_C": 1.638565468802094,
+  "independent_Tmax_RMSE_C": 1.6401846746632975,
+  "independent_DeltaT_RMSE_C": 1.6500700098541794,
+  "hotspot_trend_spearman": 0.0,
+  "hotspot_trend_assessable": false,
+  "hotspot_gate_passed": false,
+  "maximum_energy_residual_relative": 0.00028159694615374417,
+  "region_overall_gate_le_1p5_C_passed": true,
+  "region_each_speed_gate_le_1p5_C_passed": false,
+  "high_fidelity_gate_passed": false
+}

@@ -1,0 +1,25 @@
+{
+  "source_image": "source_images/Fig7.jpg",
+  "source_image_sha256": "967bba1776c53cf643652dd5428fa1dde41f487d15512da2a3c8aedea2cf117d",
+  "manual_point_count": 72,
+  "manual_points_per_region_per_speed": 4,
+  "colour_bar_review": {
+    "left_panels_K": [
+      295.0,
+      338.0
+    ],
+    "right_panels_K": [
+      295.0,
+      335.0
+    ],
+    "cyclic_red_endpoint_ambiguity": true,
+    "manual_resolution": "sample only the coloured fin core and map its continuous gradient to the >=307 K colour-bar branch"
+  },
+  "overall_manual_vs_automatic_region_RMSE_K": 0.6615875328864183,
+  "maximum_per_speed_region_RMSE_K": 0.8582018004759573,
+  "redigitization_trigger_threshold_K": 1.0,
+  "redigitization_triggered": false,
+  "digitization_reliable": true,
+  "validation_threshold_changed": false,
+  "fixed_validation_target": "outputs_v5/digitization/external/Fig7_region_summary.csv"
+}
