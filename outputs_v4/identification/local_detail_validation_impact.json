@@ -1,0 +1,6 @@
+{
+  "main_panel_independent_validation_rmse_C": 0.3253357219326715,
+  "Fig16c_local_panel_independent_validation_rmse_C": 0.2920396031204365,
+  "local_minus_main_rmse_C": -0.03329611881223504,
+  "parameters_refit_to_local_panel": false
+}

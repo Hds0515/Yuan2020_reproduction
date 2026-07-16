@@ -1,0 +1,4 @@
+hypothesis,interpretation,modelled_inlet_area_m2,parallel_scale,modelled_heat_input_W,total_heat_input_W,modelled_mdot_at_8m_s_kg_s,total_mdot_at_8m_s_kg_s,channel_count_per_model,contact_area_per_model_m2,identifiability
+H1,3962 mm2 stack total; one representative cell channel scaled by 40,9.905000000000001e-05,40,1.49774625,59.90985,0.0009382016,0.037528064,1,0.0006175,temperature-scale equivalent to H2 when every extensive quantity is scaled consistently
+H2,3962 mm2 is the total effective inlet of one aggregate CFD model,0.003962,1,59.90985,59.90985,0.037528064,0.037528064,1,0.0247,temperature-scale equivalent to H1; Fig.7 alone cannot label stack versus aggregate model
+H3,fixed 3962 mm2 total inlet represented by forty discrete rectangular channels,0.003962,1,59.90985,59.90985,0.037528064,0.037528064,40,0.3970952044422009,"structurally distinguishable through wetted perimeter, but channel count is not supplied by Fig.7"

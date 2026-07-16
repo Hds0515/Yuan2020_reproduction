@@ -1,0 +1,46 @@
+{
+  "method_classification": "parameter-model-bank MM-EKF/MMAE; not an unknown-airflow-direction switching observer",
+  "truth_generation_policy": "Each scenario uses its declared plant and load input to generate an independent truth trajectory.",
+  "comparison_randomness_policy": "Within each scenario, single-model and model-bank observers use identical truth, measurements, and seed.",
+  "declared_bank_models": [
+    {
+      "name": "nominal",
+      "input_scale": 1.0
+    },
+    {
+      "name": "capacity_plus_12pct",
+      "input_scale": 1.0
+    },
+    {
+      "name": "cooling_minus_15pct",
+      "input_scale": 1.0
+    },
+    {
+      "name": "conduction_plus_20pct",
+      "input_scale": 1.0
+    },
+    {
+      "name": "combined_mismatch",
+      "input_scale": 1.0
+    },
+    {
+      "name": "load_input_minus_10pct",
+      "input_scale": 0.9
+    }
+  ],
+  "best_two_sensor_nodes_1_based": [
+    2,
+    5
+  ],
+  "true_mismatch_scenario_count": 5,
+  "model_bank_improved_scenario_count": 5,
+  "model_bank_improves_majority_of_true_mismatches": true,
+  "mean_hotspot_improvement_percent": 30.48050464108899,
+  "worst_scenario_improvement_percent": 0.42671905193009246,
+  "paired_bootstrap_mean_improvement_95pct_CI_percent": [
+    9.274607655711034,
+    51.68640162646695
+  ],
+  "paired_bootstrap_replicates": 5000,
+  "conclusion": "The parameter-model-bank MM-EKF/MMAE improves hotspot RMSE in a majority of true mismatch scenarios."
+}

@@ -1,0 +1,44 @@
+{
+  "model": "Yuan2020_three_node_control_oriented_v4_analysis",
+  "heat_model": "B_quadratic_current",
+  "values": {
+    "C_th_J_K": 6726.531065432641,
+    "K_cool_W_K": 38.32684334526657,
+    "K_node_W_K": 11.188082668948265,
+    "Kp_1_K": 0.09273522366394066,
+    "Ki_1_Ks": 0.001940388268906994,
+    "heat_a0_W": 5.425927983801134,
+    "heat_a1_W_A": 15.340639009741588,
+    "heat_a2_W_A2": 0.6656761263312913
+  },
+  "paper_reported_or_directly_derived": {
+    "reference_temperature_C": 55.0,
+    "fan_enable_temperature_C": 53.0,
+    "smc_deadband_C": 0.5,
+    "smc_update_period_s": 10.0,
+    "coolant_node_temperatures_forward_C": [
+      24.8,
+      30.05,
+      35.3
+    ],
+    "number_of_cells": 40
+  },
+  "assumptions": {
+    "polarization_curve_is_proxy": true,
+    "radiation_neglected": true,
+    "uniform_node_heat_generation": true
+  },
+  "metrics": {
+    "fig14_calibration_rmse_C": 0.2475779546072061,
+    "fig16_calibration_rmse_C": 0.2479101726881249,
+    "fig16_independent_validation_rmse_C": 0.3253357219326715,
+    "selected_heat_model": "B_quadratic_current",
+    "weighted_jacobian_condition_number": 95762467603.8357,
+    "maximum_total_energy_residual_W": 2.2260955460405935e-11,
+    "maximum_relative_energy_residual": 2.937314660301795e-14,
+    "K_cool_times_Kp": 3.554248389956111,
+    "K_cool_times_Ki": 0.07436895721139133
+  },
+  "identifiability_note": "K_cool, Kp and Ki are structurally entangled when fan duty is unavailable; product parameters are more defensible than individual values.",
+  "sha256_without_hash_field": "1091c4bffa8e9a5605833ca159c64a453c58897ea8444a56295e0876ad8b1e46"
+}

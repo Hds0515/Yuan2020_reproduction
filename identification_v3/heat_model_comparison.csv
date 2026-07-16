@@ -1,0 +1,3 @@
+heat_model,physically_admissible,fig14_calibration_rmse_C,fig16_calibration_rmse_C,fig16_independent_validation_rmse_C
+A_thermoneutral_proxy,True,0.24913712773122107,0.2506316847976803,0.2960474999313763
+B_quadratic_current,True,0.2475779546072061,0.2479101726881249,0.3253357219326715

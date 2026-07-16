@@ -1,0 +1,69 @@
+{
+  "M0": {
+    "parameters": {
+      "h_external_W_m2K": 30.0,
+      "emissivity": 1.0
+    },
+    "bounds": {
+      "h_external_W_m2K": [
+        0.0,
+        30.0
+      ],
+      "emissivity": [
+        0.0,
+        1.0
+      ]
+    },
+    "parameters_at_boundary": true,
+    "role": "V7 failed baseline only"
+  },
+  "M1": {
+    "parameters": {
+      "equivalent_hydraulic_diameter_m": 0.029999999999999954,
+      "contact_area_multiplier": 0.27555714474180215
+    },
+    "bounds": {
+      "equivalent_hydraulic_diameter_m": [
+        0.002,
+        0.03
+      ],
+      "contact_area_multiplier": [
+        0.05,
+        2.0
+      ]
+    },
+    "parameters_at_boundary": true,
+    "calibration_cost": 36.615863284293894,
+    "calibration_function_evaluations": 10,
+    "explicit_geometry": {
+      "total_inlet_area_m2": 0.003962,
+      "channel_count": 40,
+      "channel_width_m": 0.009905,
+      "channel_height_m": 0.01,
+      "rib_width_m": 0.001,
+      "total_pitch_width_m": 0.43620000000000003,
+      "wetted_perimeter_total_m": 1.5924,
+      "nominal_hydraulic_diameter_m": 0.00995227329816629,
+      "nominal_contact_area_m2": 0.3970952044422009
+    }
+  },
+  "M2": {
+    "parameters": {
+      "h0_W_m2K_at_8m_s": 91.0974242118531,
+      "velocity_exponent_m": 0.6381724843102996
+    },
+    "bounds": {
+      "h0_W_m2K_at_8m_s": [
+        0.5,
+        200.0
+      ],
+      "velocity_exponent_m": [
+        0.2,
+        1.2
+      ]
+    },
+    "parameters_at_boundary": false,
+    "calibration_cost": 19.490859289602618,
+    "calibration_function_evaluations": 8
+  }
+}

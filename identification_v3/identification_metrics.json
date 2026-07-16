@@ -1,0 +1,11 @@
+{
+  "fig14_calibration_rmse_C": 0.24913712773122107,
+  "fig16_calibration_rmse_C": 0.2506316847976803,
+  "fig16_independent_validation_rmse_C": 0.2960474999313763,
+  "selected_heat_model": "A_thermoneutral_proxy",
+  "weighted_jacobian_condition_number": 1835765898.7165732,
+  "maximum_total_energy_residual_W": 1.4305320166288493e-11,
+  "maximum_relative_energy_residual": 3.573159290796472e-14,
+  "K_cool_times_Kp": 2.306763582309525,
+  "K_cool_times_Ki": 0.047558523914135585
+}
