@@ -1,0 +1,57 @@
+{
+  "registered_before_v13_dynamic_optimization": true,
+  "reference": {
+    "title": "Experimental study on the dynamic response of voltage and temperature of an open-cathode air-cooled proton exchange membrane fuel cell",
+    "doi": "10.1016/j.ijhydene.2024.01.045",
+    "figure_5_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0360319924000478-gr5.jpg",
+    "figure_5_sha256": "A50F12D8C0653DB83A0CAFC1D2F7961689CFB1BF0E65FA42831263712B4EEA48",
+    "figure_4_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0360319924000478-gr4.jpg"
+  },
+  "predecessor": {
+    "v12_frozen_parameter_sha256": "35cc2b8edce569ee18e01322baf88f2b21d74a42044ff40150fb4cf2c5c06f95",
+    "retained": "six steady spatial/airflow parameters and the mesh-consistent finite-volume structure",
+    "discarded": "V12 dynamic fan-release inference and its three dynamic thermal parameters"
+  },
+  "known_input": {
+    "fan_PWM_percent": 60.0,
+    "ramp_2A": "2 A increments every 50 s, 2 to 40 A loading then unloading",
+    "ramp_4A": "4 A increments every 100 s, 4 to 40 A loading then unloading",
+    "ambient_temperature_C": 23.0,
+    "voltage_closure": "digitized Fig.4 operating envelope: V_stack=clip(33.5-0.34*I,19.5,33.5)"
+  },
+  "data_partition": {
+    "calibration": "Fig.5(e), 2 A ramp, cathode inlet/intermediate/outlet temperature",
+    "final_confirmation": "Fig.5(f), 4 A ramp, cathode inlet/intermediate/outlet temperature",
+    "independent_spatial_confirmation": "V12 held-out Fig.8 group 3 result, parameters not retuned",
+    "independent_numerical_confirmation": "4800 versus 19200 states and COMSOL 6.4"
+  },
+  "permitted_dynamic_parameters": {
+    "effective_total_heat_capacity_J_K": [700.0, 2600.0],
+    "surface_heat_capacity_fraction": [0.10, 0.65],
+    "surface_core_exchange_W_K_total": [12.0, 180.0]
+  },
+  "forbidden_from_v13_fit": [
+    "airflow at 57 percent PWM",
+    "PWM-to-flow exponent",
+    "channel heat-transfer multiplier",
+    "external heat-transfer coefficient",
+    "through-stack conductivity",
+    "heat-source nonuniformity",
+    "fan hub deficit",
+    "Fig.5(f) temperatures"
+  ],
+  "acceptance_thresholds": {
+    "calibration_regional_RMSE_C": 2.0,
+    "confirmation_regional_RMSE_C": 2.0,
+    "confirmation_each_region_RMSE_C": 2.5,
+    "confirmation_maximum_error_C": 4.0,
+    "confirmation_peak_time_error_s": 75.0,
+    "region_order_accuracy_percent": 95.0,
+    "medium_fine_sensor_difference_C": 0.2,
+    "energy_residual_percent": 0.5,
+    "comsol_python_difference_C": 0.2,
+    "parameters_strictly_inside_bounds": true
+  },
+  "validated_scope_if_passed": "40-cell thermal plant, 23 C ambient, 2-40 A, fixed 60 percent PWM; variable-PWM control claims remain outside scope",
+  "control_use_rule": "May be used as a high-fidelity fixed-PWM thermal reference. Variable-duty MPC requires a later multi-PWM confirmation."
+}

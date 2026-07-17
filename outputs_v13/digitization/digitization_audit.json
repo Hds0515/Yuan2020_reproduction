@@ -1,0 +1,12 @@
+{
+  "source_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0360319924000478-gr5.jpg",
+  "source_sha256": "A50F12D8C0653DB83A0CAFC1D2F7961689CFB1BF0E65FA42831263712B4EEA48",
+  "source_size_pixels": [
+    811,
+    984
+  ],
+  "points": 120,
+  "calibration_points": 60,
+  "final_confirmation_points": 60,
+  "output_sha256": "E146C84A608CD5A0A02C7914719FE66A91A3C5532A655A1464E5EF30628CDB57"
+}
