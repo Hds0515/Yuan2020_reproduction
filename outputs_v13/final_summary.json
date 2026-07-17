@@ -1,0 +1,15 @@
+{
+  "version": "V13",
+  "decision": "near_pass_but_gate_failed",
+  "frozen_model_sha256": "223c4a77df0c44dfa401e014348db87d0eeb74a358da8f4b516b2835a5dffb1d",
+  "calibration_regional_RMSE_C": 1.4775101425993302,
+  "confirmation_regional_RMSE_C": 1.4847182706525122,
+  "confirmation_maximum_error_C": 4.271278489894769,
+  "confirmation_region_order_accuracy_percent": 94.73684210526315,
+  "confirmation_peak_time_error_s": 0.0,
+  "medium_fine_max_sensor_difference_C": 0.12070005118104632,
+  "energy_residual_percent": 1.1075745918374054e-13,
+  "control_use_authorized": false,
+  "retuning_prohibited": true,
+  "next_stage": "multi-PWM independent validation"
+}

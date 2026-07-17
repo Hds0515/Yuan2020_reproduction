@@ -1,0 +1,59 @@
+{
+  "calibration_action": "2 A calibration optimized then frozen",
+  "frozen_model_sha256": "223c4a77df0c44dfa401e014348db87d0eeb74a358da8f4b516b2835a5dffb1d",
+  "first_final_confirmation_run": true,
+  "dynamic_parameters": {
+    "effective_total_heat_capacity_J_K": 3999.999989994387,
+    "surface_heat_capacity_fraction": 0.010010000000056184,
+    "surface_core_exchange_W_K_total": 8.065428145396455,
+    "fixed60_airflow_multiplier_relative_to_v12": 2.072349298596786,
+    "current_dependent_axial_heat_skew": 0.4128642328339601
+  },
+  "delivered_state_count": 4800,
+  "fine_state_count": 19200,
+  "calibration": {
+    "regional_RMSE_C": 1.4775101425993302,
+    "each_region_RMSE_C": {
+      "inlet": 1.1720684954620688,
+      "intermediate": 1.6441341187737908,
+      "outlet": 1.5723190216622362
+    },
+    "maximum_absolute_error_C": 3.386866541376776,
+    "mean_bias_C": -0.45940276426312254,
+    "peak_time_error_s": 0.0,
+    "region_order_accuracy_percent": 100.0
+  },
+  "final_confirmation": {
+    "regional_RMSE_C": 1.4847182706525122,
+    "each_region_RMSE_C": {
+      "inlet": 1.3849335521412753,
+      "intermediate": 1.4383389234246613,
+      "outlet": 1.6205879263844631
+    },
+    "maximum_absolute_error_C": 4.271278489894769,
+    "mean_bias_C": -0.1866008884153149,
+    "peak_time_error_s": 0.0,
+    "region_order_accuracy_percent": 94.73684210526315
+  },
+  "medium_fine_max_sensor_difference_C": 0.12070005118104632,
+  "energy_audit": {
+    "total_heat_input_W": 1572.0000000000002,
+    "total_heat_rejection_W": 1571.9999999999986,
+    "maximum_nodal_residual_W": 4.363176486776865e-14,
+    "energy_residual_percent": 1.1075745918374054e-13
+  },
+  "acceptance_checks_before_comsol": {
+    "calibration_regional_RMSE": true,
+    "confirmation_regional_RMSE": true,
+    "confirmation_each_region_RMSE": true,
+    "confirmation_maximum_error": false,
+    "confirmation_peak_time": true,
+    "region_order": false,
+    "mesh": true,
+    "energy": true,
+    "parameters_strictly_inside_bounds": true
+  },
+  "python_high_fidelity_gate_passed": false,
+  "comsol_confirmation_pending": true,
+  "validated_scope": "none"
+}
