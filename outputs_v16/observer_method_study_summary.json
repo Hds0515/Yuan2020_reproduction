@@ -1,0 +1,40 @@
+{
+  "track": "synthetic method development; not an experimental confirmation",
+  "fixed_sensor_zones_zero_based": [
+    0,
+    4
+  ],
+  "fixed_noise_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "median_Tmax_RMSE_improvement_percent": 12.098972123404813,
+  "improved_seed_fraction": 1.0,
+  "paired_mean_improvement_95pct_CI_percent": [
+    11.694357429787303,
+    12.408838745921832
+  ],
+  "nominal_median_performance_loss_percent": -0.0,
+  "pure_noise_median_performance_loss_percent": -0.0,
+  "single_hotspot_zone_accuracy_percent": 96.5,
+  "gated_hotspot_zone_accuracy_percent": 97.5,
+  "runtime_s": 1.5322636000055354,
+  "acceptance_checks": {
+    "majority_improves": true,
+    "median_improvement_above_10pct": true,
+    "paired_CI_lower_above_zero": true,
+    "nominal_and_pure_noise_loss_below_5pct": true,
+    "hotspot_accuracy_not_decreased": true
+  },
+  "synthetic_numeric_gate_passed": true,
+  "core_innovation_authorized": false,
+  "authorization_reason": "The parent experimental high-fidelity gate is not passed and no fresh observer confirmation experiment exists."
+}

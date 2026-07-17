@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-17T13:50:54.473491+00:00",
+  "parent_V15_frozen_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+  "scope": {
+    "ambient_C": 23.0,
+    "fan_duty": 0.6,
+    "current_A": [
+      2.0,
+      40.0
+    ],
+    "measured_current_and_voltage_are_exogenous": true
+  },
+  "experimental_data_status": {
+    "Guo2024_2A_ramp": "already used for V13 calibration",
+    "Guo2024_4A_ramp": "already consumed once as V13 final confirmation",
+    "unused_fresh_independent_dynamic_experiment_available": false
+  },
+  "method_dataset_scenarios": [
+    {
+      "scenario_id": "calibration_staircase",
+      "purpose": "calibration",
+      "duration_s": 800,
+      "dt_s": 20,
+      "profile": "5A/15A/30A/40A/10A deterministic staircase",
+      "random_seed": null
+    },
+    {
+      "scenario_id": "calibration_triangular",
+      "purpose": "calibration",
+      "duration_s": 800,
+      "dt_s": 20,
+      "profile": "8A to 38A to 8A triangular load",
+      "random_seed": null
+    },
+    {
+      "scenario_id": "validation_multisine",
+      "purpose": "validation",
+      "duration_s": 800,
+      "dt_s": 20,
+      "profile": "bounded deterministic two-frequency load",
+      "random_seed": null
+    },
+    {
+      "scenario_id": "final_prbs_seed1601",
+      "purpose": "synthetic_final_confirmation",
+      "duration_s": 800,
+      "dt_s": 20,
+      "profile": "80 s block PRBS over [8,16,24,32,40] A",
+      "random_seed": 1601
+    }
+  ],
+  "ROM_structure_frozen_before_validation": {
+    "zones": "five equal-volume cathode-flow zones",
+    "state_model": "stable positive RC chain",
+    "total_heat_capacity_preserved": true,
+    "heat_generation_preserved": true,
+    "fit_data": "calibration scenarios only",
+    "validation_retuning_allowed": false,
+    "synthetic_final_retuning_allowed": false
+  },
+  "ROM_acceptance_thresholds": {
+    "zone_overall_RMSE_C": 0.75,
+    "Tmax_RMSE_C": 0.75,
+    "DeltaT_RMSE_C": 0.5,
+    "hotspot_zone_accuracy_percent": 90.0,
+    "mean_temperature_RMSE_C": 0.5,
+    "energy_residual_percent": 0.5,
+    "maximum_terminal_quarter_bias_C": 0.5
+  },
+  "observer_preregistration": {
+    "sensor_zone_indices_zero_based": [
+      0,
+      4
+    ],
+    "measurement_noise_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "nominal_sigma_C": 0.12,
+    "pure_noise_sigma_C": 0.3,
+    "model_bank": [
+      "nominal",
+      "adjacent_conductance_x0.75",
+      "adjacent_conductance_x1.25",
+      "ambient_loss_x0.85",
+      "ambient_loss_x1.15"
+    ],
+    "gate_inherited_from_V6": {
+      "probability_floor": 0.005,
+      "new_probability_fraction_per_step": 0.35,
+      "normalized_entropy_maximum": 0.85,
+      "maximum_probability_minimum": 0.45,
+      "sustained_excess_NIS_threshold": 1.5
+    },
+    "acceptance": {
+      "majority_improves": true,
+      "median_Tmax_RMSE_improvement_percent_min": 10.0,
+      "paired_95pct_CI_lower_above_zero": true,
+      "nominal_and_pure_noise_loss_percent_max": 5.0,
+      "hotspot_accuracy_must_not_decrease": true
+    }
+  },
+  "interpretation_rule": "Synthetic parent-model confirmation can test reduction and software, but cannot repair or replace the failed experimental high-fidelity gate."
+}

@@ -1,0 +1,105 @@
+{
+  "action": "Galerkin projection plus calibration-only extrema offsets, then frozen",
+  "frozen_ROM_sha256": "f49b96ca9ecef52cae5b642c7028bff5ee8d4988eaf0d57c379073158e4b0ea2",
+  "first_synthetic_final_confirmation_run": true,
+  "parent_state_count": 6000,
+  "ROM_state_count": 10,
+  "dynamic_parameter_fit_count": 0,
+  "calibration": {
+    "scenario_ids": [
+      "two_mass_calibration_staircase",
+      "two_mass_calibration_triangular"
+    ],
+    "zone_overall_RMSE_C": 1.5082570719706234,
+    "each_zone_RMSE_C": [
+      2.360331516168633,
+      1.5105699778862456,
+      0.31243454365458506,
+      0.8645725723658104,
+      1.635881833899055
+    ],
+    "Tmax_RMSE_C": 1.8895542406317218,
+    "DeltaT_RMSE_C": 4.421246243988881,
+    "mean_temperature_RMSE_C": 0.3369729178943197,
+    "hotspot_zone_accuracy_percent": 100.0,
+    "maximum_terminal_quarter_bias_C": 1.3149843225805675,
+    "maximum_energy_residual_percent": 8.594881202321487e-13,
+    "mean_runtime_per_step_s": 0.00021964375009702052,
+    "maximum_real_eigenvalue_per_s": -0.0016603787535776446
+  },
+  "validation": {
+    "scenario_ids": [
+      "two_mass_validation_multisine"
+    ],
+    "zone_overall_RMSE_C": 1.4534357601233756,
+    "each_zone_RMSE_C": [
+      2.2779075289058497,
+      1.4538729895665974,
+      0.296859275544707,
+      0.8348554632478347,
+      1.5731049202129261
+    ],
+    "Tmax_RMSE_C": 1.7105863602819944,
+    "DeltaT_RMSE_C": 4.107323796783388,
+    "mean_temperature_RMSE_C": 0.32437593412115634,
+    "hotspot_zone_accuracy_percent": 100.0,
+    "maximum_terminal_quarter_bias_C": 2.521831511856186,
+    "maximum_energy_residual_percent": 3.283112431242214e-13,
+    "mean_runtime_per_step_s": 0.00018558750016381965,
+    "maximum_real_eigenvalue_per_s": -0.0016603787535776446
+  },
+  "synthetic_final_confirmation": {
+    "scenario_ids": [
+      "two_mass_final_prbs_seed2601"
+    ],
+    "zone_overall_RMSE_C": 1.9248942031943772,
+    "each_zone_RMSE_C": [
+      3.0116025048394692,
+      1.9318931093681908,
+      0.4048397852441353,
+      1.0984320468105346,
+      2.0865472966362457
+    ],
+    "Tmax_RMSE_C": 2.402581711289218,
+    "DeltaT_RMSE_C": 5.593103582841434,
+    "mean_temperature_RMSE_C": 0.4327842546034674,
+    "hotspot_zone_accuracy_percent": 100.0,
+    "maximum_terminal_quarter_bias_C": 4.0169362007875495,
+    "maximum_energy_residual_percent": 4.406791922906705e-13,
+    "mean_runtime_per_step_s": 0.00018594749999465421,
+    "maximum_real_eigenvalue_per_s": -0.0016603787535776446
+  },
+  "acceptance_checks": {
+    "calibration": {
+      "zone_overall_RMSE_C": false,
+      "Tmax_RMSE_C": false,
+      "DeltaT_RMSE_C": false,
+      "hotspot_zone_accuracy_percent": true,
+      "mean_temperature_RMSE_C": true,
+      "energy_residual_percent": true,
+      "maximum_terminal_quarter_bias_C": false
+    },
+    "validation": {
+      "zone_overall_RMSE_C": false,
+      "Tmax_RMSE_C": false,
+      "DeltaT_RMSE_C": false,
+      "hotspot_zone_accuracy_percent": true,
+      "mean_temperature_RMSE_C": true,
+      "energy_residual_percent": true,
+      "maximum_terminal_quarter_bias_C": false
+    },
+    "synthetic_final_confirmation": {
+      "zone_overall_RMSE_C": false,
+      "Tmax_RMSE_C": false,
+      "DeltaT_RMSE_C": false,
+      "hotspot_zone_accuracy_percent": true,
+      "mean_temperature_RMSE_C": true,
+      "energy_residual_percent": true,
+      "maximum_terminal_quarter_bias_C": false
+    }
+  },
+  "synthetic_method_gate_passed": false,
+  "independent_experimental_validation_passed": false,
+  "formal_ROM_claim_authorized": false,
+  "reason": "The strict parent experimental gate is failed and the new final scenario is deterministic parent simulation, not fresh experiment."
+}

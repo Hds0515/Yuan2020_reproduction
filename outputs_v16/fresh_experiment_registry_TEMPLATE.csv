@@ -1,0 +1,4 @@
+scenario_id,purpose,ambient_C,fan_duty,current_profile,stack_voltage_measured,temperature_sensor_count,fan_speed_measured,airflow_or_pressure_measured,sample_period_s,random_seed,data_file_sha256,notes
+FIX60_CAL_001,calibration,23.0,0.60,multistep,true,10,true,true,1.0,,TO_BE_FILLED,Calibration only
+FIX60_VAL_001,validation,23.0,0.60,triangular,true,10,true,true,1.0,,TO_BE_FILLED,Structure selection only
+FIX60_CONF_001,final_confirmation,23.0,0.60,prbs,true,10,true,true,1.0,2601,TO_BE_FILLED,Run once after freeze

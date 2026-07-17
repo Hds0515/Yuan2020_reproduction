@@ -1,0 +1,106 @@
+{
+  "fit_action": "loaded existing freeze; no optimization",
+  "frozen_ROM_sha256": "ac53b54ddc12bfb9c4f28d7bdd9257062903a1e3fde0f222dc370f40d33c8ebf",
+  "first_synthetic_final_confirmation_run": true,
+  "parent_V15_experimental_gate_passed": false,
+  "calibration": {
+    "scenario_ids": [
+      "calibration_staircase",
+      "calibration_triangular"
+    ],
+    "zone_overall_RMSE_C": 3.7025268429327602,
+    "each_zone_RMSE_C": [
+      2.658293489057668,
+      6.812305438563289,
+      2.5108081904806507,
+      2.163565697551486,
+      2.0209703495936377
+    ],
+    "Tmax_RMSE_C": 2.4046868382535687,
+    "DeltaT_RMSE_C": 4.330334089387435,
+    "mean_temperature_RMSE_C": 2.9131777318487924,
+    "hotspot_zone_accuracy_percent": 93.75,
+    "maximum_terminal_quarter_bias_C": 4.934333501428236,
+    "maximum_energy_residual_percent": 5.469469856022765e-13,
+    "runtime_s": 0.011857900011818856,
+    "mean_runtime_per_step_s": 0.0001482237501477357,
+    "maximum_real_stability_eigenvalue_per_s": -0.009414334486501636
+  },
+  "validation": {
+    "scenario_ids": [
+      "validation_multisine"
+    ],
+    "zone_overall_RMSE_C": 4.620084420578428,
+    "each_zone_RMSE_C": [
+      3.788587050140504,
+      8.354087144902541,
+      3.0103537827031515,
+      2.662705147490619,
+      2.5356474135279816
+    ],
+    "Tmax_RMSE_C": 2.54404137410959,
+    "DeltaT_RMSE_C": 4.96901788294681,
+    "mean_temperature_RMSE_C": 3.894319933293801,
+    "hotspot_zone_accuracy_percent": 92.5,
+    "maximum_terminal_quarter_bias_C": 7.424713014750884,
+    "maximum_energy_residual_percent": 2.646999941125085e-13,
+    "runtime_s": 0.0055179999908432364,
+    "mean_runtime_per_step_s": 0.00013794999977108092,
+    "maximum_real_stability_eigenvalue_per_s": -0.009414334486501636
+  },
+  "synthetic_final_confirmation": {
+    "scenario_ids": [
+      "final_prbs_seed1601"
+    ],
+    "zone_overall_RMSE_C": 3.5774080345863024,
+    "each_zone_RMSE_C": [
+      2.677151264822902,
+      6.834120669667733,
+      2.044493860043293,
+      1.775668462747474,
+      1.6685153202592578
+    ],
+    "Tmax_RMSE_C": 1.7956140954591018,
+    "DeltaT_RMSE_C": 4.399337520471509,
+    "mean_temperature_RMSE_C": 2.734858735737703,
+    "hotspot_zone_accuracy_percent": 97.5,
+    "maximum_terminal_quarter_bias_C": 4.219069850063057,
+    "maximum_energy_residual_percent": 2.3782686568067936e-13,
+    "runtime_s": 0.005452999990666285,
+    "mean_runtime_per_step_s": 0.00013632499976665713,
+    "maximum_real_stability_eigenvalue_per_s": -0.009414334486501636
+  },
+  "acceptance_checks": {
+    "calibration": {
+      "zone_overall_RMSE_C": false,
+      "Tmax_RMSE_C": false,
+      "DeltaT_RMSE_C": false,
+      "hotspot_zone_accuracy_percent": true,
+      "mean_temperature_RMSE_C": false,
+      "energy_residual_percent": true,
+      "maximum_terminal_quarter_bias_C": false
+    },
+    "validation": {
+      "zone_overall_RMSE_C": false,
+      "Tmax_RMSE_C": false,
+      "DeltaT_RMSE_C": false,
+      "hotspot_zone_accuracy_percent": true,
+      "mean_temperature_RMSE_C": false,
+      "energy_residual_percent": true,
+      "maximum_terminal_quarter_bias_C": false
+    },
+    "synthetic_final_confirmation": {
+      "zone_overall_RMSE_C": false,
+      "Tmax_RMSE_C": false,
+      "DeltaT_RMSE_C": false,
+      "hotspot_zone_accuracy_percent": true,
+      "mean_temperature_RMSE_C": false,
+      "energy_residual_percent": true,
+      "maximum_terminal_quarter_bias_C": false
+    }
+  },
+  "synthetic_method_gate_passed": false,
+  "independent_experimental_ROM_validation_passed": false,
+  "formal_ROM_claim_authorized": false,
+  "authorization_reason": "No unused independent dynamic experiment exists and the V15 strict experimental gate remains failed."
+}

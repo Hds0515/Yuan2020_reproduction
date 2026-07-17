@@ -1,0 +1,7 @@
+{
+  "executed_utc": "2026-07-17T13:50:54.628981+00:00",
+  "frozen_ROM_sha256": "ac53b54ddc12bfb9c4f28d7bdd9257062903a1e3fde0f222dc370f40d33c8ebf",
+  "result": "fail",
+  "data_type": "synthetic V15 parent scenario, not experiment",
+  "no_retuning_after_marker": true
+}

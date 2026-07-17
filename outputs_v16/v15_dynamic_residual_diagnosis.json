@@ -1,0 +1,21 @@
+{
+  "source": "outputs_v13/fixed_pwm_dynamic_validation.csv",
+  "data_already_consumed_as_final_confirmation": true,
+  "worst_error": {
+    "time_s": 950.0,
+    "flow_region": "outlet",
+    "current_A": 40.0,
+    "measured_C": 64.28044280442805,
+    "predicted_C": 68.55172129432282,
+    "error_C": 4.271278489894769
+  },
+  "regional_order_failure_times_s": [
+    1950.0
+  ],
+  "interpretation": [
+    "The largest error occurs at the high-load end of the increasing ramp in the outlet region.",
+    "The intermediate region is biased low during much of the increasing ramp, while inlet/outlet errors change sign with load.",
+    "This load- and position-dependent residual is consistent with missing heat/airflow spatial dynamics; it is not explained by the 0.0074 degC COMSOL-Python implementation difference.",
+    "Sparse 100 s digitized anchors cannot uniquely identify sensor lag, fan lag, water state and local heat release."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "branch_stage": "V16 seven-step physics-ROM-observer programme",
+  "protected_parent": {
+    "tag": "v15_fixed60_reference_confirmed",
+    "frozen_reference_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+    "V15_outputs_overwritten": false
+  },
+  "step_1_scope_freeze": {
+    "complete": true,
+    "valid_scope": "23 C ambient, fixed 60% PWM, 2-40 A, measured current and stack voltage inputs"
+  },
+  "step_2_preregistered_data_registry": {
+    "complete": true,
+    "fresh_independent_experiment_available": false,
+    "experimental_registry_template": "outputs_v16/fresh_experiment_registry_TEMPLATE.csv",
+    "synthetic_method_datasets_are_labelled_as_simulation": true
+  },
+  "step_3_dynamic_discrepancy_diagnosis": {
+    "complete": true,
+    "worst_error": {
+      "time_s": 950.0,
+      "flow_region": "outlet",
+      "current_A": 40.0,
+      "measured_C": 64.28044280442805,
+      "predicted_C": 68.55172129432282,
+      "error_C": 4.271278489894769
+    },
+    "regional_order_failure_times_s": [
+      1950.0
+    ],
+    "conclusion": "Load- and position-dependent structural discrepancy dominates implementation error; available anchors cannot uniquely separate fan lag, sensor lag, water state and local heat release."
+  },
+  "step_4_high_resolution_confirmation": {
+    "COMSOL_implementation_consistency_passed": true,
+    "strict_experimental_gate_passed": false,
+    "maximum_dynamic_error_C": 4.27127848989484,
+    "regional_order_accuracy_percent": 94.73684210526315,
+    "reason": "4.271 C exceeds the preregistered 4.0 C limit and 94.737% is below the 95% ordering limit; no unused confirmation experiment exists."
+  },
+  "step_5_five_zone_ROM": {
+    "single_mass_ablation_completed": true,
+    "single_mass_synthetic_gate_passed": false,
+    "two_mass_projection_completed": true,
+    "two_mass_validation_mean_temperature_RMSE_C": 0.32437593412115634,
+    "two_mass_validation_zone_RMSE_C": 1.4534357601233756,
+    "two_mass_validation_Tmax_RMSE_C": 1.7105863602819944,
+    "two_mass_validation_DeltaT_RMSE_C": 4.107323796783388,
+    "two_mass_synthetic_final_gate_passed": false,
+    "independent_experimental_validation_passed": false,
+    "formal_claim_authorized": false,
+    "conclusion": "The two-mass structure preserves mean temperature, stability, hotspot zone and energy, but five-zone extrema reconstruction is not accurate enough."
+  },
+  "step_6_sparse_observer": {
+    "synthetic_method_study_completed": true,
+    "synthetic_numeric_gate_passed": true,
+    "median_Tmax_RMSE_improvement_percent": 12.098972123404813,
+    "preregistered_experimental_confirmation_passed": false,
+    "core_innovation_authorized": false,
+    "reason": "The observer used the failed single-mass method model and synthetic parent truth; it is an algorithm check only."
+  },
+  "step_7_control_decision": {
+    "MPC_run": false,
+    "control_research_authorized": false,
+    "decision": "Do not run decisive MPC. The variable-PWM plant and independently validated ROM are unavailable."
+  },
+  "research_decision": {
+    "what_is_available": "An experimentally constrained fixed-60% high-resolution reference and a reproducible ROM structure study.",
+    "what_is_not_available": "A general high-fidelity plant or an independently validated five-zone hotspot ROM.",
+    "next_required_action": "Collect a newly reserved multi-point fixed-60% dynamic confirmation experiment; measure fan speed and preferably airflow or pressure. Variable-PWM work requires separate PWM40/60/80 telemetry.",
+    "thesis_writing": "Methods, reproduction, discrepancy and negative-result chapters may start; final innovation claims must wait for fresh confirmation data."
+  },
+  "integrity": {
+    "V15_frozen_reference_matches_declared_sha256": true,
+    "single_mass_current_protocol_matches_historical_freeze": false,
+    "single_mass_protocol_note": "The protocol timestamp was inadvertently regenerated after the negative freeze; the mismatch is disclosed and this failed baseline is not used for a positive claim.",
+    "two_mass_protocol_matches_freeze": true,
+    "two_mass_model_source_matches_freeze": true
+  },
+  "reference_temperature_C": 55.0,
+  "reference_temperature_is_not_a_safety_limit": true,
+  "draft_PR_only": true,
+  "merge_to_main_allowed": false
+}
