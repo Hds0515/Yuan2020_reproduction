@@ -1,0 +1,42 @@
+{
+  "created_utc": "2026-07-17T13:55:46.546367+00:00",
+  "parent_V15_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+  "scenarios": [
+    {
+      "scenario_id": "two_mass_calibration_staircase",
+      "purpose": "calibration",
+      "seed": null,
+      "file": "outputs_v16/two_mass_projection_dataset/two_mass_calibration_staircase.csv",
+      "sha256": "5858dd38e3fe2b785fdb4b7acc93c40bf4a32367193d2c65b6a5cdafee43878f",
+      "source_type": "frozen V15-equation deterministic simulation",
+      "fresh_experiment": false
+    },
+    {
+      "scenario_id": "two_mass_calibration_triangular",
+      "purpose": "calibration",
+      "seed": null,
+      "file": "outputs_v16/two_mass_projection_dataset/two_mass_calibration_triangular.csv",
+      "sha256": "eccf5b9cb8de5b32532c2b7598327b8f697265f30661ff9a6425db1c375df6c9",
+      "source_type": "frozen V15-equation deterministic simulation",
+      "fresh_experiment": false
+    },
+    {
+      "scenario_id": "two_mass_validation_multisine",
+      "purpose": "validation",
+      "seed": null,
+      "file": "outputs_v16/two_mass_projection_dataset/two_mass_validation_multisine.csv",
+      "sha256": "7956af3ed3a3b0ff0bad9b70da04a04d67c34743edb0b92a933d13ef171dfd65",
+      "source_type": "frozen V15-equation deterministic simulation",
+      "fresh_experiment": false
+    },
+    {
+      "scenario_id": "two_mass_final_prbs_seed2601",
+      "purpose": "synthetic_final_confirmation",
+      "seed": 2601,
+      "file": "outputs_v16/two_mass_projection_dataset/two_mass_final_prbs_seed2601.csv",
+      "sha256": "8914834fb8f22e5ef99e34a873c041e5274a0a38e3d4acd34896bbb1ef1af2e7",
+      "source_type": "frozen V15-equation deterministic simulation",
+      "fresh_experiment": false
+    }
+  ]
+}

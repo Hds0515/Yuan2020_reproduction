@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-17T13:50:35.434125+00:00",
+  "parent_V15_frozen_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+  "protocol_sha256": "c043e30b39f45e0689c845b779fb6e3fce2a79393e8d7f7599611417e67076d0",
+  "model_source_sha256": "2439593e40acf7bd8ac9f68e69fa7d4f224082332f6253ca2bea97bc0876e0e2",
+  "calibration_scenarios": [
+    "calibration_staircase",
+    "calibration_triangular"
+  ],
+  "parameters": {
+    "capacity_J_K": [
+      297.86840181319155,
+      3628.7800061198695,
+      24.450527353698025,
+      24.45052735380915,
+      24.450527353818813
+    ],
+    "adjacent_conductance_W_K": [
+      2.2409757034392337,
+      33.59060009673083,
+      99.99999999999356,
+      99.99999999996025
+    ],
+    "ambient_loss_W_K": [
+      6.89439822704068,
+      22.81353033933249,
+      6.8311559414694925,
+      5.460484175273425,
+      3.117355357342245
+    ],
+    "tmax_offset_C_intercept_and_current40": [
+      4.270334801556031e-18,
+      4.002846409472401
+    ],
+    "tmin_offset_C_intercept_and_current40": [
+      3.570968610279287e-15,
+      3.8681909366723546
+    ]
+  },
+  "no_retuning_after_freeze": true,
+  "claim_scope": "V15 fixed-duty synthetic method-development ROM only"
+}

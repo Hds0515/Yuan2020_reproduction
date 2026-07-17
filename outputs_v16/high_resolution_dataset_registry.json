@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-17T13:50:54.511293+00:00",
+  "fresh_experimental_confirmation_available": false,
+  "scenarios": [
+    {
+      "scenario_id": "calibration_staircase",
+      "purpose": "calibration",
+      "duration_s": 800,
+      "dt_s": 20,
+      "profile": "5A/15A/30A/40A/10A deterministic staircase",
+      "random_seed": null,
+      "data_file": "outputs_v16/high_resolution_method_dataset/calibration_staircase.csv",
+      "data_file_sha256": "8359dc27b71403552eb7110af11029a26da65f257815cc67b8e3ed1c7a65f7f3",
+      "parent_model_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+      "source_type": "deterministic simulation of frozen V15 parent",
+      "eligible_as_fresh_experimental_confirmation": false
+    },
+    {
+      "scenario_id": "calibration_triangular",
+      "purpose": "calibration",
+      "duration_s": 800,
+      "dt_s": 20,
+      "profile": "8A to 38A to 8A triangular load",
+      "random_seed": null,
+      "data_file": "outputs_v16/high_resolution_method_dataset/calibration_triangular.csv",
+      "data_file_sha256": "eb23023d973bf6a9741335f2946c7459f1f38c13845cf9fcfc66c1ddaa752433",
+      "parent_model_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+      "source_type": "deterministic simulation of frozen V15 parent",
+      "eligible_as_fresh_experimental_confirmation": false
+    },
+    {
+      "scenario_id": "validation_multisine",
+      "purpose": "validation",
+      "duration_s": 800,
+      "dt_s": 20,
+      "profile": "bounded deterministic two-frequency load",
+      "random_seed": null,
+      "data_file": "outputs_v16/high_resolution_method_dataset/validation_multisine.csv",
+      "data_file_sha256": "ef1943df2f15c5cff437e2a9cede2621f4eb7cc53d67762ddf77217013a03280",
+      "parent_model_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+      "source_type": "deterministic simulation of frozen V15 parent",
+      "eligible_as_fresh_experimental_confirmation": false
+    },
+    {
+      "scenario_id": "final_prbs_seed1601",
+      "purpose": "synthetic_final_confirmation",
+      "duration_s": 800,
+      "dt_s": 20,
+      "profile": "80 s block PRBS over [8,16,24,32,40] A",
+      "random_seed": 1601,
+      "data_file": "outputs_v16/high_resolution_method_dataset/final_prbs_seed1601.csv",
+      "data_file_sha256": "44bfc2de377685c3e6cc268e923935b88b363c02e5cf25b916998adae012840c",
+      "parent_model_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+      "source_type": "deterministic simulation of frozen V15 parent",
+      "eligible_as_fresh_experimental_confirmation": false
+    }
+  ]
+}

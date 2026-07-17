@@ -11,6 +11,7 @@ comsol/~*.mph
 comsol/**/*.class
 comsol/**/*.class.status
 comsol/**/*_Model.mph
+comsol/**/*.lock
 outputs_v3/
 # Regenerated from source_images/Fig17.jpg; 52 MB and not a runtime input.
 outputs_v5/digitization/external/Fig17_raw_pixels.csv

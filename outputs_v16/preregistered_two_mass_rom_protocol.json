@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "registered_utc": "2026-07-17T14:05:00+00:00",
+  "parent_V15_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+  "reason_for_new_structure": "The frozen single-mass five-state RC chain failed calibration and validation and hit parameter bounds, indicating that the V15 surface-core time-scale separation cannot be collapsed honestly into five thermal states.",
+  "structure": "five cathode-flow zones with one surface and one core state per zone; matrices obtained by capacity-weighted Galerkin projection; no dynamic parameter fitting",
+  "projection_mesh": "40 cells x 15 flow rows x 5 columns x 2 masses = 6000 parent states",
+  "calibration_use": "only two non-final scenarios may fit nonnegative Tmax/Tmin reconstruction offsets",
+  "validation_retuning_allowed": false,
+  "final_scenario": "new deterministic PRBS seed 2601; not previously executed",
+  "final_retuning_allowed": false,
+  "acceptance_thresholds": {
+    "zone_overall_RMSE_C": 0.75,
+    "Tmax_RMSE_C": 0.75,
+    "DeltaT_RMSE_C": 0.50,
+    "hotspot_zone_accuracy_percent": 90.0,
+    "mean_temperature_RMSE_C": 0.50,
+    "energy_residual_percent": 0.5,
+    "maximum_terminal_quarter_bias_C": 0.50
+  },
+  "interpretation_rule": "Passing this synthetic projection test does not change the failed V15 experimental gate and is not independent experimental validation."
+}
