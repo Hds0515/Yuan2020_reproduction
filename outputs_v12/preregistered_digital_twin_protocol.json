@@ -8,10 +8,11 @@
   },
   "scope": "thermal digital twin; electrochemical voltage is a measured exogenous input and not a predicted state",
   "state_resolution": {
-    "solid_surface_states": 600,
-    "internal_thermal_mass_states": 600,
-    "total_states": 1200,
-    "layout": "40 cells x 3 cathode-flow regions x 5 in-plane regions x 2 thermal masses"
+    "identification_mesh_states": 1200,
+    "delivered_medium_mesh_states": 4800,
+    "fine_confirmation_mesh_states": 19200,
+    "delivered_layout": "40 cells x 6 cathode-flow finite volumes x 10 in-plane finite volumes x 2 thermal masses",
+    "reported_sensor_layout": "area aggregation to 40 x 3 x 5 physical regions"
   },
   "structural_changes_from_v11": [
     "all conductive and convective coefficients scale by finite-volume face area and distance",
@@ -47,7 +48,8 @@
     "stack_edge_heat_transfer_coefficient_W_m2K": [3.0, 14.0],
     "effective_through_stack_conductivity_W_mK": [0.15, 4.0],
     "heat_source_nonuniformity": [0.0, 0.75],
-    "fan_hub_deficit": [0.0, 0.45]
+    "fan_hub_deficit": [0.0, 0.45],
+    "fan_release_time_constant_s": [5.0, 120.0]
   },
   "fixed_or_measured_not_fit": [
     "40 cells",
@@ -80,6 +82,7 @@
     "parameters_strictly_inside_bounds": true
   },
   "decision_rule": "Every thermal, mesh, energy, and independent-implementation gate must pass before the model may supply a ROM, observer, or controller reference trajectory.",
+  "pre_freeze_amendment": "Fig.9 re-audit separated input event times from temperature observation times. A bounded fan-release time constant was added because PWM telemetry is not published and the paper explicitly attributes dynamic behaviour to fan/current timing. A 1200-state identification mesh is used for optimization, but the delivered plant is the mesh-converged 4800-state discretization checked against a 19200-state fine mesh. This amendment occurred before any V12 parameter freeze and uses calibration Fig.9(a) only.",
   "reference_temperature_C": 55.0,
   "reference_temperature_is_not_a_safety_limit": true
 }

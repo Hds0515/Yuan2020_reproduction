@@ -23,6 +23,12 @@ only with their colocated surface node, which provides a physically
 interpretable fast/slow thermal response without adding an unmeasured heat
 source.
 
+The 1200-state grid is used only for parameter identification.  The delivered
+reference plant refines every reported 3x5 sensor region into 2x2 finite
+volumes (4800 thermal states including the two masses).  A 19200-state grid is
+the fine mesh for convergence confirmation; both meshes are area-aggregated
+back to the same physical 40x3x5 reporting regions.
+
 Cathode air is marched from inlet to outlet with an exact heat-exchanger
 effectiveness relation, so its enthalpy gain equals surface heat loss.  The fan
 footprint includes an axial hub deficit followed by plenum mixing.  Total flow
@@ -30,6 +36,15 @@ above the reported 12% PWM start point follows a bounded power law.  PWM fan
 speed curves are model-specific, so the exponent is calibrated and explicitly
 bounded rather than asserted as a manufacturer value for the unpublished fan
 controller.
+
+Before parameter freeze, a Fig. 9 pixel-coordinate re-audit found that the
+earlier V11 table had conflated input-event times with temperature-observation
+times.  V12 stores them separately.  The paper discusses deliberate lag between
+current and fan adjustment but does not publish PWM telemetry, so a bounded
+first-order fan-release time constant is identified on Fig. 9(a).  Duty rises
+immediately when load rises and decays toward the lower command after load
+falls.  This actuator reconstruction is an explicit uncertainty, not a claimed
+measurement.
 
 Heat generation is
 
@@ -51,4 +66,3 @@ afterward.
 COMSOL 6.4 is an independent implementation gate, not a second fitting
 environment.  Its geometry, coefficients, inputs, and frozen parameters must
 match the Python finite-volume model within 0.20 °C at the aggregated sensors.
-
