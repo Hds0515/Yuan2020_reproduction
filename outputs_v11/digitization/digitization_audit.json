@@ -1,0 +1,15 @@
+{
+  "rendered_page_path": "tmp\\pdfs\\pei_pages\\page-11.png",
+  "rendered_page_sha256": "bfd16e979495f8ec2d1f5ad0fd57713d8de9fa5151a1eb8b3e91d4d13d98c806",
+  "render_dpi": 180,
+  "static_points": 75,
+  "dynamic_anchors": 30,
+  "static_temperature_range_C": [
+    48.333333333333336,
+    62.916666666666664
+  ],
+  "outputs": {
+    "gong2024_fig8_75_temperatures.csv": "0db24cc257c49d3783062d80c96c798321e159b2c73d260db22e3e8a4afb5270",
+    "gong2024_fig9_dynamic_anchors.csv": "a93f436e1f5066b307ddd3a189615b6d6c64d9572bac941eb1c6df333251b167"
+  }
+}

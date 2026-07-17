@@ -1,0 +1,62 @@
+{
+  "registered_before_parameter_optimization": true,
+  "caveat": "The source figures were visually inspected before locking this split; no model parameter had been optimized.",
+  "reference_system": "Gong et al. 2024 open-cathode air-cooled 40-cell PEMFC stack",
+  "primary_source": {
+    "doi": "10.1016/j.ijhydene.2024.02.270",
+    "public_pdf_url": "https://nht.xjtu.edu.cn/paper/en/2024/Experimental_investigation_on_the_open_cathode_air_cooled_proton_exchange_membrane_fuel_cells_Optimum_operating_parameters_and_control_strategies.pdf",
+    "verified_pdf_sha256": "635BA7043D93CE901D5EB2EE6C4C71FC0089C348C9EB75CEF64EDAF34E64A568"
+  },
+  "model_resolution": {
+    "cells": 40,
+    "thermally_resolved_regions_per_cell": 15,
+    "state_count": 600,
+    "layout": "40 stack positions x 3 cathode-flow segments x 5 in-plane columns"
+  },
+  "data_partition": {
+    "calibration": {
+      "steady_spatial": "Fig. 8(b), cell groups 2 and 4, 30 digitized thermocouple locations",
+      "dynamic": "Fig. 9(a), UAV-like load, manually audited center-temperature anchors"
+    },
+    "validation": {
+      "steady_spatial": "Fig. 8(b), cell groups 1 and 5, 30 digitized thermocouple locations"
+    },
+    "final_confirmation": {
+      "steady_spatial": "Fig. 8(b), cell group 3, 15 digitized thermocouple locations",
+      "dynamic": "Fig. 9(b), random load/unload center-temperature anchors"
+    }
+  },
+  "parameters_permitted_for_calibration": [
+    "effective_total_thermal_mass_fraction",
+    "forced_convection_multiplier",
+    "effective_total_airflow_at_reference_duty",
+    "stack_edge_heat_transfer_coefficient",
+    "intercell_contact_conductance",
+    "serpentine_heat_source_nonuniformity"
+  ],
+  "parameters_forbidden_from_calibration": [
+    "cell_count",
+    "active_area",
+    "cathode_channel_count",
+    "channel_width",
+    "channel_depth",
+    "channel_length",
+    "bipolar_plate_thickness",
+    "fan_power_curve",
+    "experimental current sequence",
+    "final confirmation temperatures"
+  ],
+  "acceptance_thresholds": {
+    "validation_spatial_RMSE_C": 2.0,
+    "validation_Tmax_absolute_error_C": 2.5,
+    "validation_DeltaT_absolute_error_C": 2.5,
+    "final_spatial_RMSE_C": 2.0,
+    "final_dynamic_RMSE_C": 2.5,
+    "final_dynamic_maximum_error_C": 4.0,
+    "hotspot_row_accuracy_percent": 90.0,
+    "medium_fine_aggregated_sensor_difference_C": 0.2,
+    "energy_residual_percent": 0.5,
+    "all_parameters_inside_bounds": true
+  },
+  "control_gate": "No ROM, observer, or MPC conclusion until every high-fidelity threshold passes."
+}
