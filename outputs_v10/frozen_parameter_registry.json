@@ -1,0 +1,73 @@
+{
+  "geometry": {
+    "flow_length_m": 0.06,
+    "cell_width_m": 0.28,
+    "channel_count": 80,
+    "cathode_channel_height_m": 0.0025,
+    "cathode_channel_long_width_m": 0.0025,
+    "cathode_wall_angle_deg": 80.0,
+    "bipolar_plate_thickness_m": 0.0055,
+    "gdl_anode_thickness_m": 0.0002,
+    "gdl_cathode_thickness_m": 0.0002,
+    "ccm_thickness_m": 5e-05,
+    "bipolar_plate_in_plane_k_W_mK": 60.0,
+    "gdl_in_plane_k_W_mK": 10.0,
+    "ccm_k_W_mK": 1.5
+  },
+  "derived_geometry": {
+    "channel_pitch_m": 0.0035000000000000005,
+    "channel_short_width_m": 0.0016183650964576748,
+    "channel_area_m2": 5.147956370572094e-06,
+    "channel_wetted_perimeter_m": 0.009195498155886401,
+    "hydraulic_diameter_m": 0.002239337677329285,
+    "axial_kA_W_m_K": 0.0011692625
+  },
+  "air_properties": {
+    "density_kg_m3": 1.204,
+    "heat_capacity_J_kgK": 1006.0,
+    "thermal_conductivity_W_mK": 0.02514,
+    "dynamic_viscosity_Pa_s": 1.825e-05
+  },
+  "heat_transfer_closure": {
+    "correlation": "Shah-London fully developed rectangular duct, uniform heat flux",
+    "declared_equivalent_aspect_ratio": 1.0,
+    "nusselt_number": 3.610224,
+    "fitted_to_validation_data": false
+  },
+  "scope": "representative cathode channel; not a recovered full-cell manifold/CAD",
+  "primary_source": {
+    "citation": "Shahsavari S, Desouza A, Bahrami M, Kjeang E. Thermal analysis of air-cooled PEM fuel cells. Int J Hydrogen Energy. 2012;37:18261-18271.",
+    "doi": "10.1016/j.ijhydene.2012.09.075",
+    "url": "https://www.sfu.ca/~mbahrami/pdf/2012/S.%20Shahsavari%2C%20A.%20Desouza%2C%20M.%20Bahrami%2C%20E.%20Kjeang%20-%20Thermal%20analysis%20of%20air-cooled%20PEM%20fuel%20cells.pdf",
+    "verified_pdf_sha256": "3E5CC71356AEAC3F726DCCB212D74842B59E7EB0DCF2BD21E20012539C47E768",
+    "geometry_source": "Table 2",
+    "validation_source": "Table 1"
+  },
+  "validation_protocol": {
+    "parameters_fit_to_table1": false,
+    "all_cases_full_cell_gate": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "restricted_representative_channel_check": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "reason_case1_not_excluded_from_full_gate": "Case 1 is retained in the full gate. The restricted check is reported separately because the paper states that its cell-level model used local current-density data and inlet/outlet plenums that are absent here.",
+    "full_gate_thresholds": {
+      "Tmax_RMSE_C": 1.5,
+      "maximum_absolute_Tmax_error_C": 2.0,
+      "maximum_energy_residual_percent": 0.5,
+      "medium_fine_Tmax_relative_percent": 1.0,
+      "medium_fine_region_difference_C": 0.2,
+      "full_cell_spatial_map_required": true
+    }
+  }
+}
