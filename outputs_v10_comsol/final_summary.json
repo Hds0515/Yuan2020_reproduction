@@ -1,0 +1,25 @@
+{
+  "comsol_version": "6.4",
+  "java_source_sha256": "73c84f2c1bda8283a10381c1b72724a875481c944e5d21d09e22796f772984f3",
+  "frozen_python_registry_sha256": "bbb5818382a7d25f33eebe70f3f1f29dc0cda5ca2892583e089922dd6fdef9d0",
+  "all_six_cases_converged": true,
+  "all_three_meshes_converged": true,
+  "consistency_metrics": {
+    "maximum_region_difference_C": 0.14126087176792623,
+    "maximum_Tmax_difference_C": 0.11238497624815125,
+    "maximum_DeltaT_difference_C": 0.020897616727239665,
+    "maximum_energy_residual_percent": 0.0004791210061135899,
+    "maximum_medium_fine_region_difference_C": 0.002787867971321134,
+    "maximum_medium_fine_Tmax_difference_C": 0.00041994207327888944
+  },
+  "comsol_matches_frozen_python": true,
+  "fig7_like_experimental_metrics": {
+    "all_six_Tmax_RMSE_C": 7.967595085360131,
+    "all_six_maximum_absolute_Tmax_error_C": 19.403085572579585,
+    "restricted_cases_2_to_6_Tmax_RMSE_C": 0.9397551732960487,
+    "restricted_cases_2_to_6_maximum_absolute_Tmax_error_C": 1.2855321621341886
+  },
+  "high_fidelity_reference_validated": false,
+  "authorize_decisive_control_research": false,
+  "reason": "Independent finite-element agreement does not repair the retained case-1 failure or supply the unavailable full-cell spatial/current/plenum inputs."
+}

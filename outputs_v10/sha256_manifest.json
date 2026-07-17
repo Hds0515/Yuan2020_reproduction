@@ -1,0 +1,8 @@
+{
+  "frozen_parameter_registry.json": "bbb5818382a7d25f33eebe70f3f1f29dc0cda5ca2892583e089922dd6fdef9d0",
+  "literature_validation.csv": "65a099ae8d1d908d8040c90035e0802491752488310ae7cbe0898849de330036",
+  "temperature_profiles.csv": "79432f065bf7f800489862375dbbd1516fb5ed2498a0f8573546be361a66c709",
+  "mesh_convergence.csv": "a5d7fac8fc0f09d0d35a59e47ef42af87d083620f7cf474a207b3c5fbdec2240",
+  "final_summary.json": "ffc75938fd0ad0a4dccaca2b551448ff4822733cc8b0c7230f9dcfe990d1ac7b",
+  "validation_overview.png": "192f3f5b478417d57902cc40735b0286cd066b31bf1f6fe71d9ddefe168465a1"
+}

@@ -1,0 +1,42 @@
+{
+  "stage": "V10 literature-constrained representative-channel reference",
+  "model_parameters_fitted_to_validation_cases": false,
+  "numerical_metrics": {
+    "maximum_energy_residual_percent": 7.974044704962493e-10,
+    "maximum_medium_fine_Tmax_relative_percent": 0.11818135891749619,
+    "maximum_medium_fine_region_difference_C": 0.1384777315644925
+  },
+  "all_six_case_full_cell_metrics": {
+    "Tmax_RMSE_C": 7.92486354000018,
+    "maximum_absolute_Tmax_error_C": 19.290700596331433,
+    "mean_absolute_Tmax_error_C": 3.9227270933451805,
+    "Tmax_trend_Spearman": 1.0,
+    "Tmax_trend_p_value": 0.0
+  },
+  "restricted_representative_channel_metrics": {
+    "case_ids": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "Tmax_RMSE_C": 0.9684671670679565,
+    "maximum_absolute_Tmax_error_C": 1.347601991263872,
+    "mean_absolute_Tmax_error_C": 0.84913239274793
+  },
+  "paper_reported_simulation_Tmax_RMSE_C": 2.581988897471611,
+  "gates": {
+    "numerical_conservation_and_mesh": true,
+    "all_six_case_Tmax": false,
+    "restricted_cases_2_to_6_Tmax": true,
+    "full_cell_spatial_map": false,
+    "full_cell_energy_partition": false,
+    "full_cell_plenum_and_local_current_inputs_available": false,
+    "high_fidelity_reference_validated": false,
+    "authorize_decisive_ROM_MMEKF_MPC": false
+  },
+  "decision": "The frozen model is a numerically credible representative-channel core, but it is not a validated full-cell/manifold reference. Case 1 and the missing 24-point spatial map prevent the high-fidelity gate from passing.",
+  "case1_is_retained_as_failure": true,
+  "parameter_registry_sha256": "bbb5818382a7d25f33eebe70f3f1f29dc0cda5ca2892583e089922dd6fdef9d0"
+}
