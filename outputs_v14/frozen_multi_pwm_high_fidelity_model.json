@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-17T09:49:09.884375+00:00",
+  "protocol_sha256": "0f951944429cedc2a387e030f8740ae935536468ae7cf88728485dee3985d324",
+  "model_source_sha256": "3a33e74c7bbc44e5edfacfc541672f15f0ce9a33ea29a57b4e356deb93ddc567",
+  "digitized_data_sha256": "f69e2666c8777758ed98467f0b00e9f4069b038504e007c417b660a11922775a",
+  "fan_flow_exponent_relative_to_60pct": 1.1784751785068976,
+  "plant_record": {
+    "v12_frozen_sha256": "35cc2b8edce569ee18e01322baf88f2b21d74a42044ff40150fb4cf2c5c06f95",
+    "v12_spatial_parameters": {
+      "effective_total_airflow_at_57pct_kg_s": 0.021934345212215003,
+      "pwm_to_flow_exponent": 2.5917841202975773,
+      "channel_heat_transfer_multiplier": 1.5434528081728003,
+      "stack_edge_heat_transfer_coefficient_W_m2K": 13.9999972210056,
+      "effective_through_stack_conductivity_W_mK": 2.8745487024696486,
+      "heat_source_nonuniformity": 0.3721976849771562,
+      "fan_hub_deficit": 0.449999
+    },
+    "dynamic_parameters": {
+      "effective_total_heat_capacity_J_K": 3999.999989994387,
+      "surface_heat_capacity_fraction": 0.010010000000056184,
+      "surface_core_exchange_W_K_total": 8.065428145396455,
+      "fixed60_airflow_multiplier_relative_to_v12": 2.072349298596786,
+      "current_dependent_axial_heat_skew": 0.4128642328339601
+    },
+    "thermoneutral_voltage_V_per_cell": 1.48,
+    "state_count": 4800,
+    "scope": "23 C ambient, 2-40 A, fixed 60 percent PWM thermal plant",
+    "v13_frozen_sha256": "223c4a77df0c44dfa401e014348db87d0eeb74a358da8f4b516b2835a5dffb1d",
+    "fan_flow_exponent_relative_to_60pct": 1.1784751785068976,
+    "validated_PWM_range_percent": [
+      40,
+      80
+    ]
+  },
+  "calibration": "Guo2024 Fig.11 PWM40, 150-750 s",
+  "validation": "Guo2024 Fig.11 PWM60, 150-950 s",
+  "final_confirmation": "Guo2024 Fig.11 PWM80, 150-950 s",
+  "no_retuning_after_freeze": true
+}

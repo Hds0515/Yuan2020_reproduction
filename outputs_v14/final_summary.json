@@ -1,0 +1,25 @@
+{
+  "stage": "V14 multi-PWM high-fidelity plant confirmation",
+  "frozen_model_sha256": "7cd86ccb0e23b0b12f409c0a9bc9c910fc04cd878f115b1a5cf2a1ebd1ec447d",
+  "no_post_confirmation_retuning": true,
+  "python_high_fidelity_gate_passed": false,
+  "results": {
+    "PWM40_calibration_RMSE_C": 1.5621136682857921,
+    "PWM60_validation_RMSE_C": 2.607155075388076,
+    "PWM80_final_confirmation_RMSE_C": 3.0551929010426027,
+    "PWM80_maximum_absolute_error_C": 6.111469969399707,
+    "independent_spatial_RMSE_C": 1.1972718732972596,
+    "fixed60_regional_dynamic_RMSE_C": 1.4847182706525122,
+    "medium_fine_max_sensor_difference_C": 0.09908220012655988,
+    "energy_residual_percent": 7.629252050580949e-14
+  },
+  "decision": {
+    "variable_PWM_model_validated": false,
+    "fixed60_evidence_retained": true,
+    "reason": "The single frozen PWM-to-flow exponent did not transfer to the independent PWM60 and PWM80 trajectories.",
+    "ROM_MM_EKF_MPC_authorized": false,
+    "next_action": "Independently confirm the spatial and fixed-60-percent-PWM thermal implementation in COMSOL without adding fan-curve parameters."
+  },
+  "reference_temperature_C": 55.0,
+  "reference_temperature_is_not_a_safety_limit": true
+}

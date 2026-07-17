@@ -1,0 +1,56 @@
+{
+  "calibration_action": "PWM40 exponent optimized then frozen",
+  "frozen_model_sha256": "7cd86ccb0e23b0b12f409c0a9bc9c910fc04cd878f115b1a5cf2a1ebd1ec447d",
+  "first_final_confirmation_run": true,
+  "fan_flow_exponent_relative_to_60pct": 1.1784751785068976,
+  "delivered_state_count": 4800,
+  "fine_state_count": 19200,
+  "calibration_PWM40": {
+    "RMSE_C": 1.5621136682857921,
+    "maximum_absolute_error_C": 2.186570939103227,
+    "mean_bias_C": -0.5333478190434858,
+    "temperature_trend_spearman": 1.0,
+    "scored_start_s": 250.0,
+    "scored_end_s": 750.0
+  },
+  "validation_PWM60": {
+    "RMSE_C": 2.607155075388076,
+    "maximum_absolute_error_C": 4.126093157049041,
+    "mean_bias_C": -0.516787840534219,
+    "temperature_trend_spearman": 1.0,
+    "scored_start_s": 250.0,
+    "scored_end_s": 950.0
+  },
+  "final_confirmation_PWM80": {
+    "RMSE_C": 3.0551929010426027,
+    "maximum_absolute_error_C": 6.111469969399707,
+    "mean_bias_C": 0.8269610055977621,
+    "temperature_trend_spearman": 1.0,
+    "scored_start_s": 250.0,
+    "scored_end_s": 950.0
+  },
+  "independent_spatial_RMSE_C": 1.1972718732972596,
+  "independent_regional_dynamic_RMSE_C": 1.4847182706525122,
+  "medium_fine_max_sensor_difference_C": 0.09908220012655988,
+  "energy_audit": {
+    "total_heat_input_W": 1572.0000000000002,
+    "total_heat_rejection_W": 1571.999999999999,
+    "maximum_nodal_residual_W": 3.8968828164342995e-14,
+    "energy_residual_percent": 7.629252050580949e-14
+  },
+  "acceptance_checks_before_comsol": {
+    "calibration_RMSE": true,
+    "validation_RMSE": false,
+    "final_confirmation_RMSE": false,
+    "final_confirmation_maximum": false,
+    "temperature_trend": true,
+    "v12_spatial": true,
+    "v13_regional_dynamic": true,
+    "mesh": true,
+    "energy": true,
+    "fan_exponent_strictly_inside_bounds": true
+  },
+  "python_high_fidelity_gate_passed": false,
+  "comsol_confirmation_pending": true,
+  "validated_scope": "none"
+}
