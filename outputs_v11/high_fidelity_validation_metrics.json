@@ -1,0 +1,67 @@
+{
+  "calibration_action": "optimized_calibration_partition_then_frozen",
+  "frozen_model_sha256": "22022db7f18474392339b2c16343c1d14fc3d3d9ad759bb5eccd201d23f9f881",
+  "first_final_confirmation_run": true,
+  "parameters": {
+    "effective_total_thermal_mass_fraction": 0.7368947360939788,
+    "forced_convection_multiplier": 1.5163147283008223,
+    "effective_total_airflow_at_reference_duty_kg_s": 0.02636976458208667,
+    "stack_edge_heat_transfer_coefficient_W_m2K": 17.99999899998773,
+    "intercell_contact_conductance_W_K_per_region": 0.04000100000291115,
+    "serpentine_heat_source_nonuniformity": 0.34999899999999995
+  },
+  "calibration_spatial": {
+    "spatial_RMSE_C": 1.389192557781761,
+    "mean_bias_C": 0.004075548481844275,
+    "maximum_absolute_point_error_C": 3.0164779510515203,
+    "Tmax_absolute_error_C": 0.6176984364482081,
+    "DeltaT_absolute_error_C": 1.2333552392662668,
+    "hotspot_row_accuracy_percent": 100.0
+  },
+  "calibration_dynamic": {
+    "RMSE_C": 5.516554310918751,
+    "maximum_absolute_error_C": 10.067932108842122
+  },
+  "validation_spatial": {
+    "spatial_RMSE_C": 3.369568049756153,
+    "mean_bias_C": -3.001127918346712,
+    "maximum_absolute_point_error_C": 5.41322046368893,
+    "Tmax_absolute_error_C": 4.034060197123431,
+    "DeltaT_absolute_error_C": 3.460996347028413,
+    "hotspot_row_accuracy_percent": 100.0
+  },
+  "final_confirmation_spatial": {
+    "spatial_RMSE_C": 2.652069965900402,
+    "mean_bias_C": 2.300610918189503,
+    "maximum_absolute_point_error_C": 4.609788586471453,
+    "Tmax_absolute_error_C": 3.370587694971263,
+    "DeltaT_absolute_error_C": 1.7004710482816776,
+    "hotspot_row_accuracy_percent": 100.0
+  },
+  "final_confirmation_dynamic": {
+    "RMSE_C": 4.570180175710188,
+    "maximum_absolute_error_C": 12.034388221798523,
+    "mean_bias_C": 2.177972874516606
+  },
+  "medium_fine_max_sensor_difference_C": 0.7999442105844565,
+  "energy_audit": {
+    "total_heat_input_W": 777.5999999999999,
+    "total_heat_rejection_W": 777.5999999999999,
+    "maximum_nodal_residual_W": 1.9317880628477724e-14,
+    "energy_residual_percent": 7.709882115452476e-16
+  },
+  "acceptance_checks": {
+    "validation_spatial": false,
+    "validation_Tmax": false,
+    "validation_DeltaT": false,
+    "final_spatial": false,
+    "final_dynamic_RMSE": false,
+    "final_dynamic_maximum": false,
+    "hotspot_row": true,
+    "mesh": false,
+    "energy": true,
+    "parameters_strictly_inside_bounds": true
+  },
+  "high_fidelity_model_accepted": false,
+  "scope": "validated 40-cell thermal reference only; no electrochemical state validation"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "V11",
+  "decision": "high_fidelity_gate_failed",
+  "frozen_model_sha256": "22022db7f18474392339b2c16343c1d14fc3d3d9ad759bb5eccd201d23f9f881",
+  "validation_spatial_RMSE_C": 3.369568049756153,
+  "final_spatial_RMSE_C": 2.652069965900402,
+  "final_dynamic_RMSE_C": 4.570180175710188,
+  "final_dynamic_maximum_error_C": 12.034388221798523,
+  "medium_fine_max_sensor_difference_C": 0.7999442105844565,
+  "energy_residual_percent": 7.709882115452476e-16,
+  "hotspot_row_accuracy_percent": 100.0,
+  "authorized_for_ROM_observer_or_MPC": false,
+  "retuning_prohibited": true,
+  "successor_required": "mesh-consistent fan/plenum finite-volume model"
+}
