@@ -1,0 +1,19 @@
+{
+  "version": "V12",
+  "decision": "dynamic_gate_failed",
+  "frozen_parameter_file_sha256": "35cc2b8edce569ee18e01322baf88f2b21d74a42044ff40150fb4cf2c5c06f95",
+  "delivered_state_count": 4800,
+  "fine_state_count": 19200,
+  "held_out_spatial_RMSE_C": 1.1972718732972596,
+  "held_out_Tmax_absolute_error_C": 1.3356929361347625,
+  "held_out_DeltaT_absolute_error_C": 1.983498059835128,
+  "medium_fine_max_sensor_difference_C": 0.06763977219200967,
+  "energy_residual_percent": 3.317780912727251e-13,
+  "held_out_dynamic_RMSE_C": 8.265455685658528,
+  "held_out_dynamic_maximum_error_C": 14.257247309267086,
+  "spatial_component_validated": true,
+  "transient_reference_validated": false,
+  "control_use_authorized": false,
+  "retuning_prohibited": true,
+  "next_reference": "Guo et al. 2024 fixed-60%-PWM ramp experiments"
+}

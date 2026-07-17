@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-07-17T08:57:52.117076+00:00",
+  "protocol_sha256": "e42c4100f2e98e4c8e0aac21abcc43e45291132540f83a0f05aec36f5281f32e",
+  "model_source_sha256": "281f1eb44b11fb5d2ec614c9df84a4ca45c1f2b4272e1c61e2ae9cf7d4ef74c2",
+  "data_sha256": {
+    "fig8": "0db24cc257c49d3783062d80c96c798321e159b2c73d260db22e3e8a4afb5270",
+    "fig9_inputs": "4c89c0270408bb5b615a9e45eb20c56ae377aaa93c3b40fdf0350b7fc4d47d11",
+    "fig9_temperatures": "ac24046cbf7b9cdddddb17b990a84a518c1e9af60906c7318313b6abf2852a04"
+  },
+  "parameters": {
+    "effective_total_heat_capacity_J_K": 780.0750468973777,
+    "surface_heat_capacity_fraction": 0.6499899999971601,
+    "surface_core_exchange_W_K_total": 179.99998999868268,
+    "effective_total_airflow_at_57pct_kg_s": 0.021934345212215003,
+    "pwm_to_flow_exponent": 2.5917841202975773,
+    "channel_heat_transfer_multiplier": 1.5434528081728003,
+    "stack_edge_heat_transfer_coefficient_W_m2K": 13.9999972210056,
+    "effective_through_stack_conductivity_W_mK": 2.8745487024696486,
+    "heat_source_nonuniformity": 0.3721976849771562,
+    "fan_hub_deficit": 0.449999,
+    "fan_release_time_constant_s": 115.51574856829376
+  },
+  "identification_mesh": [
+    40,
+    3,
+    5,
+    2
+  ],
+  "delivered_mesh": [
+    40,
+    6,
+    10,
+    2
+  ],
+  "fine_confirmation_mesh": [
+    40,
+    12,
+    20,
+    2
+  ],
+  "calibration_partition": [
+    "Fig.8 groups 1/2/4/5",
+    "Fig.9(a)"
+  ],
+  "final_confirmation_partition": [
+    "Fig.8 group 3",
+    "Fig.9(b)"
+  ],
+  "no_retuning_after_freeze": true
+}

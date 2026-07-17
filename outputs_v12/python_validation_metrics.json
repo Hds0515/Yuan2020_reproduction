@@ -1,0 +1,70 @@
+{
+  "calibration_action": "calibration partitions optimized then frozen",
+  "frozen_parameter_file_sha256": "35cc2b8edce569ee18e01322baf88f2b21d74a42044ff40150fb4cf2c5c06f95",
+  "first_final_confirmation_run": true,
+  "parameters": {
+    "effective_total_heat_capacity_J_K": 780.0750468973777,
+    "surface_heat_capacity_fraction": 0.6499899999971601,
+    "surface_core_exchange_W_K_total": 179.99998999868268,
+    "effective_total_airflow_at_57pct_kg_s": 0.021934345212215003,
+    "pwm_to_flow_exponent": 2.5917841202975773,
+    "channel_heat_transfer_multiplier": 1.5434528081728003,
+    "stack_edge_heat_transfer_coefficient_W_m2K": 13.9999972210056,
+    "effective_through_stack_conductivity_W_mK": 2.8745487024696486,
+    "heat_source_nonuniformity": 0.3721976849771562,
+    "fan_hub_deficit": 0.449999,
+    "fan_release_time_constant_s": 115.51574856829376
+  },
+  "delivered_state_count": 4800,
+  "fine_state_count": 19200,
+  "calibration_spatial": {
+    "RMSE_C": 1.4583463713499314,
+    "mean_bias_C": -0.06494917948899849,
+    "maximum_absolute_point_error_C": 3.040689493390566,
+    "Tmax_absolute_error_C": 0.0015471690776394098,
+    "DeltaT_absolute_error_C": 2.3381081718133387,
+    "hotspot_row_accuracy_percent": 100.0
+  },
+  "calibration_dynamic": {
+    "RMSE_C": 1.234384080977565,
+    "maximum_absolute_error_C": 3.3716488839553023,
+    "runtime_s": 3.2370322000060696
+  },
+  "final_spatial": {
+    "RMSE_C": 1.1972718732972596,
+    "mean_bias_C": 0.20597893406936738,
+    "maximum_absolute_point_error_C": 1.9672546135546938,
+    "Tmax_absolute_error_C": 1.3356929361347625,
+    "DeltaT_absolute_error_C": 1.983498059835128,
+    "hotspot_row_accuracy_percent": 100.0
+  },
+  "final_dynamic": {
+    "RMSE_C": 8.265455685658528,
+    "maximum_absolute_error_C": 14.257247309267086,
+    "mean_bias_C": 6.29992700784677,
+    "runtime_s": 4.245503399986774
+  },
+  "medium_fine_max_sensor_difference_C": 0.06763977219200967,
+  "steady_energy_audit": {
+    "total_heat_input_W": 723.5999999999999,
+    "total_heat_rejection_W": 723.6000000000023,
+    "maximum_nodal_residual_W": 3.058664432842306e-14,
+    "energy_residual_percent": 3.317780912727251e-13
+  },
+  "acceptance_checks_before_comsol": {
+    "calibration_spatial": true,
+    "calibration_dynamic": true,
+    "final_spatial": true,
+    "final_Tmax": true,
+    "final_DeltaT": true,
+    "final_dynamic_RMSE": false,
+    "final_dynamic_maximum": false,
+    "hotspot_row": true,
+    "mesh": true,
+    "steady_energy": true,
+    "parameters_strictly_inside_bounds": true
+  },
+  "python_high_fidelity_gate_passed": false,
+  "comsol_independent_confirmation_pending": true,
+  "control_use_authorized": false
+}
