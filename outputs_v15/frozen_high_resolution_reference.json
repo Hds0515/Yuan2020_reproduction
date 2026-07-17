@@ -1,0 +1,33 @@
+{
+  "model_class": "Fixed60HighResolutionReference",
+  "frozen_parent_sha256": "223c4a77df0c44dfa401e014348db87d0eeb74a358da8f4b516b2835a5dffb1d",
+  "dynamic_parameters": {
+    "effective_total_heat_capacity_J_K": 3999.999989994387,
+    "surface_heat_capacity_fraction": 0.010010000000056184,
+    "surface_core_exchange_W_K_total": 8.065428145396455,
+    "fixed60_airflow_multiplier_relative_to_v12": 2.072349298596786,
+    "current_dependent_axial_heat_skew": 0.4128642328339601
+  },
+  "state_count": 4800,
+  "scope": {
+    "ambient_C": 23.0,
+    "duty": 0.6,
+    "current_A": [
+      2.0,
+      40.0
+    ],
+    "measured_current_and_voltage_are_exogenous": true
+  },
+  "limitations": [
+    "not validated for variable PWM",
+    "does not resolve membrane water or flooding",
+    "does not reconstruct the original fan plenum or manifold CAD",
+    "V13 strict maximum-error and ordering thresholds were narrowly missed"
+  ],
+  "created_utc": "2026-07-17T10:15:30.506532+00:00",
+  "python_model_source_sha256": "4993c3dc7e71be7b7c22c7256322ecdff75e9ce6362d2c45623c077edf903924",
+  "comsol_model_source_sha256": "730fc05132c75199a39db9a3fdffca9cab3a9f7be762cc72fc6b04c252f0bc8e",
+  "comsol_runtime_model_sha256": "d6e5dc57acd26922151bc8c1937b8d65bce8449b555389f229059e982da78d63",
+  "comsol_version": "6.4.0.293",
+  "parameter_changes_from_V13": 0
+}
