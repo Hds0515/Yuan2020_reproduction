@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "model_scope": "40-cell Gong/Guo graphite stack; 23 degC ambient; fixed 60 percent PWM; 4 A current ramp; measured current and voltage inputs",
+  "frozen_parent_model_sha256": "223c4a77df0c44dfa401e014348db87d0eeb74a358da8f4b516b2835a5dffb1d",
+  "parameter_changes_allowed": false,
+  "comsol_implementation": {
+    "solver": "COMSOL Multiphysics 6.4 transient Global Equations",
+    "comparison_mesh": "40 x 3 x 5 surface nodes plus matched core nodes (1200 states)",
+    "delivered_python_mesh": "40 x 6 x 10 surface nodes plus matched core nodes (4800 states)",
+    "purpose": "independent solver implementation of the frozen energy-conserving equations"
+  },
+  "acceptance_thresholds": {
+    "COMSOL_vs_Python_regional_maximum_difference_C": 0.05,
+    "COMSOL_vs_Python_global_maximum_difference_C": 0.10,
+    "COMSOL_energy_residual_percent": 0.5
+  },
+  "experimental_status_carried_forward": {
+    "independent_spatial_RMSE_C": 1.1972718732972596,
+    "fixed60_regional_dynamic_RMSE_C": 1.4847182706525122,
+    "fixed60_maximum_absolute_error_C": 4.271278489894769,
+    "fixed60_region_order_accuracy_percent": 94.73684210526315,
+    "strict_V13_gate_passed": false
+  },
+  "interpretation_rule": "A COMSOL consistency pass verifies implementation, not the two failed V13 experimental thresholds. The deliverable may be described only as an experimentally constrained high-resolution reference within the stated fixed-PWM scope, not as a validated variable-duty control plant."
+}

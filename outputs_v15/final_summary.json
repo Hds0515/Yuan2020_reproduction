@@ -1,0 +1,66 @@
+{
+  "frozen_reference_sha256": "05566ac5903af63fdda10c1dd941a3bfbd6b7f607409007d341e320debf81ae7",
+  "parent_V13_sha256": "223c4a77df0c44dfa401e014348db87d0eeb74a358da8f4b516b2835a5dffb1d",
+  "COMSOL": {
+    "version": "6.4.0.293",
+    "state_count": 1200,
+    "transient_solver": "BDF",
+    "converged": true,
+    "reported_core_solve_time_s": 7.0926629,
+    "COMSOL_vs_Python_maximum_difference_C": 0.007390663343770143,
+    "COMSOL_vs_Python_RMSE_C": 0.0013452305258171596,
+    "COMSOL_energy_residual_max_mid_hold_percent": 0.0099608862001332,
+    "checks": {
+      "regional_maximum_difference": true,
+      "regional_RMSE": true,
+      "COMSOL_energy_residual": true
+    },
+    "implementation_consistency_passed": true
+  },
+  "delivered_model": {
+    "entry_point": "models_v15.Fixed60HighResolutionReference",
+    "state_count": 4800,
+    "fine_comparison_state_count": 19200,
+    "scope": {
+      "ambient_C": 23.0,
+      "duty": 0.6,
+      "current_A": [
+        2.0,
+        40.0
+      ],
+      "measured_current_and_voltage_are_exogenous": true
+    }
+  },
+  "experimental_evidence": {
+    "independent_spatial_RMSE_C": 1.1972718732972596,
+    "fixed60_regional_dynamic": {
+      "regional_RMSE_C": 1.484718270652493,
+      "each_region_RMSE_C": {
+        "inlet": 1.3849335521412072,
+        "intermediate": 1.4383389234246684,
+        "outlet": 1.620587926384463
+      },
+      "maximum_absolute_error_C": 4.27127848989484,
+      "mean_bias_C": -0.1866008884153671,
+      "peak_time_error_s": 0.0,
+      "region_order_accuracy_percent": 94.73684210526315
+    },
+    "medium_fine_max_sensor_difference_C": 0.12070005118104632,
+    "steady_energy_audit": {
+      "total_heat_input_W": 1572.0000000000002,
+      "total_heat_rejection_W": 1571.9999999999986,
+      "maximum_nodal_residual_W": 4.363176486776865e-14,
+      "energy_residual_percent": 1.1075745918374054e-13
+    }
+  },
+  "decisions": {
+    "scoped_high_resolution_reference_available": true,
+    "COMSOL_implementation_confirmed": true,
+    "strict_experimental_high_fidelity_gate_passed": false,
+    "variable_PWM_high_fidelity_plant_available": false,
+    "ROM_MM_EKF_oracle_MPC_authorized": false,
+    "reason": "V13 maximum-error and regional-order thresholds and V14 variable-PWM confirmation remain failed."
+  },
+  "reference_temperature_C": 55.0,
+  "reference_temperature_is_not_a_safety_limit": true
+}
