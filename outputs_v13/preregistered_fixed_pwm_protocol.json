@@ -17,7 +17,9 @@
     "ramp_2A": "2 A increments every 50 s, 2 to 40 A loading then unloading",
     "ramp_4A": "4 A increments every 100 s, 4 to 40 A loading then unloading",
     "ambient_temperature_C": 23.0,
-    "voltage_closure": "digitized Fig.4 operating envelope: V_stack=clip(33.5-0.34*I,19.5,33.5)"
+    "voltage_closure": "digitized Fig.4 operating envelope: V_stack=clip(33.5-0.34*I,19.5,33.5)",
+    "thermoneutral_voltage_V_per_cell": 1.48,
+    "initial_condition": "the measured 50 s inlet/intermediate/outlet temperatures initialize the corresponding rows; scoring starts at 150 s"
   },
   "data_partition": {
     "calibration": "Fig.5(e), 2 A ramp, cathode inlet/intermediate/outlet temperature",
@@ -26,9 +28,11 @@
     "independent_numerical_confirmation": "4800 versus 19200 states and COMSOL 6.4"
   },
   "permitted_dynamic_parameters": {
-    "effective_total_heat_capacity_J_K": [700.0, 2600.0],
-    "surface_heat_capacity_fraction": [0.10, 0.65],
-    "surface_core_exchange_W_K_total": [12.0, 180.0]
+    "effective_total_heat_capacity_J_K": [700.0, 4000.0],
+    "surface_heat_capacity_fraction": [0.01, 0.65],
+    "surface_core_exchange_W_K_total": [5.0, 180.0],
+    "fixed60_airflow_multiplier_relative_to_v12": [0.5, 3.0],
+    "current_dependent_axial_heat_skew": [0.0, 0.60]
   },
   "forbidden_from_v13_fit": [
     "airflow at 57 percent PWM",
@@ -53,5 +57,6 @@
     "parameters_strictly_inside_bounds": true
   },
   "validated_scope_if_passed": "40-cell thermal plant, 23 C ambient, 2-40 A, fixed 60 percent PWM; variable-PWM control claims remain outside scope",
+  "pre_freeze_physics_amendment": "Calibration-only residuals exposed two physical omissions before freeze: the heat balance must use 1.48 V thermoneutral voltage rather than 1.253 V reversible voltage, and Fig.5/6 require an energy-normalized current-dependent outlet heat-source skew. The first measured regional temperatures are treated as the known initial state. No Fig.5(f) temperature enters calibration.",
   "control_use_rule": "May be used as a high-fidelity fixed-PWM thermal reference. Variable-duty MPC requires a later multi-PWM confirmation."
 }
