@@ -1,0 +1,42 @@
+{
+  "registered_before_v14_fan_curve_fit": true,
+  "source": {
+    "paper_doi": "10.1016/j.ijhydene.2024.01.045",
+    "figure_11_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0360319924000478-gr11.jpg",
+    "figure_11_sha256": "B0DF5C5A0E33D42DF6421B801A98234F88CA56A4594FAD845CA45525856C87D8"
+  },
+  "frozen_predecessors": {
+    "v12_spatial": "held-out spatial RMSE 1.197 C; no V14 retuning",
+    "v13_fixed60": "held-out regional dynamic RMSE 1.485 C; no V14 thermal retuning",
+    "v13_frozen_model_sha256": "223c4a77df0c44dfa401e014348db87d0eeb74a358da8f4b516b2835a5dffb1d"
+  },
+  "v14_only_parameter": {
+    "fan_flow_exponent_relative_to_60pct": [0.3, 2.5]
+  },
+  "data_partition": {
+    "calibration": "Fig.11 PWM40 average temperature, 150-750 s before declared overheating termination",
+    "validation": "Fig.11 PWM60 average temperature, 150-950 s",
+    "final_confirmation": "Fig.11 PWM80 average temperature, 150-950 s",
+    "excluded": "PWM100 because the paper identifies flooding; the V14 thermal-only model has no liquid-water state"
+  },
+  "fixed_inputs": {
+    "current": "4 A increment each 100 s",
+    "voltage": "V_stack=clip(33.5-0.34*I,19.5,33.5)",
+    "initialization": "first digitized average temperature initializes each trajectory; first point is not scored"
+  },
+  "acceptance_thresholds": {
+    "calibration_RMSE_C": 2.5,
+    "validation_RMSE_C": 2.5,
+    "final_confirmation_RMSE_C": 2.5,
+    "final_confirmation_maximum_error_C": 4.0,
+    "temperature_trend_spearman": 0.99,
+    "v12_spatial_RMSE_C": 2.0,
+    "v13_regional_dynamic_RMSE_C": 2.0,
+    "mesh_difference_C": 0.2,
+    "energy_residual_percent": 0.5,
+    "comsol_python_difference_C": 0.2,
+    "fan_exponent_strictly_inside_bounds": true
+  },
+  "validated_scope_if_all_pass": "4800-state high-fidelity thermal reference for 23 C ambient, 4-40 A ramps, and 40-80 percent PWM; 55 C is a reference only",
+  "control_gate": "Variable-duty control research remains blocked until COMSOL confirms the frozen V14 implementation."
+}

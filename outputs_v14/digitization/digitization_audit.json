@@ -1,0 +1,10 @@
+{
+  "source_sha256": "B0DF5C5A0E33D42DF6421B801A98234F88CA56A4594FAD845CA45525856C87D8",
+  "source_size_pixels": [
+    691,
+    442
+  ],
+  "points": 25,
+  "output_sha256": "F69E2666C8777758ED98467F0B00E9F4069B038504E007C417B660A11922775A",
+  "excluded_PWM100_reason": "paper reports flooding; thermal-only scope"
+}
