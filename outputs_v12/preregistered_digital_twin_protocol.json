@@ -1,0 +1,85 @@
+{
+  "registered_before_v12_parameter_optimization": true,
+  "predecessor_disclosure": "V11 held-out results were observed and failed. V12 is a structural successor, not a retuning of V11; the V11 frozen file remains immutable.",
+  "reference_system": "Gong et al. 2024 open-cathode air-cooled 40-cell PEMFC stack",
+  "primary_source": {
+    "doi": "10.1016/j.ijhydene.2024.02.270",
+    "pdf_sha256": "635BA7043D93CE901D5EB2EE6C4C71FC0089C348C9EB75CEF64EDAF34E64A568"
+  },
+  "scope": "thermal digital twin; electrochemical voltage is a measured exogenous input and not a predicted state",
+  "state_resolution": {
+    "solid_surface_states": 600,
+    "internal_thermal_mass_states": 600,
+    "total_states": 1200,
+    "layout": "40 cells x 3 cathode-flow regions x 5 in-plane regions x 2 thermal masses"
+  },
+  "structural_changes_from_v11": [
+    "all conductive and convective coefficients scale by finite-volume face area and distance",
+    "intercell transport uses effective through-stack conductivity rather than conductance per region",
+    "a two-capacitance solid/contact structure represents fast plate and slow assembly response",
+    "PWM-to-flow uses a bounded nonlinear fan-law exponent above the published 12 percent start threshold",
+    "the annular fan footprint is mixed in a plenum before entering the 40 cell paths",
+    "experiment-specific measured voltage anchors close the electrical-to-thermal energy balance",
+    "ambient temperature is an experimental input, not forced equal to initial stack temperature"
+  ],
+  "data_partition": {
+    "calibration": [
+      "Fig.8 groups 1, 2, 4 and 5 (60 spatial temperatures)",
+      "Fig.9(a) UAV-like centre-temperature trace"
+    ],
+    "final_confirmation": [
+      "Fig.8 group 3 (15 spatial temperatures)",
+      "Fig.9(b) random-load centre-temperature trace"
+    ],
+    "numerical_confirmation": [
+      "medium-fine mesh comparison",
+      "steady and transient energy closure",
+      "independent COMSOL 6.4 implementation"
+    ]
+  },
+  "calibration_parameters": {
+    "effective_total_heat_capacity_J_K": [700.0, 2600.0],
+    "surface_heat_capacity_fraction": [0.10, 0.65],
+    "surface_core_exchange_W_K_total": [12.0, 180.0],
+    "effective_total_airflow_at_57pct_kg_s": [0.012, 0.070],
+    "pwm_to_flow_exponent": [0.8, 3.5],
+    "channel_heat_transfer_multiplier": [0.55, 2.4],
+    "stack_edge_heat_transfer_coefficient_W_m2K": [3.0, 14.0],
+    "effective_through_stack_conductivity_W_mK": [0.15, 4.0],
+    "heat_source_nonuniformity": [0.0, 0.75],
+    "fan_hub_deficit": [0.0, 0.45]
+  },
+  "fixed_or_measured_not_fit": [
+    "40 cells",
+    "51 cm2 active area",
+    "45 cathode channels",
+    "1.4 mm channel depth",
+    "1.0 mm channel width",
+    "60.8 mm channel length",
+    "2.5 mm bipolar plate thickness",
+    "0.82 graphite emissivity",
+    "12 percent fan start threshold",
+    "current sequence",
+    "voltage sequence",
+    "ambient temperature",
+    "final-confirmation temperatures"
+  ],
+  "acceptance_thresholds": {
+    "calibration_spatial_RMSE_C": 2.0,
+    "calibration_dynamic_RMSE_C": 2.5,
+    "final_spatial_RMSE_C": 2.0,
+    "final_Tmax_absolute_error_C": 2.5,
+    "final_DeltaT_absolute_error_C": 2.5,
+    "final_dynamic_RMSE_C": 2.5,
+    "final_dynamic_maximum_error_C": 4.0,
+    "hotspot_row_accuracy_percent": 90.0,
+    "medium_fine_sensor_difference_C": 0.2,
+    "steady_energy_residual_percent": 0.5,
+    "transient_energy_residual_percent": 0.5,
+    "comsol_python_sensor_difference_C": 0.2,
+    "parameters_strictly_inside_bounds": true
+  },
+  "decision_rule": "Every thermal, mesh, energy, and independent-implementation gate must pass before the model may supply a ROM, observer, or controller reference trajectory.",
+  "reference_temperature_C": 55.0,
+  "reference_temperature_is_not_a_safety_limit": true
+}
